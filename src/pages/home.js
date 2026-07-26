@@ -49,17 +49,20 @@ document.querySelectorAll('.stat-num').forEach(el => {
 
 /* ---------- 模块入口 ---------- */
 const modules = [
-  ['characters.html', '🎭', '角色图鉴', '全部修正者的档案：属性、技能、语音与 3D 模型展示。', `${counts.characters} 条记录`],
-  ['timeline.html', '🕰️', '时间线', '从公测到落幕，每个版本与重要节点的编年史。', `${counts.timeline} 条记录`],
-  ['story.html', '📖', '剧情回顾', '主线章节的剧情梗概与回顾，重温泽塔阿尔法的故事。', `${counts.story} 章`],
-  ['gallery.html', '🖼️', '插画合集', '游戏内 CG 与官方社媒发布的美术作品收藏。', `${counts.gallery} 张`],
-  ['enemies.html', '👁️', '敌人图鉴', '视骸与诸多敌人的资料档案。', `${counts.enemies} 条记录`]
+  ['characters.html', '01', 'Characters', '角色图鉴', '全部修正者的档案：属性、技能、语音与 3D 模型展示。', `${counts.characters} 条记录`],
+  ['timeline.html', '02', 'Timeline', '时间线', '从公测到落幕，每个版本与重要节点的编年史。', `${counts.timeline} 条记录`],
+  ['story.html', '03', 'Story', '剧情回顾', '主线章节的剧情梗概与回顾，重温泽塔阿尔法的故事。', `${counts.story} 章`],
+  ['gallery.html', '04', 'Gallery', '插画合集', '游戏内 CG 与官方社媒发布的美术作品收藏。', `${counts.gallery} 张`],
+  ['enemies.html', '05', 'Enemies', '敌人图鉴', '视骸与诸多敌人的资料档案。', `${counts.enemies} 条记录`]
 ]
 
 document.getElementById('module-grid').innerHTML = modules
-  .map(([href, icon, title, desc, count]) => `
+  .map(([href, index, en, title, desc, count]) => `
     <a class="card module-card" href="${href}">
-      <div class="module-icon">${icon}</div>
+      <div class="module-head">
+        <span class="module-index">${index} /</span>
+        <span class="module-en">${en}</span>
+      </div>
       <h3>${title}</h3>
       <p class="module-desc">${desc}</p>
       <span class="module-count">${count}</span>
@@ -90,8 +93,8 @@ if (canvas && !reduceMotion) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (const st of stars) {
       const tw = 0.55 + 0.45 * Math.sin(t / 1400 + st.p)
-      ctx.globalAlpha = tw * 0.8
-      ctx.fillStyle = st.p % 1 > 0.5 ? '#9fd8ff' : '#cdd6ff'
+      ctx.globalAlpha = tw * 0.22
+      ctx.fillStyle = st.p % 1 > 0.5 ? '#3579a6' : '#6f7fae'
       ctx.beginPath()
       ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2)
       ctx.fill()

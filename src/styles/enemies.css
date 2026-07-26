@@ -88,7 +88,7 @@ body.modal-lock { overflow: hidden; }
 .modal-mask {
   position: absolute;
   inset: 0;
-  background: rgba(5, 7, 15, 0.72);
+  background: rgba(18, 23, 30, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -116,9 +116,9 @@ body.modal-lock { overflow: hidden; }
   z-index: 2;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--line-strong);
-  background: rgba(7, 10, 22, 0.65);
+  background: var(--panel-solid);
   color: var(--text);
   font-size: 18px;
   line-height: 1;

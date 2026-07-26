@@ -34,7 +34,7 @@
 
 .form-input {
   width: 100%;
-  background: rgba(10, 16, 34, 0.8);
+  background: var(--panel-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -107,7 +107,7 @@ select.form-input option { background: var(--panel-solid); color: var(--text); }
   margin: 0;
 }
 .aside-panel code {
-  background: rgba(85, 214, 255, 0.08);
+  background: var(--bg-soft);
   border: 1px solid var(--line);
   border-radius: 5px;
   padding: 1px 7px;

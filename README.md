@@ -14,6 +14,14 @@
 | `gallery.html` | 插画合集：游戏内 CG 与官方社媒美术，支持筛选与灯箱浏览 |
 | `enemies.html` | 敌人图鉴：视骸等敌人资料 |
 
+## 设计
+
+工业科技风设计语言（参考明日方舟系 UI 的公开设计语法）：浅灰纸面 + 近黑墨色 +
+单一低饱和淡蓝信号色；直角、1px 细线、切角与括号角标；大标题紧排、微标签疏排。
+设计令牌集中在 `src/styles/base.css`。字体为自托管的
+[MiSans](https://hyperos.mi.com/font/)（Regular/Medium/Semibold，按 unicode-range
+分片按需加载，可免费商用，许可见 `src/fonts/misans/LICENSE`）。
+
 ## 快速开始
 
 ```bash
