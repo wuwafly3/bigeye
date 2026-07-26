@@ -122,7 +122,7 @@
       "name": "远吕知",
       "category": "首领",
       "faction": "视骸",
-      "description": "蛇女形态的蛇神BOSS，会施放大范围剑技「万蛇斩」，部分攻击没有红圈预警、仅在双眼泛起红光时发动，需要及时向外闪避。原型为日本神话中的八岐大蛇（远吕智）。",
+      "description": "蛇女形态的蛇神BOSS，会施放大范围剑技「万蛇斩」，部分攻击没有红圈预警、仅在双眼泛起红光时发动，需要及时向外闪避。原型为日本神话中的八岐大蛇（八俣远吕知）。",
       "appearsIn": "扭曲梦境等BOSS挑战玩法",
       "image": "images/enemies/orochi.png"
     },
@@ -148,7 +148,7 @@
       "id": "yisen",
       "name": "伊森",
       "category": "首领",
-      "faction": "视骸",
+      "faction": "人形（改造人）",
       "description": "拥有远程风筝与近身作战两个阶段的BOSS，会连续三次闪现后衔接枪击或蓄力技「华丽剑术」，二阶段拥有多种带范围预警的攻击。",
       "appearsIn": "扭曲梦境等BOSS挑战玩法",
       "image": "images/enemies/yisen.png"
