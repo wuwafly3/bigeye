@@ -40,11 +40,13 @@
 .char-card.hide { display: none; }
 
 /* 3:4 竖版立绘区 */
+/* 相片框双层：白卡衬边 + 内嵌细线 */
 .char-portrait {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--bg-soft);
-  border-bottom: 1px solid var(--line);
+  margin: 6px 6px 0;
+  border: 1px solid var(--line);
 }
 .char-portrait img {
   width: 100%;
