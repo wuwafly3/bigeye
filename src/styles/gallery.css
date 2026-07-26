@@ -39,9 +39,11 @@
 }
 .art-card.hide { display: none; }
 
+/* 相片框双层：白色卡衬出边框，图像内嵌一圈细线 */
 .art-figure {
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
+  margin: 7px 7px 0;
+  border: 1px solid var(--line);
   background: var(--bg-soft);
 }
 .art-figure img {
@@ -213,6 +215,7 @@ body.lightbox-lock { overflow: hidden; }
   line-height: 1;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 }
 .lightbox-close:hover,
 .lightbox-nav:hover {
