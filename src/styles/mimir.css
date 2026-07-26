@@ -1,0 +1,169 @@
+/* 弥弥尔（Mi-Mi）右下角小助手 */
+
+.mimir-widget {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* ---------- 本体 ---------- */
+.mimir-avatar {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.mimir-avatar:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.mimir-bot {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(24, 60, 90, 0.22));
+  animation: mimir-float 3.6s ease-in-out infinite;
+}
+.mimir-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(24, 60, 90, 0.22));
+  animation: mimir-float 3.6s ease-in-out infinite;
+}
+.mimir-avatar.mimir-live2d {
+  width: auto;
+  height: auto;
+}
+@keyframes mimir-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* 点击时小小跳一下 */
+.mimir-avatar.bounce .mimir-bot,
+.mimir-avatar.bounce .mimir-img {
+  animation: mimir-bounce 0.45s ease, mimir-float 3.6s ease-in-out 0.45s infinite;
+}
+@keyframes mimir-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-9px) scale(1.06); }
+  70% { transform: translateY(0) scale(0.97); }
+}
+/* 眨眼与天线呼吸 */
+.mimir-eye {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: mimir-blink 4.6s ease-in-out infinite;
+}
+.mimir-eye-r { animation-delay: 0.08s; }
+@keyframes mimir-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  94% { transform: scaleY(0.12); }
+}
+.mimir-antenna { animation: signal-breathe 2.2s ease-in-out infinite; }
+.mimir-shadow { animation: mimir-shadow 3.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes mimir-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(0.78); opacity: 0.7; }
+}
+
+/* ---------- 气泡 ---------- */
+.mimir-bubble {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 6px;
+  width: max-content;
+  max-width: 264px;
+  background: var(--panel-solid);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow:
+    0 2px 0 rgba(24, 60, 90, 0.10),
+    0 6px 16px rgba(24, 60, 90, 0.12);
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text);
+  cursor: pointer;
+}
+/* 气泡小尾巴：斜置方块，呼应点击特效 */
+.mimir-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 26px;
+  width: 9px;
+  height: 9px;
+  background: var(--panel-solid);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transform: rotate(45deg);
+}
+.mimir-bubble.pop { animation: mimir-pop 0.28s ease both; }
+@keyframes mimir-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- 收起 / 召回 ---------- */
+.mimir-close {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--panel-solid);
+  color: var(--text-faint);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  box-shadow: 0 2px 0 rgba(24, 60, 90, 0.12);
+}
+.mimir-widget:hover .mimir-close,
+.mimir-close:focus-visible { opacity: 1; }
+.mimir-close:hover { color: var(--danger); }
+
+.mimir-restore {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 150;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    0 2px 0 rgba(4, 7, 11, 0.5),
+    0 4px 10px rgba(24, 60, 90, 0.2);
+  border-left: 3px solid var(--accent);
+  transition: transform 0.15s;
+}
+.mimir-restore:hover { transform: translateY(-2px); }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 720px) {
+  .mimir-widget, .mimir-restore { right: 14px; bottom: 14px; }
+  .mimir-avatar { width: 58px; height: 58px; }
+  .mimir-bubble { max-width: min(232px, calc(100vw - 60px)); font-size: 12.5px; }
+}
+
+@media print {
+  .mimir-widget, .mimir-restore { display: none; }
+}

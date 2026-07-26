@@ -2,6 +2,7 @@
  * 公共布局：注入顶部导航与页脚、图片占位处理。
  * 每个页面 JS 的入口都应先调用 initLayout()。
  */
+import { initMimir } from './mimir.js'
 
 const NAV_ITEMS = [
   ['index.html', '首页'],
@@ -58,6 +59,7 @@ export function initLayout() {
   toggle.addEventListener('click', () => links.classList.toggle('open'))
 
   initClickEffect()
+  initMimir()
 }
 
 /** 点击特效：在点击处生成一个斜置方块，扩散淡出（遵守 prefers-reduced-motion） */
