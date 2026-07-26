@@ -591,6 +591,23 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   .toolbar .result-count { margin-left: 0; width: 100%; }
 }
 
+/* ---------- 点击特效：以点击点为中心的斜方块，扩散淡出 ---------- */
+.click-fx {
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  background: rgba(100, 116, 139, 0.22);
+  border: 1px solid rgba(100, 116, 139, 0.38);
+  pointer-events: none;
+  z-index: 9999;
+  animation: click-fx 0.45s ease-out forwards;
+}
+@keyframes click-fx {
+  0% { opacity: 1; transform: rotate(45deg) scale(0.45); }
+  100% { opacity: 0; transform: rotate(45deg) scale(1.75); }
+}
+
 /* ---------- 入场动画工具类（layout.js revealOnScroll 使用） ---------- */
 .anim-rise {
   opacity: 0;
