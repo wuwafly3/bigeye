@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, revealOnScroll } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 
 initLayout()
@@ -88,7 +88,7 @@ function cardHtml(c) {
   return `
     <a class="card char-card" href="character.html?id=${encodeURIComponent(c.id || '')}">
       <div class="char-portrait">
-        <img src="./${escapeHtml(c.portrait || '')}" alt="${escapeHtml(name)}" loading="lazy" />
+        <img src="${escapeHtml(assetUrl(c.portrait))}" alt="${escapeHtml(name)}" loading="lazy" />
       </div>
       <div class="char-info">
         <div class="char-name" title="${escapeHtml(name)}">${escapeHtml(name)}</div>

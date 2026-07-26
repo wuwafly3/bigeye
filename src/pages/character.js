@@ -1,7 +1,7 @@
 /**
  * 角色详情页：?id= 定位角色，左栏 3D MMD 查看器 + 右栏档案信息面板。
  */
-import { initLayout, imageFallback, escapeHtml, formatDate } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, formatDate, assetUrl } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 import { createMMDViewer } from './mmd-viewer.js'
 
@@ -240,7 +240,7 @@ function renderCharacter(c, i) {
   const showArt = idx => {
     const v = artVariants[idx]
     if (!artBox || !v) return
-    artBox.innerHTML = `<img src="./${escapeHtml(v.fullArt)}" alt="${escapeHtml(name)} 立绘 - ${escapeHtml(v.name)}" loading="lazy" />`
+    artBox.innerHTML = `<img src="${escapeHtml(assetUrl(v.fullArt))}" alt="${escapeHtml(name)} 立绘 - ${escapeHtml(v.name)}" loading="lazy" />`
     imageFallback(artBox.querySelector('img'), trimmed(c.name) || name)
   }
   if (artBox) showArt(0)

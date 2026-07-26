@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, formatDate, revealOnScroll } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, formatDate, revealOnScroll, assetUrl } from '../shared/layout.js'
 import galleryData from '../data/gallery.json'
 
 initLayout()
@@ -77,7 +77,7 @@ function cardHtml(a, i) {
       data-index="${i}"
     >
       <div class="art-figure">
-        <img src="./${escapeHtml(a.image || '')}" alt="${escapeHtml(title)}" loading="lazy" />
+        <img src="${escapeHtml(assetUrl(a.image))}" alt="${escapeHtml(title)}" loading="lazy" />
       </div>
       <div class="art-info">
         <div class="art-title" title="${escapeHtml(title)}">${escapeHtml(title)}</div>
@@ -178,7 +178,7 @@ function renderLightbox() {
   const tags = Array.isArray(a.tags) ? a.tags : []
 
   lbFigure.innerHTML =
-    `<img src="./${escapeHtml(a.image || '')}" alt="${escapeHtml(title)}" />`
+    `<img src="${escapeHtml(assetUrl(a.image))}" alt="${escapeHtml(title)}" />`
   imageFallback(lbFigure.querySelector('img'), fallbackLabel(a))
 
   lbTitleRow.innerHTML =

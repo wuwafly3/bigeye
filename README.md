@@ -37,6 +37,8 @@ npm run preview  # 预览构建产物
 
 1. **文字数据**：编辑 `src/data/*.json`，字段说明见 [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md)。
 2. **图片**：放入 `public/images/`（角色立绘、插画、敌人图），路径写进对应 JSON 即可；缺图时页面自动显示占位块。
+   图片量大时可迁移到图床：在 `src/data/site.json` 配置 `assetBase` 一处即可整体切换，
+   单条数据也可直接填完整外链 URL（详见 `docs/DATA_SCHEMA.md` 的 site.json 一节）。
 3. **MMD 模型**：整个模型文件夹放入 `public/models/<角色id>/`，在角色数据中填写 `model.path`。
    也可以不放服务器——角色详情页支持**从本地文件夹加载**模型，浏览者选择自己电脑上的
    模型文件夹即可预览（详见 `public/models/README.md`，注意模型作者的使用条款）。

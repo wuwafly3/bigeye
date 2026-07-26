@@ -1,4 +1,4 @@
-import { initLayout, revealOnScroll } from '../shared/layout.js'
+import { initLayout, revealOnScroll, assetUrl } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 import timelineData from '../data/timeline.json'
 import storyData from '../data/story.json'
@@ -6,6 +6,13 @@ import galleryData from '../data/gallery.json'
 import enemiesData from '../data/enemies.json'
 
 initLayout()
+
+/* 主视觉背景：经 assetUrl 解析，配置图床 assetBase 后自动改从图床加载 */
+const backdropImg = document.querySelector('.hero-backdrop-img')
+if (backdropImg) {
+  backdropImg.style.backgroundImage =
+    `url('${assetUrl('images/backdrop/home-hero.jpg')}'), url('${assetUrl('images/backdrop/home-hero.svg')}')`
+}
 
 /* ---------- 数据统计 ---------- */
 const counts = {
