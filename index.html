@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="./src/styles/home.css" />
 </head>
 <body>
+  <!-- 主视觉背景：优先加载 home-hero.jpg（官方图，缺省时用同风格 SVG 占位） -->
+  <div class="hero-backdrop" aria-hidden="true">
+    <div class="hero-backdrop-img"
+         style="background-image: url('./images/backdrop/home-hero.jpg'), url('./images/backdrop/home-hero.svg')"></div>
+  </div>
   <canvas id="starfield" aria-hidden="true"></canvas>
 
   <main class="container">

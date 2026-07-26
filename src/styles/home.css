@@ -7,6 +7,48 @@
   pointer-events: none;
 }
 
+/* ---------- 主视觉背景：全出血图 + 左侧压纸面渐变保证文字可读 ---------- */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(680px, 92vh);
+  overflow: hidden;
+  z-index: -2;
+  pointer-events: none;
+}
+.hero-backdrop-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover, cover;
+  background-position: center 28%, center;
+  background-repeat: no-repeat;
+  /* 缓慢的 Ken Burns 呼吸，prefers-reduced-motion 时由全局规则关闭 */
+  animation: backdrop-zoom 38s ease-in-out infinite alternate;
+  transform-origin: 60% 30%;
+}
+@keyframes backdrop-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+/* 叠加层：左侧供文字停留的纸面渐变 + 底部融入页面 */
+.hero-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(239, 245, 250, 0.94) 0%,
+      rgba(239, 245, 250, 0.78) 34%,
+      rgba(239, 245, 250, 0.38) 62%,
+      rgba(239, 245, 250, 0.12) 100%),
+    linear-gradient(180deg,
+      rgba(239, 245, 250, 0.10) 0%,
+      rgba(239, 245, 250, 0.06) 55%,
+      var(--bg) 97%);
+}
+
 /* ---------- 主视觉：左对齐编辑式排版 + 漩涡装饰 ---------- */
 .home-hero {
   position: relative;
