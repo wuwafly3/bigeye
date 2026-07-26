@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="深空之眼档案馆 · 投稿与纠错 — 提交档案修正、补充资料或素材线索。" />
+  <title>投稿与纠错 · 深空之眼档案馆</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%2355d6ff' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%238f7bff'/></svg>" />
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/submit.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="page-hero">
+      <div class="page-kicker">CONTRIBUTE</div>
+      <h1>投稿与纠错</h1>
+      <p class="page-desc">
+        发现档案有误、想补充资料，或掌握尚未收录的官方素材线索？
+        在这里提交，维护者审核后会更新进档案。每一条补充都让这份记忆更完整。
+      </p>
+    </div>
+
+    <div class="submit-layout">
+      <form id="submit-form" class="panel submit-form" novalidate>
+        <div class="form-row form-row-split">
+          <label class="form-field">
+            <span class="form-label">类型</span>
+            <select id="f-type" class="form-input">
+              <option>纠错</option>
+              <option>补充资料</option>
+              <option>素材线索</option>
+              <option>其他</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span class="form-label">相关模块</span>
+            <select id="f-module" class="form-input">
+              <option>角色图鉴</option>
+              <option>时间线</option>
+              <option>剧情回顾</option>
+              <option>插画合集</option>
+              <option>敌人图鉴</option>
+              <option>整站</option>
+              <option>其他</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-field">
+          <span class="form-label">标题 <em class="form-required">*</em></span>
+          <input id="f-title" class="form-input" type="text" maxlength="120"
+                 placeholder="一句话概括，例如：震离·月读的日文配音有误" required />
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">内容 <em class="form-required">*</em></span>
+          <textarea id="f-content" class="form-input form-textarea" maxlength="4000" rows="8"
+                    placeholder="请写明：哪里有问题 / 正确的内容是什么 / 依据或来源（链接、截图出处等）" required></textarea>
+          <span class="form-hint"><span id="f-count">0</span> / 4000</span>
+        </label>
+
+        <label class="form-field">
+          <span class="form-label">联系方式（可选）</span>
+          <input id="f-contact" class="form-input" type="text" maxlength="200"
+                 placeholder="便于沟通的方式，注意：会公开显示在 GitHub Issue 中，可留空" />
+        </label>
+
+        <!-- 蜜罐字段：正常访问者不可见，机器人填写即被丢弃 -->
+        <label class="hp-field" aria-hidden="true">
+          <span>网站</span>
+          <input id="f-website" type="text" tabindex="-1" autocomplete="off" />
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="f-submit" class="btn btn-primary">提交投稿</button>
+          <span id="f-status" class="form-status" role="status"></span>
+        </div>
+      </form>
+
+      <aside class="submit-aside">
+        <div class="notice">
+          投稿会以 GitHub Issue 的形式进入仓库，公开可见；
+          审核通过后由维护者更新进档案数据。
+        </div>
+        <div class="panel aside-panel">
+          <h2>也可以直接参与</h2>
+          <p>
+            熟悉 GitHub 的话，欢迎直接在仓库
+            <a href="https://github.com/wuwafly3/bigeye/issues/new" target="_blank" rel="noopener">提交 Issue</a>
+            或按 <code>docs/DATA_SCHEMA.md</code> 的格式发起 Pull Request。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script type="module" src="./src/pages/submit.js"></script>
+</body>
+</html>

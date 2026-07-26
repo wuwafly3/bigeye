@@ -35,11 +35,28 @@ npm run preview  # 预览构建产物
 
 ## 部署
 
+### GitHub Pages（纯静态）
+
 仓库内置 GitHub Pages 工作流（`.github/workflows/deploy.yml`）：
 推送到 `main` 分支后自动构建并发布。首次使用需在仓库
 **Settings → Pages → Source** 中选择 **GitHub Actions**。
 
 构建产物是完全静态的相对路径站点，也可以直接托管到任意对象存储 / CDN / 网盘直链。
+
+### Vercel（静态 + 投稿接口）
+
+1. 在 [vercel.com](https://vercel.com) Import 本仓库，框架自动识别为 Vite，
+   构建配置已由 `vercel.json` 提供，无需改动。
+2. 在项目 **Settings → Environment Variables** 添加：
+   - `GITHUB_TOKEN`（必填）：细粒度 Personal Access Token，只勾选本仓库的
+     **Issues: Read and write** 权限 —— 供「投稿与纠错」接口创建 Issue 使用。
+   - `GITHUB_REPO`（可选）：默认 `wuwafly3/bigeye`。
+3. 部署完成后，站内 `submit.html` 的表单会通过 `api/submit.js`
+   把投稿写成仓库 Issue（标签 `archive-submission`），审核后再更新进数据文件。
+   未配置 token 时表单会自动降级，引导访客直接去 GitHub 提 Issue。
+
+> 提示：`*.vercel.app` 域名在中国大陆访问可能不稳定，建议绑定自有域名。
+> 两种部署可以并存：GitHub Pages 提供纯静态镜像，Vercel 提供带投稿接口的主站。
 
 ## 免责声明
 

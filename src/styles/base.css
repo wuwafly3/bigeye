@@ -187,6 +187,12 @@ main.container { padding-top: 34px; padding-bottom: 80px; min-height: 70vh; }
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
+.site-footer .footer-links { margin-top: 8px; }
+.site-footer .footer-links a {
+  color: var(--text-dim);
+  border-bottom: 1px dotted var(--line-strong);
+}
+.site-footer .footer-links a:hover { color: var(--accent); }
 
 /* ---------- 页面标题区 ---------- */
 .page-hero { margin-bottom: 30px; }
