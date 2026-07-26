@@ -1,4 +1,4 @@
-import { initLayout, escapeHtml } from '../shared/layout.js'
+import { initLayout, escapeHtml, revealOnScroll } from '../shared/layout.js'
 import storyData from '../data/story.json'
 
 initLayout()
@@ -72,6 +72,7 @@ function renderToc() {
           </article>`
       }).join('')}
     </div>`
+  revealOnScroll(tocView.querySelectorAll('.chapter-card'), { stagger: 60 })
 }
 
 /* ---------- 阅读视图 ---------- */

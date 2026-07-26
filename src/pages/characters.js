@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 
 initLayout()
@@ -104,6 +104,7 @@ function renderCards() {
     const c = characters[i]
     imageFallback(img, c.name || c.codename || '?')
   })
+  revealOnScroll(cards, { stagger: 30, maxDelay: 300 })
 }
 
 function applyFilter() {

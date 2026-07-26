@@ -10,11 +10,11 @@
 
 /* ---------- 设计令牌 ---------- */
 :root {
-  /* 纸面（浅灰主线） */
-  --bg-deep: #e7ebf0;        /* 页面边缘 / 深一档纸面 */
-  --bg: #f2f4f7;             /* 主纸面 */
-  --bg-soft: #e9edf2;        /* 次级纸面 */
-  --panel: #fcfdfe;          /* 卡片 / 面板 */
+  /* 纸面（天空蓝调浅灰） */
+  --bg-deep: #dbe8f2;        /* 页面边缘 / 深一档纸面 */
+  --bg: #eff5fa;             /* 主纸面 */
+  --bg-soft: #e2edf5;        /* 次级纸面 */
+  --panel: #ffffff;          /* 卡片 / 面板 */
   --panel-solid: #ffffff;
 
   /* 墨色（深色反面：页脚、logo 块、3D 舞台） */
@@ -24,32 +24,38 @@
   --ink-dim: #96a2b2;
 
   /* 线条 */
-  --line: #d6dce4;
-  --line-strong: #aab6c4;
+  --line: #d0dce7;
+  --line-strong: #a6bacb;
 
   /* 文本 */
-  --text: #171d26;
-  --text-dim: #505e72;
-  --text-faint: #8894a5;
+  --text: #16202c;
+  --text-dim: #4d5f75;
+  --text-faint: #8595a9;
 
-  /* 信号色：低饱和淡蓝，只用于选中 / 进行中 / 主行动 */
-  --accent: #3579a6;
-  --accent-2: #6f7fae;       /* 次级点缀：低饱和蓝紫 */
-  --accent-soft: rgba(53, 121, 166, 0.10);
-  --lime: #93a83d;           /* 低饱和亮色点缀：状态点 / 结束标记 */
-  --gold: #a2842e;           /* S 级 */
-  --danger: #b8515f;
-  --ok: #4f9e6e;
+  /* 信号色：明快天空蓝（主视觉的漩涡青） */
+  --accent: #1899d6;
+  --accent-2: #8b7ce0;       /* 星域紫 */
+  --accent-soft: rgba(24, 153, 214, 0.12);
 
-  /* 属性色（本作八属性，浅底可读的低饱和深调） */
-  --elem-fire: #b85f3a;
-  --elem-thunder: #7a63b3;
-  --elem-ice: #3d8cb3;
-  --elem-water: #3d70b3;
-  --elem-wind: #3d9a82;
-  --elem-dark: #6b55a3;
-  --elem-light: #a2842e;
-  --elem-phys: #5c6b80;
+  /* 嘉年华点缀色：气球与彩纸，小面积使用 */
+  --pink: #f2708f;
+  --sun: #f0b23a;
+  --mint: #2fbfa8;
+  --lime: var(--mint);
+
+  --gold: #c9982e;           /* S 级 */
+  --danger: #e05a6d;
+  --ok: #3aa976;
+
+  /* 属性色（本作八属性，明快但保持浅底可读） */
+  --elem-fire: #e0653a;
+  --elem-thunder: #8b6ce0;
+  --elem-ice: #2ea0d6;
+  --elem-water: #3b82dd;
+  --elem-wind: #2fb896;
+  --elem-dark: #7a5fc9;
+  --elem-light: #d9a12e;
+  --elem-phys: #64748b;
 
   /* 版型：直角为默认，功能性圆角 ≤3px */
   --radius: 3px;
@@ -61,8 +67,11 @@
     "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
   --font-num: "IBM Plex Mono", "SF Mono", ui-monospace, Consolas, monospace;
 
-  --shadow: 0 10px 28px rgba(18, 26, 38, 0.10);
-  --glow: 0 0 0 3px rgba(53, 121, 166, 0.16);
+  --shadow: 0 10px 28px rgba(24, 90, 140, 0.12);
+  --glow: 0 0 0 3px rgba(24, 153, 214, 0.18);
+  /* 信号渐变：用在信号条与主按钮的能量线上 */
+  --signal-gradient: linear-gradient(90deg, var(--accent), var(--mint));
+  --festival-gradient: linear-gradient(90deg, var(--accent), var(--accent-2), var(--pink));
 }
 
 /* ---------- 重置 ---------- */
@@ -72,10 +81,12 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-height: 100vh;
-  /* 纸面 + 极淡坐标网格（图纸质感） */
+  /* 天空光晕 + 淡蓝坐标网格（明快图纸质感） */
   background:
-    linear-gradient(rgba(18, 23, 30, 0.030) 1px, transparent 1px) 0 0 / 100% 48px,
-    linear-gradient(90deg, rgba(18, 23, 30, 0.030) 1px, transparent 1px) 0 0 / 48px 100%,
+    radial-gradient(920px 420px at 78% -140px, rgba(24, 153, 214, 0.14), transparent 65%),
+    radial-gradient(700px 360px at 8% -80px, rgba(139, 124, 224, 0.08), transparent 60%),
+    linear-gradient(rgba(24, 110, 170, 0.045) 1px, transparent 1px) 0 0 / 100% 48px,
+    linear-gradient(90deg, rgba(24, 110, 170, 0.045) 1px, transparent 1px) 0 0 / 48px 100%,
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -133,14 +144,29 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
 }
 /* 墨色标识块：左侧信号条 + 双语标 */
 .site-logo {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1.2;
   white-space: nowrap;
   background: var(--ink);
-  border-left: 3px solid var(--accent);
-  padding: 5px 14px 5px 11px;
+  padding: 5px 14px 5px 12px;
+}
+/* 呼吸的渐变信号条（1.6–2.4s 克制循环） */
+.site-logo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--signal-gradient);
+  animation: signal-breathe 2.2s ease-in-out infinite;
+}
+@keyframes signal-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
 }
 .site-logo .logo-cn {
   font-size: 15px;
@@ -175,7 +201,13 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   right: 12px;
   bottom: -1px;
   height: 3px;
-  background: var(--accent);
+  background: var(--signal-gradient);
+  transform-origin: left;
+  animation: bar-in 0.45s ease both;
+}
+@keyframes bar-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 .nav-toggle {
   display: none;
@@ -192,7 +224,8 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
 
 /* ---------- 页脚（由 layout.js 注入）：墨色状态条 ---------- */
 .site-footer {
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid transparent;
+  border-image: var(--festival-gradient) 1;
   padding: 32px 0 42px;
   margin-top: 40px;
   background: var(--ink);
@@ -236,7 +269,9 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   content: "";
   width: 22px;
   height: 3px;
-  background: var(--accent);
+  background: var(--signal-gradient);
+  transform-origin: left;
+  animation: bar-in 0.5s ease both;
 }
 .page-hero h1 {
   font-size: 34px;
@@ -244,6 +279,12 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   letter-spacing: -0.5px;
   line-height: 1.1;
   margin-bottom: 10px;
+  animation: rise-in 0.5s ease both;
+}
+.page-hero .page-desc { animation: rise-in 0.55s ease 0.08s both; }
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
 }
 .page-hero .page-desc { color: var(--text-dim); max-width: 640px; margin: 0; }
 
@@ -279,6 +320,9 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   z-index: 2;
 }
 .card:hover::before { opacity: 1; }
+/* 卡内图片的轻微缩放呼应 */
+.card img { transition: transform 0.35s ease; }
+.card:hover img { transform: scale(1.025); }
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -412,7 +456,8 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   cursor: pointer;
   transition: all 0.15s;
 }
-.btn:hover { border-color: var(--text); }
+.btn:hover { border-color: var(--text); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
 .btn-primary {
   position: relative;
   background: var(--ink);
@@ -427,7 +472,7 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   top: -1px;
   bottom: -1px;
   width: 4px;
-  background: var(--accent);
+  background: var(--signal-gradient);
 }
 .btn-primary:hover { background: var(--ink-2); border-color: var(--ink-2); }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
@@ -462,6 +507,8 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   width: 8px;
   height: 8px;
   background: var(--accent);
+  box-shadow: 12px 0 0 -2px var(--pink), 22px 0 0 -3px var(--sun);
+  margin-right: 16px;
   flex: none;
 }
 .section-title::after {
@@ -495,7 +542,20 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   .toolbar .result-count { margin-left: 0; width: 100%; }
 }
 
+/* ---------- 入场动画工具类（layout.js revealOnScroll 使用） ---------- */
+.anim-rise {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: var(--rise-delay, 0s);
+}
+.anim-rise.in {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
+  .anim-rise { opacity: 1; transform: none; }
 }

@@ -83,6 +83,35 @@ export function escapeHtml(str = '') {
     .replaceAll("'", '&#39;')
 }
 
+/**
+ * 批量入场动画：给元素加 .anim-rise，进入视口时错落显示。
+ * 在列表首次渲染完成后调用一次即可；遵守 prefers-reduced-motion。
+ * @param {Iterable<Element>|string} target 元素集合或选择器
+ */
+export function revealOnScroll(target, { stagger = 45, maxDelay = 360 } = {}) {
+  const els = typeof target === 'string' ? document.querySelectorAll(target) : target
+  const items = Array.from(els)
+  if (!items.length) return
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      typeof IntersectionObserver === 'undefined') {
+    items.forEach(el => el.classList.add('anim-rise', 'in'))
+    return
+  }
+  items.forEach((el, i) => {
+    el.classList.add('anim-rise')
+    el.style.setProperty('--rise-delay', Math.min(i * stagger, maxDelay) + 'ms')
+  })
+  const io = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in')
+        io.unobserve(entry.target)
+      }
+    }
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' })
+  items.forEach(el => io.observe(el))
+}
+
 /** 格式化日期 2022-03-24 -> 2022年3月24日；容错返回原文 */
 export function formatDate(iso = '') {
   const m = /^(\d{4})-(\d{1,2})(?:-(\d{1,2}))?/.exec(iso)

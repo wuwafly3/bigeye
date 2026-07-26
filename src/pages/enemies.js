@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll } from '../shared/layout.js'
 import enemiesData from '../data/enemies.json'
 
 initLayout()
@@ -82,6 +82,7 @@ function renderCards() {
   grid.querySelectorAll('.enemy-figure img').forEach((img, i) => {
     imageFallback(img, String(enemies[i].name || '?').slice(0, 1))
   })
+  revealOnScroll(cards, { stagger: 35 })
 }
 
 function applyFilter() {
