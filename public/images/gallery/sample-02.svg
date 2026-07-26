@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="示例插画：星潮与光线">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070f"/>
+      <stop offset="0.5" stop-color="#0a0f1e"/>
+      <stop offset="1" stop-color="#101a38"/>
+    </linearGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8f7bff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#8f7bff" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#55d6ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#55d6ff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <g fill="#dde6f7">
+    <circle cx="90" cy="70" r="1.5" opacity="0.8"/>
+    <circle cx="240" cy="130" r="1.1" opacity="0.55"/>
+    <circle cx="420" cy="60" r="1.7" opacity="0.85"/>
+    <circle cx="600" cy="110" r="1.2" opacity="0.6"/>
+    <circle cx="780" cy="70" r="1.4" opacity="0.7"/>
+    <circle cx="900" cy="150" r="1.1" opacity="0.55"/>
+    <circle cx="520" cy="200" r="1" opacity="0.45"/>
+    <circle cx="150" cy="240" r="1.2" opacity="0.5"/>
+    <circle cx="860" cy="260" r="1.5" opacity="0.65"/>
+  </g>
+  <path d="M0 330 C 190 250 380 410 560 330 C 700 268 860 250 960 300 L960 540 L0 540 Z" fill="url(#wave1)"/>
+  <path d="M0 395 C 230 315 430 465 640 385 C 770 336 880 330 960 360 L960 540 L0 540 Z" fill="url(#wave2)"/>
+  <path d="M0 460 C 260 405 470 505 700 450 C 810 424 900 420 960 435 L960 540 L0 540 Z" fill="#8f7bff" opacity="0.22"/>
+  <g stroke="#55d6ff" stroke-linecap="round">
+    <line x1="-30" y1="40" x2="430" y2="280" stroke-width="2.5" stroke-opacity="0.4"/>
+    <line x1="-30" y1="110" x2="500" y2="360" stroke-width="1.5" stroke-opacity="0.25"/>
+    <line x1="-30" y1="190" x2="360" y2="360" stroke-width="1" stroke-opacity="0.18"/>
+  </g>
+  <g stroke="#ffd37a" stroke-linecap="round">
+    <line x1="990" y1="60" x2="620" y2="250" stroke-width="2" stroke-opacity="0.4"/>
+    <line x1="990" y1="140" x2="700" y2="290" stroke-width="1.2" stroke-opacity="0.25"/>
+  </g>
+  <path d="M480 250 l7 16 16 7 -16 7 -7 16 -7 -16 -16 -7 16 -7 z" fill="#ffd37a" opacity="0.9"/>
+  <path d="M330 190 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5 z" fill="#55d6ff" opacity="0.8"/>
+  <circle cx="700" cy="330" r="3" fill="#ffd37a" opacity="0.8"/>
+</svg>

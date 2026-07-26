@@ -1,3 +1,94 @@
 {
-  "artworks": []
+  "artworks": [
+    {
+      "id": "art-001",
+      "title": "【示例】启程之刻 · 公测主视觉",
+      "source": "game",
+      "date": "2022-04-22",
+      "description": "公测开启当日的主视觉示例构图：星环行星自深空中升起，象征旅程的开始。",
+      "image": "images/gallery/sample-01.svg",
+      "tags": ["主视觉"]
+    },
+    {
+      "id": "art-002",
+      "title": "【示例】盛夏星潮 · 活动预告",
+      "source": "official",
+      "date": "2022-08-11",
+      "description": "官方社媒发布的夏季活动预告示例图，星潮与光线在夜色中交错。",
+      "image": "images/gallery/sample-02.svg",
+      "tags": ["活动宣传"]
+    },
+    {
+      "id": "art-003",
+      "title": "【示例】冬夜星轨 · 节日贺图",
+      "source": "game",
+      "date": "2022-12-24",
+      "description": "冬夜观测主题的节日贺图示例，同心星轨围绕着一处安静的光心。",
+      "image": "images/gallery/sample-03.svg",
+      "tags": ["节日贺图"]
+    },
+    {
+      "id": "art-004",
+      "title": "【示例】一周年 · 棱镜之光",
+      "source": "official",
+      "date": "2023-04-22",
+      "description": "一周年庆典的示例视觉：棱镜折射出属于第一年的三色光。",
+      "image": "images/gallery/sample-04.svg",
+      "tags": ["周年庆", "主视觉"]
+    },
+    {
+      "id": "art-005",
+      "title": "【示例】立绘档案 · 虚位以待",
+      "source": "game",
+      "date": "2023-07",
+      "description": "角色立绘存档占位图：光柱与晶片缓缓上升，虚位以待真实立绘入档。",
+      "image": "images/gallery/sample-05.svg",
+      "tags": ["角色立绘"]
+    },
+    {
+      "id": "art-006",
+      "title": "【示例】二周年 · 黎明线",
+      "source": "official",
+      "date": "2024-04-22",
+      "description": "二周年之际的贺图示例，晨光自行星地平线上亮起。",
+      "image": "images/gallery/sample-06.svg",
+      "tags": ["周年庆"]
+    },
+    {
+      "id": "art-007",
+      "title": "【示例】观测网络 · 活动概念图",
+      "source": "game",
+      "date": "2024-09-18",
+      "description": "星图观测活动的概念示例图，节点与连线构成深空中的观测网络。",
+      "image": "images/gallery/sample-07.svg",
+      "tags": ["活动宣传"]
+    },
+    {
+      "id": "art-008",
+      "title": "【示例】新春 · 星云焰火",
+      "source": "official",
+      "date": "2025-01-29",
+      "description": "新春贺图示例：星云如焰火铺展，缀以金色的祝福光点。",
+      "image": "images/gallery/sample-08.svg",
+      "tags": ["节日贺图"]
+    },
+    {
+      "id": "art-009",
+      "title": "【示例】流星雨之夜",
+      "source": "game",
+      "date": "2025-10-06",
+      "description": "流星雨观测活动的示例插画，一道道光迹划过长夜。",
+      "image": "images/gallery/sample-09.svg",
+      "tags": ["活动宣传", "节日贺图"]
+    },
+    {
+      "id": "art-010",
+      "title": "【示例】长夜将尽 · 停运纪念",
+      "source": "official",
+      "date": "2026-05-20",
+      "description": "停运纪念示例插画：光环渐隐如蚀，但微光仍在轨道上停留。",
+      "image": "images/gallery/sample-10.svg",
+      "tags": ["停运纪念", "主视觉"]
+    }
+  ]
 }

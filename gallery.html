@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="深空之眼档案馆 · 插画合集 — 收录游戏内 CG 与官方社媒美术作品的长期存档。" />
+  <title>插画合集 · 深空之眼档案馆</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%2355d6ff' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%238f7bff'/></svg>" />
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/gallery.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="page-hero">
+      <div class="page-kicker">GALLERY</div>
+      <h1>插画合集</h1>
+      <p class="page-desc">
+        游戏内 CG 与官方社媒美术作品的存档。愿这些曾经点亮深空的画面，在灯火熄灭之后仍能被安静地翻阅。
+      </p>
+    </section>
+
+    <div class="notice" id="sample-notice">
+      当前展示均为示例占位插画（标题含【示例】），待日后逐步替换为真实的游戏内 CG 与官方美术存档。
+    </div>
+
+    <section class="toolbar" id="gallery-toolbar" aria-label="插画筛选">
+      <div class="filter-chips" id="chips-source" role="group" aria-label="按来源筛选"></div>
+      <span class="chips-divider" aria-hidden="true"></span>
+      <div class="filter-chips" id="chips-tag" role="group" aria-label="按标签筛选"></div>
+      <span class="result-count" id="result-count"></span>
+    </section>
+
+    <section aria-label="插画列表">
+      <div class="art-flow" id="gallery-flow"></div>
+
+      <div class="empty-state" id="empty-filter" hidden>
+        <div class="empty-icon">🔍</div>
+        <p>没有符合条件的作品，试试调整来源或标签筛选。</p>
+      </div>
+
+      <div class="empty-state" id="empty-data" hidden>
+        <div class="empty-icon">🖼️</div>
+        <p>档案数据待补充。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-mask" id="lightbox-mask"></div>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="关闭大图">×</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="上一幅">‹</button>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="下一幅">›</button>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="lightbox-figure" id="lightbox-figure"></div>
+      <div class="lightbox-info">
+        <div class="lightbox-title-row" id="lightbox-title-row"></div>
+        <p class="lightbox-desc" id="lightbox-desc"></p>
+        <div class="lightbox-meta" id="lightbox-meta"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/pages/gallery.js"></script>
+</body>
+</html>
