@@ -1,3 +1,202 @@
 {
-  "enemies": []
+  "enemies": [
+    {
+      "id": "zuoweimendu",
+      "name": "左卫门督",
+      "category": "普通",
+      "faction": "视骸（人造种）",
+      "description": "人造种视骸小怪，与右卫门督为同型敌人。名称原型为日本古代律令制下卫门府的长官官职「左卫门督」。",
+      "appearsIn": "主线剧情等常规关卡",
+      "image": "images/enemies/zuoweimendu.png"
+    },
+    {
+      "id": "youweimendu",
+      "name": "右卫门督",
+      "category": "普通",
+      "faction": "视骸（人造种）",
+      "description": "人造种视骸小怪，与左卫门督为同型敌人。名称原型为日本古代律令制下卫门府的长官官职「右卫门督」。",
+      "appearsIn": "主线剧情等常规关卡",
+      "image": "images/enemies/youweimendu.png"
+    },
+    {
+      "id": "andras",
+      "name": "安多斯",
+      "category": "普通",
+      "faction": "视骸",
+      "description": "普通视骸。原型为所罗门七十二柱魔神中排第63位的侯爵安多斯（Andras），传说形象为鸦首人身、骑乘黑狼、手持利剑。",
+      "appearsIn": "主线剧情等常规关卡",
+      "image": "images/enemies/andras.png"
+    },
+    {
+      "id": "belial",
+      "name": "贝利亚尔",
+      "category": "普通",
+      "faction": "视骸",
+      "description": "普通视骸。原型为所罗门七十二柱魔神中排第68位的王贝利亚尔（Belial），传说形象为驾驭火焰战车的美丽堕天使，声音魅惑。",
+      "appearsIn": "主线剧情等常规关卡",
+      "image": "images/enemies/belial.png"
+    },
+    {
+      "id": "minotaur",
+      "name": "弥诺陶洛斯",
+      "category": "精英",
+      "faction": "视骸",
+      "description": "精英级视骸。原型为古希腊神话中被囚于克里特岛迷宫的牛头怪弥诺陶洛斯。",
+      "appearsIn": "主线剧情等常规关卡",
+      "image": "images/enemies/minotaur.png"
+    },
+    {
+      "id": "geji",
+      "name": "歌姬",
+      "category": "精英",
+      "faction": "视骸（人造种）",
+      "description": "人造种视骸，以精英BOSS身份登场。",
+      "appearsIn": "扭曲梦境等BOSS挑战玩法",
+      "image": "images/enemies/geji.png"
+    },
+    {
+      "id": "shanjun",
+      "name": "山君",
+      "category": "精英",
+      "faction": "视骸（兽种）",
+      "description": "兽种视骸。「山君」为古汉语中对虎的雅称。",
+      "appearsIn": "",
+      "image": "images/enemies/shanjun.png"
+    },
+    {
+      "id": "huashi",
+      "name": "画师",
+      "category": "精英",
+      "faction": "视骸（人造种）",
+      "description": "人造种视骸。",
+      "appearsIn": "",
+      "image": "images/enemies/huashi.png"
+    },
+    {
+      "id": "gremory",
+      "name": "格莫瑞",
+      "category": "精英",
+      "faction": "视骸（智种）",
+      "description": "拥有智能的智种视骸。名称原型为所罗门七十二柱魔神中的格莫瑞（Gremory）。",
+      "appearsIn": "",
+      "image": "images/enemies/gremory.png"
+    },
+    {
+      "id": "athena",
+      "name": "雅典娜",
+      "category": "首领",
+      "faction": "修正者",
+      "description": "1.3版本主线剧情中登场的BOSS，身份是修正者而非视骸，原型为希腊神话中的智慧与战争女神雅典娜。之后以可操作角色「铃兰之弦·雅典娜」的形式实装。",
+      "appearsIn": "1.3版本主线剧情",
+      "image": "images/enemies/athena.png"
+    },
+    {
+      "id": "hyobukyo",
+      "name": "兵部卿",
+      "category": "首领",
+      "faction": "视骸（人造种）",
+      "description": "人造种人形视骸首领，佩戴面具、持太刀作战，机动性极高，拥有五种攻击方式且出招衍生多变，部分出招前面具会闪烁白光。",
+      "appearsIn": "",
+      "image": "images/enemies/hyobukyo.png"
+    },
+    {
+      "id": "youjinweidajiang",
+      "name": "右近卫大将",
+      "category": "首领",
+      "faction": "视骸（人造种）",
+      "description": "人造种视骸。名称原型为日本律令制下统领近卫府的武官官职「右近卫大将」。",
+      "appearsIn": "",
+      "image": "images/enemies/youjinweidajiang.png"
+    },
+    {
+      "id": "hemaozhen",
+      "name": "贺茂真",
+      "category": "首领",
+      "faction": "视骸（鸦神）",
+      "description": "「鸦神」类视骸。",
+      "appearsIn": "",
+      "image": "images/enemies/hemaozhen.png"
+    },
+    {
+      "id": "orochi",
+      "name": "远吕知",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "蛇女形态的蛇神BOSS，会施放大范围剑技「万蛇斩」，部分攻击没有红圈预警、仅在双眼泛起红光时发动，需要及时向外闪避。原型为日本神话中的八岐大蛇（远吕智）。",
+      "appearsIn": "扭曲梦境等BOSS挑战玩法",
+      "image": "images/enemies/orochi.png"
+    },
+    {
+      "id": "siren",
+      "name": "塞壬",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "初始以「塞壬之翼」形态登场，随后本体与翼同场作战并共享血量；会召唤锁定玩家方向的红色龙卷风，并发动左中右三连突进撕咬。原型为希腊神话中的海妖塞壬。",
+      "appearsIn": "扭曲梦境等BOSS挑战玩法",
+      "image": "images/enemies/siren.png"
+    },
+    {
+      "id": "halphas",
+      "name": "哈法斯",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "体型庞大、火力凶猛的BOSS，能够为自身附加增益提升攻击力，地面范围攻击频繁，对闪避要求较高。名称原型为所罗门七十二柱魔神之一的哈法斯（Halphas）。",
+      "appearsIn": "扭曲梦境等BOSS挑战玩法",
+      "image": "images/enemies/halphas.png"
+    },
+    {
+      "id": "yisen",
+      "name": "伊森",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "拥有远程风筝与近身作战两个阶段的BOSS，会连续三次闪现后衔接枪击或蓄力技「华丽剑术」，二阶段拥有多种带范围预警的攻击。",
+      "appearsIn": "扭曲梦境等BOSS挑战玩法",
+      "image": "images/enemies/yisen.png"
+    },
+    {
+      "id": "shengjiezhe",
+      "name": "圣洁者",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "在扭曲梦境中与净化者成对登场的BOSS级视骸。",
+      "appearsIn": "扭曲梦境（BOSS挑战玩法）",
+      "image": "images/enemies/shengjiezhe.png"
+    },
+    {
+      "id": "jinghuazhe",
+      "name": "净化者",
+      "category": "首领",
+      "faction": "视骸（侵蚀种）",
+      "description": "侵蚀种视骸，在扭曲梦境中与圣洁者成对登场的BOSS级敌人。",
+      "appearsIn": "扭曲梦境（BOSS挑战玩法）",
+      "image": "images/enemies/jinghuazhe.png"
+    },
+    {
+      "id": "zhanhai",
+      "name": "战骸",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "在扭曲梦境中与幻骸成对登场的BOSS级视骸。",
+      "appearsIn": "扭曲梦境（BOSS挑战玩法）",
+      "image": "images/enemies/zhanhai.png"
+    },
+    {
+      "id": "huanhai",
+      "name": "幻骸",
+      "category": "首领",
+      "faction": "视骸",
+      "description": "在扭曲梦境中与战骸成对登场的BOSS级视骸。",
+      "appearsIn": "扭曲梦境（BOSS挑战玩法）",
+      "image": "images/enemies/huanhai.png"
+    },
+    {
+      "id": "ditiye-kalan",
+      "name": "底提耶·卡兰",
+      "category": "首领",
+      "faction": "天则",
+      "description": "3.7版本「起落皆尘埃」主线剧情中登场的BOSS，隶属「天则」势力。",
+      "appearsIn": "3.7版本主线剧情",
+      "image": "images/enemies/ditiye-kalan.png"
+    }
+  ]
 }

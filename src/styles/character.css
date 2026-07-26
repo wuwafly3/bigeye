@@ -1,0 +1,280 @@
+/* 角色详情页 + 3D MMD 查看器 专属样式 */
+
+/* 确保 hidden 属性对带布局类的元素也生效 */
+[hidden] { display: none !important; }
+
+/* ---------- 双栏布局：左 3D 查看器（sticky）/ 右信息面板 ---------- */
+.char-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  gap: 28px;
+  align-items: start;
+}
+.char-viewer-col {
+  position: sticky;
+  top: calc(var(--header-h) + 22px);
+  min-width: 0;
+}
+.char-info-col { min-width: 0; }
+
+/* ---------- 信息面板 ---------- */
+.back-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  transition: color 0.15s;
+}
+.back-link:hover { color: var(--accent); }
+
+.detail-name {
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.detail-block { margin-top: 28px; }
+.detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.detail-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line-strong), transparent);
+}
+
+.kv-table {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 18px;
+  margin: 0;
+  font-size: 13.5px;
+}
+.kv-table dt { color: var(--text-faint); letter-spacing: 1px; white-space: nowrap; }
+.kv-table dd { margin: 0; color: var(--text); }
+
+.detail-desc p {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 0.8em;
+}
+.detail-desc p:last-child { margin-bottom: 0; }
+
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.skill-item .skill-type { flex: none; margin-top: 2px; }
+.skill-body { min-width: 0; }
+.skill-name { font-size: 14px; font-weight: 600; }
+.skill-desc { margin: 3px 0 0; font-size: 13px; color: var(--text-dim); }
+
+.quote {
+  margin: 0 0 10px;
+  padding: 7px 14px;
+  border-left: 3px solid var(--accent-2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(143, 123, 255, 0.06);
+  color: var(--text-dim);
+  font-size: 13.5px;
+}
+.quote:last-child { margin-bottom: 0; }
+
+.full-art {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.full-art img { width: 100%; }
+.full-art .img-placeholder { min-height: 260px; }
+
+/* ---------- 底部：上一位 / 下一位 + 模块说明 ---------- */
+.char-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 44px;
+}
+.char-pager .btn {
+  max-width: 48%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 1.9;
+}
+.char-pager .pager-next { margin-left: auto; }
+
+.module-note {
+  margin: 30px 0 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  letter-spacing: 1px;
+}
+
+.char-empty .empty-actions { margin-top: 20px; }
+
+/* ---------- MMD 查看器 ---------- */
+.mmd-viewer {
+  position: relative;
+  height: 70vh;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    radial-gradient(420px 260px at 50% 18%, rgba(85, 214, 255, 0.07), transparent 70%),
+    linear-gradient(180deg, rgba(16, 24, 48, 0.7), rgba(7, 10, 22, 0.85));
+}
+.mmd-stage { position: absolute; inset: 0; }
+.mmd-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+/* 加载进度条 */
+.mmd-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(130, 170, 255, 0.12);
+  z-index: 4;
+}
+.mmd-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.2s ease;
+}
+
+/* 错误提示（复用 .notice，换成告警色） */
+.mmd-error {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 5;
+  border-left-color: var(--danger);
+  background: rgba(255, 107, 129, 0.07);
+}
+
+/* 未加载模型时的占位面板 */
+.mmd-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 26px 30px 70px;
+  text-align: center;
+}
+.mmd-ph-icon {
+  font-size: 34px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.mmd-ph-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+.mmd-ph-text {
+  margin: 0 0 12px;
+  max-width: 420px;
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--text-faint);
+}
+.mmd-ph-text code {
+  color: var(--accent);
+  font-family: var(--font-num);
+  font-size: 11.5px;
+}
+
+/* 底部控制栏：缩小版按钮 */
+.mmd-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, transparent, rgba(5, 7, 15, 0.78) 60%);
+}
+.mmd-controls .btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  gap: 5px;
+  background: rgba(7, 10, 22, 0.55);
+}
+.mmd-controls .btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.viewer-note {
+  margin: 10px 2px 0;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* ---------- 响应式：窄屏上下堆叠 ---------- */
+@media (max-width: 860px) {
+  .char-detail-layout { grid-template-columns: 1fr; gap: 22px; }
+  .char-viewer-col { position: static; }
+  .mmd-viewer { height: 50vh; min-height: 300px; }
+  .detail-name { font-size: 24px; }
+  .char-pager { flex-wrap: wrap; }
+  .char-pager .btn { max-width: 100%; }
+  .char-pager .pager-next { margin-left: 0; }
+}
+
+/* JS 渲染前的静态加载占位 */
+.char-loading {
+  color: var(--text-faint);
+  font-size: 14px;
+  margin: 8px 0;
+}

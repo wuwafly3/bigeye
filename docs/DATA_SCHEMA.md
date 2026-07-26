@@ -18,14 +18,14 @@
 {
   "characters": [
     {
-      "id": "apollo",                    // 必填，唯一
-      "name": "阿波罗",                   // 神名
-      "codename": "晨曦",                 // 代号（神格）
-      "fullName": "阿波罗·晨曦",          // 展示名，缺省为 name·codename
+      "id": "tsukuyomi-zhenli",          // 必填，唯一
+      "name": "月读",                     // 神名
+      "codename": "震离",                 // 神格代号
+      "fullName": "震离·月读",            // 展示名，缺省为 codename·name（官方惯例：神格·神名）
       "rarity": "S",                     // S / A / B
-      "element": "炎",                   // 属性：炎 / 雷 / 冰 / 暗 …
+      "element": "雷",                   // 属性：火 / 冰 / 水 / 雷 / 风 / 光 / 暗 / 物理
       "weapon": "",                      // 武器类型
-      "faction": "",                     // 所属阵营 / 序列
+      "faction": "",                     // 所属神系（真樱 / 圣树 / 奥山 / 尼罗 / 众星 / 天垣 …）
       "voiceActor": { "cn": "", "jp": "" },
       "releaseVersion": "",              // 实装版本号
       "releaseDate": "",                 // 实装日期
@@ -35,13 +35,16 @@
       "skills": [
         { "name": "", "type": "普攻|技能|终结技|连携", "description": "" }
       ],
-      "portrait": "images/characters/apollo/portrait.png", // 头像/半身
-      "fullArt": "images/characters/apollo/full.png",      // 全身立绘
-      "model": { "path": "models/apollo/model.pmx", "scale": 1 } // 可选，MMD 模型
+      "portrait": "images/characters/tsukuyomi-zhenli/portrait.png", // 头像/半身
+      "fullArt": "images/characters/tsukuyomi-zhenli/full.png",      // 全身立绘
+      "model": { "path": "models/tsukuyomi-zhenli/model.pmx", "scale": 1 } // 可选，MMD 模型
     }
   ]
 }
 ```
+
+> 版本与日期的史实（公测日、版本上线日等）以 `timeline.json` 为唯一事实源，
+> 其他文件与页面文案与其保持一致。
 
 ## timeline.json — 时间线
 
@@ -49,9 +52,9 @@
 {
   "events": [
     {
-      "date": "2022-03-24",             // 必填
-      "version": "1.0",                 // 可选，版本号
-      "title": "全平台公测开启",          // 必填
+      "date": "2023-05-23",             // 必填
+      "version": "",                    // 可选，版本号
+      "title": "国际服 Aether Gazer 上线", // 必填
       "category": "运营",               // 版本 / 活动 / 剧情 / 运营
       "description": "……"
     }

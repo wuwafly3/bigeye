@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="深空之眼档案馆 · 角色图鉴 — 收录全部修正者的档案：属性、稀有度与所属神系。" />
+  <title>角色图鉴 · 深空之眼档案馆</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%2355d6ff' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%238f7bff'/></svg>" />
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/characters.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="page-hero">
+      <div class="page-kicker">CHARACTERS</div>
+      <h1>角色图鉴</h1>
+      <p class="page-desc">
+        收录全部修正者的档案。每一位曾与管理员并肩作战的神明，都在此留档，以备回望。
+      </p>
+    </section>
+
+    <section class="toolbar char-toolbar" id="char-toolbar" aria-label="角色筛选">
+      <input
+        class="search-input"
+        id="char-search"
+        type="search"
+        placeholder="搜索神名 / 代号 / 全名"
+        aria-label="按神名、代号或全名搜索修正者"
+      />
+      <span class="result-count" id="result-count"></span>
+
+      <div class="filter-row">
+        <span class="filter-label">属性</span>
+        <div class="filter-chips" id="chips-element" role="group" aria-label="按属性筛选"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">稀有度</span>
+        <div class="filter-chips" id="chips-rarity" role="group" aria-label="按稀有度筛选"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">阵营</span>
+        <div class="filter-chips" id="chips-faction" role="group" aria-label="按阵营筛选"></div>
+      </div>
+    </section>
+
+    <section aria-label="角色列表">
+      <div class="grid-cards char-grid" id="char-grid"></div>
+
+      <div class="empty-state" id="empty-filter" hidden>
+        <div class="empty-icon">🔭</div>
+        <p>没有符合条件的修正者，试试调整筛选或搜索词。</p>
+      </div>
+
+      <div class="empty-state" id="empty-data" hidden>
+        <div class="empty-icon">🗂️</div>
+        <p>档案数据待补充。</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/pages/characters.js"></script>
+</body>
+</html>

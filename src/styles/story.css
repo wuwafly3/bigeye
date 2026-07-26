@@ -1,0 +1,188 @@
+/* 剧情回顾页专属样式 */
+
+/* ---------- 剧透提示 ---------- */
+.story-notice {
+  margin-bottom: 30px;
+  border-left-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+
+/* ---------- 目录视图：章节卡列表 ---------- */
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.chapter-card {
+  display: flex;
+  gap: 26px;
+  padding: 26px 30px 24px;
+}
+
+/* 大号装饰序号 */
+.chapter-num {
+  flex: 0 0 auto;
+  min-width: 76px;
+  font-family: var(--font-num);
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, var(--accent) 10%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.85;
+}
+
+.chapter-body { flex: 1; min-width: 0; }
+
+.chapter-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.chapter-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+.chapter-summary {
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.9;
+  margin: 0 0 14px;
+}
+
+.chapter-chars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+/* 纯展示 chip：不可点 */
+.chip-static {
+  cursor: default;
+  pointer-events: none;
+  padding: 3px 12px;
+  font-size: 12px;
+}
+
+.chapter-read { font-size: 13.5px; }
+
+/* 待补充章节：整体减淡、去掉悬停动效 */
+.chapter-card-empty .chapter-num {
+  background: linear-gradient(180deg, var(--text-faint), var(--text-faint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0.45;
+}
+.chapter-card-empty .chapter-title,
+.chapter-card-empty .chapter-summary { color: var(--text-faint); }
+.chapter-card-empty:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
+}
+
+/* ---------- 阅读视图 ---------- */
+#reader-view {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: var(--text-dim);
+  transition: color 0.15s;
+}
+.back-link:hover { color: var(--accent); }
+
+.reader-header { margin-bottom: 24px; }
+.reader-num {
+  font-family: var(--font-num);
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.reader-title {
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.reader-subtitle {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color: var(--accent-2);
+}
+
+/* summary 引言块 */
+.reader-summary {
+  margin: 0 0 14px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-2) 7%, transparent);
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* 正文：适合长文阅读 */
+.reader-body {
+  font-size: 16px;
+  line-height: 2.05;
+}
+.reader-body .section-title { font-size: 18px; }
+.reader-body p {
+  margin-bottom: 1.15em;
+  text-align: justify;
+}
+.reader-body .empty-state { margin-top: 34px; }
+
+/* 上一章 / 下一章 */
+.reader-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 48px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.reader-nav-btn {
+  max-width: 48%;
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  line-height: 1.5;
+}
+.reader-nav-spacer { flex: 0 0 auto; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 720px) {
+  .chapter-card {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 20px 22px;
+  }
+  .chapter-num { font-size: 38px; min-width: 0; }
+  .chapter-title { font-size: 18px; }
+  .reader-title { font-size: 23px; }
+  .reader-body { font-size: 15.5px; }
+  .reader-nav { flex-wrap: wrap; }
+  .reader-nav-btn { max-width: 100%; }
+}

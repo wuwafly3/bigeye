@@ -30,13 +30,15 @@
   --danger: #ff6b81;
   --ok: #6fe3a5;
 
-  /* 属性色（角色/敌人元素） */
+  /* 属性色（本作八属性：火/冰/水/雷/风/光/暗/物理） */
   --elem-fire: #ff8a5c;
   --elem-thunder: #b48bff;
   --elem-ice: #6cd4ff;
+  --elem-water: #5ca9ff;
+  --elem-wind: #7ef0d4;
   --elem-dark: #a06bff;
   --elem-light: #ffe08a;
-  --elem-quantum: #7ef0d4;
+  --elem-phys: #c9d2e5;
 
   /* 版型 */
   --radius: 14px;
@@ -54,6 +56,7 @@
 
 /* ---------- 重置 ---------- */
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
@@ -282,12 +285,14 @@ main.container { padding-top: 34px; padding-bottom: 80px; min-height: 70vh; }
 
 /* 属性徽章：JS 里给元素加 data-element 属性即可着色 */
 [data-element] { --elem: var(--text-dim); color: var(--elem); border-color: color-mix(in srgb, var(--elem) 55%, transparent); background: color-mix(in srgb, var(--elem) 10%, transparent); }
-[data-element="炎"], [data-element="火"] { --elem: var(--elem-fire); }
+[data-element="火"], [data-element="炎"] { --elem: var(--elem-fire); }
 [data-element="雷"] { --elem: var(--elem-thunder); }
-[data-element="冰"], [data-element="水"] { --elem: var(--elem-ice); }
-[data-element="暗"], [data-element="幽冥"] { --elem: var(--elem-dark); }
-[data-element="光"], [data-element="圣光"] { --elem: var(--elem-light); }
-[data-element="量子"], [data-element="混沌"] { --elem: var(--elem-quantum); }
+[data-element="冰"] { --elem: var(--elem-ice); }
+[data-element="水"] { --elem: var(--elem-water); }
+[data-element="风"] { --elem: var(--elem-wind); }
+[data-element="暗"] { --elem: var(--elem-dark); }
+[data-element="光"] { --elem: var(--elem-light); }
+[data-element="物理"] { --elem: var(--elem-phys); }
 
 /* ---------- 图片占位（layout.js imageFallback 使用） ---------- */
 .img-placeholder {

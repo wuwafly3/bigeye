@@ -1,0 +1,228 @@
+/* 时间线页专属样式 */
+
+/* ---------- 筛选条 ---------- */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- 主体与发光轴线 ---------- */
+.timeline {
+  position: relative;
+  padding: 6px 0 36px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--accent) 7%,
+    var(--accent-2) 55%,
+    var(--accent) 92%,
+    transparent 100%
+  );
+  box-shadow: 0 0 14px rgba(85, 214, 255, 0.35);
+  opacity: 0.75;
+}
+
+/* ---------- 年份标记：横跨轴线 ---------- */
+.tl-year {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 42px 0 28px;
+}
+.timeline .tl-year:first-child { margin-top: 8px; }
+.tl-year span {
+  display: inline-block;
+  padding: 5px 32px;
+  font-family: var(--font-num);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--accent);
+  background: var(--panel-solid);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  box-shadow: var(--glow);
+}
+
+/* ---------- 事件条目：桌面端左右交替 ---------- */
+.tl-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 22px;
+  --cat-color: var(--accent);
+}
+.tl-item[data-cat="版本"] { --cat-color: var(--accent); }
+.tl-item[data-cat="活动"] { --cat-color: var(--gold); }
+.tl-item[data-cat="剧情"] { --cat-color: var(--accent-2); }
+.tl-item[data-cat="运营"] { --cat-color: var(--ok); }
+
+.tl-left { padding-right: 42px; }
+.tl-right { margin-left: 50%; padding-left: 42px; }
+
+/* 圆点：接在轴线上 */
+.tl-dot {
+  position: absolute;
+  top: 24px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--cat-color);
+  box-shadow: 0 0 10px var(--cat-color);
+  z-index: 2;
+}
+.tl-left .tl-dot { right: -6px; }
+.tl-right .tl-dot { left: -6px; }
+
+/* 圆点到卡片的细连接线 */
+.tl-item::before {
+  content: "";
+  position: absolute;
+  top: 29px;
+  width: 32px;
+  height: 1px;
+  opacity: 0.5;
+}
+.tl-left::before {
+  right: 8px;
+  background: linear-gradient(270deg, var(--cat-color), transparent);
+}
+.tl-right::before {
+  left: 8px;
+  background: linear-gradient(90deg, var(--cat-color), transparent);
+}
+
+/* ---------- 事件卡片 ---------- */
+.tl-card { padding: 16px 18px 14px; }
+.tl-card:hover {
+  border-color: color-mix(in srgb, var(--cat-color) 45%, transparent);
+}
+.tl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.tl-date {
+  font-family: var(--font-num);
+  font-size: 12.5px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+.tl-version {
+  font-family: var(--font-num);
+  color: var(--accent);
+  border-color: rgba(85, 214, 255, 0.5);
+  background: rgba(85, 214, 255, 0.08);
+}
+.tl-cat {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--cat-color);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 55%, transparent);
+  background: color-mix(in srgb, var(--cat-color) 10%, transparent);
+}
+.tl-title { font-size: 15.5px; margin: 0 0 6px; }
+.tl-desc {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ---------- 结语卡 ---------- */
+.tl-ending {
+  max-width: 560px;
+  margin: 10px auto 0;
+  padding: 30px 26px 24px;
+  text-align: center;
+}
+.tl-ending-dot {
+  width: 9px;
+  height: 9px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(85, 214, 255, 0.6);
+}
+.tl-ending-text {
+  margin: 0 0 8px;
+  color: var(--text-dim);
+  font-size: 14.5px;
+  letter-spacing: 2px;
+}
+.tl-ending-en {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ---------- 入场动画 ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 响应式：<860px 单侧布局 ---------- */
+@media (max-width: 860px) {
+  .timeline::before {
+    left: 16px;
+    transform: none;
+  }
+  .tl-year {
+    text-align: left;
+    margin: 34px 0 22px;
+  }
+  .tl-year span {
+    padding: 4px 24px;
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+  .tl-item, .tl-left, .tl-right {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 0 46px;
+  }
+  .tl-left .tl-dot, .tl-right .tl-dot {
+    left: 12px;
+    right: auto;
+  }
+  .tl-left::before, .tl-right::before {
+    left: 24px;
+    right: auto;
+    background: linear-gradient(90deg, var(--cat-color), transparent);
+  }
+}
+
+@media (max-width: 720px) {
+  .tl-card { padding: 14px 15px 12px; }
+  .tl-ending { padding: 24px 20px 20px; }
+}
+
+/* prefers-reduced-motion：禁用入场动画，内容直接可见 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
