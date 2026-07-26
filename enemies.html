@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="深空之眼档案馆 · 敌人图鉴 — 收录视骸与诸敌的资料档案：类别、势力与出现场合。" />
+  <title>敌人图鉴 · 深空之眼档案馆</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%2355d6ff' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%238f7bff'/></svg>" />
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/enemies.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="page-hero">
+      <div class="page-kicker">ENEMIES</div>
+      <h1>敌人图鉴</h1>
+      <p class="page-desc">
+        视骸与诸敌的资料档案。那些曾在战场彼端与修正者交锋的存在，也一并留档于此，以备回望。
+      </p>
+    </section>
+
+    <section class="toolbar" id="enemy-toolbar" aria-label="敌人筛选">
+      <div class="filter-chips" id="chips-category" role="group" aria-label="按类别筛选"></div>
+      <input
+        class="search-input"
+        id="enemy-search"
+        type="search"
+        placeholder="搜索敌人名称"
+        aria-label="按名称搜索敌人"
+      />
+      <span class="result-count" id="result-count"></span>
+    </section>
+
+    <section aria-label="敌人列表">
+      <div class="grid-cards enemy-grid" id="enemy-grid"></div>
+
+      <div class="empty-state" id="empty-filter" hidden>
+        <div class="empty-icon">🔍</div>
+        <p>没有符合条件的敌人，试试调整筛选或搜索词。</p>
+      </div>
+
+      <div class="empty-state" id="empty-data" hidden>
+        <div class="empty-icon">🗂️</div>
+        <p>档案数据待补充。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="enemy-modal" id="enemy-modal" hidden>
+    <div class="modal-mask" id="modal-mask"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button type="button" class="modal-close" id="modal-close" aria-label="关闭详情">×</button>
+      <div class="modal-figure" id="modal-figure"></div>
+      <div class="modal-body">
+        <div class="modal-title-row" id="modal-title-row"></div>
+        <div class="modal-meta" id="modal-meta"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/pages/enemies.js"></script>
+</body>
+</html>
