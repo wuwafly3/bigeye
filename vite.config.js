@@ -16,7 +16,8 @@ export default defineConfig({
         timeline: resolve(root, 'timeline.html'),
         story: resolve(root, 'story.html'),
         gallery: resolve(root, 'gallery.html'),
-        enemies: resolve(root, 'enemies.html')
+        enemies: resolve(root, 'enemies.html'),
+        submit: resolve(root, 'submit.html')
       }
     }
   }

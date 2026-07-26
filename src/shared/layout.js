@@ -49,6 +49,7 @@ export function initLayout() {
       <div class="footer-title">深空之眼档案馆 · AETHER GAZER ARCHIVE</div>
       <div>本站为非官方粉丝档案项目，旨在为《深空之眼》留存记忆，与勇仕网络及其关联公司无关。</div>
       <div>游戏内素材、角色形象与美术作品的版权归原权利方所有；本站内容仅供交流学习，请勿用于商业用途。</div>
+      <div class="footer-links"><a href="submit.html">投稿与纠错</a></div>
     </div>`
   document.body.append(footer)
 
