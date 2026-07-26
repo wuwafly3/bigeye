@@ -136,6 +136,28 @@
 
 ---
 
+## mimir.json — 弥弥尔小助手
+
+右下角互动部件的配置与文案库：
+
+```jsonc
+{
+  "enabled": true,                    // false 可整体关闭
+  "name": "弥弥尔",
+  "mode": "svg",                      // svg（内置形象）/ image / live2d
+  "image": "",                        // mode=image 时的图片路径（相对 public/）
+  "live2d": { "core": "", "libs": [], "model": "", "width": 200, "height": 230 },
+  "autoIntervalSeconds": 26,          // 自动冒泡间隔
+  "bubbleSeconds": 7,                 // 气泡停留时长
+  "greetings": { "dawn": "…", "morning": "…", "afternoon": "…", "evening": "…" },
+  "quotes": ["随机气泡文案，随意增删"]
+}
+```
+
+形象升级（图片 / Live2D）的素材放置见 `public/mimir/README.md`。
+
+---
+
 ## 素材放置位置
 
 - 角色图：`public/images/characters/<id>/portrait.png`（头像）、`full.png`（立绘）
