@@ -56,6 +56,23 @@ export function initLayout() {
   const toggle = header.querySelector('.nav-toggle')
   const links = header.querySelector('.nav-links')
   toggle.addEventListener('click', () => links.classList.toggle('open'))
+
+  initClickEffect()
+}
+
+/** 点击特效：在点击处生成一个斜置方块，扩散淡出（遵守 prefers-reduced-motion） */
+function initClickEffect() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  document.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return
+    const fx = document.createElement('div')
+    fx.className = 'click-fx'
+    fx.style.left = e.clientX + 'px'
+    fx.style.top = e.clientY + 'px'
+    document.body.appendChild(fx)
+    fx.addEventListener('animationend', () => fx.remove(), { once: true })
+    setTimeout(() => fx.remove(), 700) // 动画事件缺失时的兜底清理
+  }, { passive: true })
 }
 
 /**
