@@ -1,5 +1,32 @@
 /* 敌人图鉴专属样式 */
 
+/* 本页主题色：警示红（凸显危险，覆写全局信号色） */
+:root {
+  --accent: #d64550;
+  --accent-soft: rgba(214, 69, 80, 0.12);
+  --signal-gradient: linear-gradient(90deg, #d64550, #f0b23a);
+}
+
+/* 危险警示条纹：页面标题下的斜纹标识 */
+.page-hero {
+  position: relative;
+  padding-bottom: 16px;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 190px;
+  height: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent) 0 8px,
+    transparent 8px 16px
+  );
+  opacity: 0.65;
+}
+
 /* ---------- 工具条 ---------- */
 #enemy-toolbar[hidden] { display: none; }
 .filter-chips {

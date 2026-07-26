@@ -290,3 +290,62 @@
   font-size: 14px;
   margin: 8px 0;
 }
+
+/* ---------- 立绘 / 模型多套切换卡 ---------- */
+.variant-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.model-tabs { margin: 10px 2px 0; }
+.variant-tabs .chip { font-size: 12.5px; padding: 4px 13px; }
+
+/* ---------- 档案 / 誓约心链：折叠条目 ---------- */
+.fold-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-solid);
+  margin-bottom: 10px;
+  box-shadow: 0 2px 0 rgba(24, 60, 90, 0.07);
+  overflow: hidden;
+}
+.fold-item summary {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  user-select: none;
+  transition: background 0.15s;
+}
+.fold-item summary::-webkit-details-marker { display: none; }
+.fold-item summary::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  background: var(--accent);
+  transition: transform 0.2s;
+}
+.fold-item[open] summary::before { transform: rotate(45deg); }
+.fold-item summary:hover { background: var(--bg-soft); }
+.fold-body {
+  padding: 4px 16px 12px;
+  border-top: 1px solid var(--line);
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 2;
+}
+.fold-body p { margin: 10px 0 0; }
+.fold-body .fold-summary {
+  color: var(--text-faint);
+  border-left: 3px solid var(--line-strong);
+  padding-left: 12px;
+  font-size: 13px;
+}
+/* 心链条目：个人剧情，阅读排版稍舒展 */
+.fold-heartlink .fold-body { font-size: 14px; line-height: 2.1; }

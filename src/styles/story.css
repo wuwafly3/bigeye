@@ -1,5 +1,12 @@
 /* 剧情回顾页专属样式 */
 
+/* 本页主题色：叙事星域紫（页面差异化，覆写全局信号色） */
+:root {
+  --accent: #7a68d8;
+  --accent-soft: rgba(122, 104, 216, 0.12);
+  --signal-gradient: linear-gradient(90deg, #7a68d8, #f2708f);
+}
+
 /* ---------- 剧透提示 ---------- */
 .story-notice {
   margin-bottom: 30px;

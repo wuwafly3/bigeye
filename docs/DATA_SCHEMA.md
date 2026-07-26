@@ -36,12 +36,28 @@
         { "name": "", "type": "普攻|技能|终结技|连携", "description": "" }
       ],
       "portrait": "images/characters/tsukuyomi-zhenli/portrait.png", // 头像/半身
-      "fullArt": "images/characters/tsukuyomi-zhenli/full.png",      // 全身立绘
-      "model": { "path": "models/tsukuyomi-zhenli/model.pmx", "scale": 1 } // 可选，MMD 模型
+      "fullArt": "images/characters/tsukuyomi-zhenli/full.png",      // 全身立绘（默认）
+      "model": { "path": "models/tsukuyomi-zhenli/model.pmx", "scale": 1 }, // 可选，MMD 模型（默认）
+      "skins": [                          // 可选：换装/皮肤，详情页出现多套切换卡
+        {
+          "name": "夏日祭",               // 换装名称（切换卡上显示）
+          "fullArt": "images/characters/tsukuyomi-zhenli/skin-summer.png", // 可选
+          "model": { "path": "models/tsukuyomi-zhenli-summer/model.pmx", "scale": 1 } // 可选
+        }
+      ],
+      "archives": [                       // 可选：档案（游戏内解锁的纯文本档案节点）
+        { "title": "档案一", "content": "正文，可用 \n 分段" }
+      ],
+      "heartlinks": [                     // 可选：誓约心链（个人剧情，文本记录）
+        { "title": "心链一 标题", "summary": "一句话引言（可选）", "content": "剧情文本，\n 分段" }
+      ]
     }
   ]
 }
 ```
+
+> `skins` 里的 `fullArt` 与 `model` 均可省略：只要任意一套之外还有第二套立绘或模型，
+> 详情页就会自动出现对应的切换卡；`archives` / `heartlinks` 为空时整块隐藏。
 
 > 版本与日期的史实（公测日、版本上线日等）以 `timeline.json` 为唯一事实源，
 > 其他文件与页面文案与其保持一致。

@@ -17,6 +17,16 @@ const trimmed = value => String(value == null ? '' : value).trim()
 /** 转义非空文本，空值返回 ''（用于“有则显示”判断） */
 const escIf = value => (trimmed(value) ? escapeHtml(trimmed(value)) : '')
 
+/** 多段纯文本 → <p> 列表（按换行分段，逐段转义） */
+function textParagraphs(text) {
+  return String(text == null ? '' : text)
+    .split('\n')
+    .map(s => s.trim())
+    .filter(Boolean)
+    .map(p => `<p>${escapeHtml(p)}</p>`)
+    .join('')
+}
+
 /** 展示名：fullName 优先，缺省按官方惯例拼 codename·name（与图鉴页一致） */
 function displayName(c) {
   if (!c) return '未知修正者'
@@ -135,10 +145,54 @@ function renderCharacter(c, i) {
     .map(q => `<blockquote class="quote">${escapeHtml(q)}</blockquote>`)
     .join('')
 
-  /* 立绘 */
-  const fullArt = trimmed(c.fullArt)
-  const artHtml = fullArt
-    ? `<div class="full-art"><img id="full-art-img" src="./${escapeHtml(fullArt)}" alt="${escapeHtml(name)} 立绘" loading="lazy" /></div>`
+  /* 档案（纯文本档案节点） */
+  const archives = Array.isArray(c.archives)
+    ? c.archives.filter(a => a && (trimmed(a.title) || trimmed(a.content)))
+    : []
+  const archivesHtml = archives
+    .map((a, idx) => `
+      <details class="fold-item"${idx === 0 ? ' open' : ''}>
+        <summary>${escapeHtml(trimmed(a.title) || `档案 ${idx + 1}`)}</summary>
+        <div class="fold-body">${textParagraphs(a.content)}</div>
+      </details>`)
+    .join('')
+
+  /* 誓约心链（个人剧情，纯文本记录） */
+  const heartlinks = Array.isArray(c.heartlinks)
+    ? c.heartlinks.filter(h => h && (trimmed(h.title) || trimmed(h.content) || trimmed(h.summary)))
+    : []
+  const heartlinksHtml = heartlinks
+    .map((h, idx) => `
+      <details class="fold-item fold-heartlink">
+        <summary>${escapeHtml(trimmed(h.title) || `心链 ${idx + 1}`)}</summary>
+        <div class="fold-body">
+          ${trimmed(h.summary) ? `<p class="fold-summary">${escapeHtml(trimmed(h.summary))}</p>` : ''}
+          ${textParagraphs(h.content)}
+        </div>
+      </details>`)
+    .join('')
+
+  /* 立绘与皮肤：默认 + skins 组成可切换的变体列表 */
+  const skins = Array.isArray(c.skins) ? c.skins.filter(Boolean) : []
+  const variants = [
+    { name: '默认', fullArt: trimmed(c.fullArt), model: c.model || null },
+    ...skins.map(s => ({
+      name: trimmed(s.name) || '换装',
+      fullArt: trimmed(s.fullArt),
+      model: s.model || null
+    }))
+  ]
+  const artVariants = variants.filter(v => v.fullArt)
+  const modelVariants = variants.filter(v => v.model && trimmed(v.model.path))
+
+  const artTabsHtml = artVariants.length > 1
+    ? `<div class="variant-tabs" id="art-tabs" role="tablist" aria-label="立绘切换">
+        ${artVariants.map((v, idx) => `
+          <button type="button" class="chip${idx === 0 ? ' active' : ''}" data-index="${idx}">${escapeHtml(v.name)}</button>`).join('')}
+      </div>`
+    : ''
+  const artHtml = artVariants.length
+    ? `${artTabsHtml}<div class="full-art" id="full-art-box"></div>`
     : ''
 
   /* 上一位 / 下一位（按 roster 顺序循环） */
@@ -157,6 +211,11 @@ function renderCharacter(c, i) {
     <div class="char-detail-layout">
       <div class="char-viewer-col">
         <div id="mmd-container" class="mmd-viewer" aria-label="3D 模型查看器"></div>
+        ${modelVariants.length > 1 ? `
+        <div class="variant-tabs model-tabs" id="model-tabs" role="tablist" aria-label="模型切换">
+          ${modelVariants.map((v, idx) => `
+            <button type="button" class="chip${idx === 0 ? ' active' : ''}" data-index="${idx}">${escapeHtml(v.name)}</button>`).join('')}
+        </div>` : ''}
         <p class="viewer-note">3D 模型在浏览器本地渲染；「从本地文件夹加载」不会上传任何文件。</p>
       </div>
       <div class="char-info-col">
@@ -168,22 +227,50 @@ function renderCharacter(c, i) {
         ${block('角色资料', profileRows ? `<dl class="kv-table">${profileRows}</dl>` : '')}
         ${block('技能', skillsHtml ? `<ul class="skill-list">${skillsHtml}</ul>` : '')}
         ${block('语音摘录', quotesHtml)}
+        ${block('档案', archivesHtml)}
+        ${block('誓约心链', heartlinksHtml)}
         ${block('立绘', artHtml)}
       </div>
     </div>
     ${pagerHtml}
     <p class="module-note">本页档案长期留存 —— 服务器谢幕之后，仍可在此回望每一位修正者。</p>`
 
-  const artImg = document.getElementById('full-art-img')
-  if (artImg) imageFallback(artImg, trimmed(c.name) || name)
+  /* 立绘渲染与多套切换 */
+  const artBox = document.getElementById('full-art-box')
+  const showArt = idx => {
+    const v = artVariants[idx]
+    if (!artBox || !v) return
+    artBox.innerHTML = `<img src="./${escapeHtml(v.fullArt)}" alt="${escapeHtml(name)} 立绘 - ${escapeHtml(v.name)}" loading="lazy" />`
+    imageFallback(artBox.querySelector('img'), trimmed(c.name) || name)
+  }
+  if (artBox) showArt(0)
+  const artTabs = document.getElementById('art-tabs')
+  if (artTabs) {
+    artTabs.addEventListener('click', e => {
+      const btn = e.target.closest('button[data-index]')
+      if (!btn) return
+      artTabs.querySelectorAll('.chip').forEach(b => b.classList.toggle('active', b === btn))
+      showArt(+btn.dataset.index)
+    })
+  }
 
-  /* 3D 查看器：有 model.path 自动加载站内模型，否则静默停在占位状态 */
-  const model = c.model || {}
+  /* 3D 查看器：默认加载首个有模型的变体，多套模型时可切换 */
+  const firstModel = (modelVariants[0] && modelVariants[0].model) || {}
   const viewer = createMMDViewer(document.getElementById('mmd-container'), {
-    modelPath: trimmed(model.path),
-    modelScale: Number(model.scale) || 1,
+    modelPath: trimmed(firstModel.path),
+    modelScale: Number(firstModel.scale) || 1,
     screenshotName: trimmed(c.id) || 'model'
   })
+  const modelTabs = document.getElementById('model-tabs')
+  if (modelTabs) {
+    modelTabs.addEventListener('click', e => {
+      const btn = e.target.closest('button[data-index]')
+      if (!btn) return
+      modelTabs.querySelectorAll('.chip').forEach(b => b.classList.toggle('active', b === btn))
+      const v = modelVariants[+btn.dataset.index]
+      if (v && v.model) viewer.loadSite(v.model.path, v.model.scale)
+    })
+  }
   addEventListener('pagehide', e => {
     if (!e.persisted) viewer.dispose()
   })
