@@ -10,6 +10,7 @@
  * - 可收起（右上角 ×），状态记忆在 localStorage；遵守 prefers-reduced-motion
  */
 import mimirData from '../data/mimir.json'
+import { assetUrl } from './assets.js'
 import '../styles/mimir.css'
 
 const STORE_KEY = 'agarchive-mimir-hidden'
@@ -74,7 +75,7 @@ export function initMimir() {
     img.className = 'mimir-img'
     img.alt = ''
     img.onerror = mountSvg
-    img.src = './' + cfg.image
+    img.src = assetUrl(cfg.image)
     avatar.appendChild(img)
   } else if (cfg.mode === 'live2d' && cfg.live2d && cfg.live2d.model) {
     mountSvg() // 先显示内置形象，加载成功后替换
@@ -155,7 +156,7 @@ export function initMimir() {
 async function mountLive2D(container, cfg) {
   const loadScript = src => new Promise((resolve, reject) => {
     const s = document.createElement('script')
-    s.src = './' + src
+    s.src = assetUrl(src)
     s.onload = resolve
     s.onerror = () => reject(new Error('加载失败: ' + src))
     document.head.appendChild(s)
@@ -179,7 +180,7 @@ async function mountLive2D(container, cfg) {
     autoDensity: true,
     resolution: Math.min(window.devicePixelRatio || 1, 2)
   })
-  const model = await PIXI.live2d.Live2DModel.from('./' + cfg.model)
+  const model = await PIXI.live2d.Live2DModel.from(assetUrl(cfg.model))
   const scale = Math.min(width / model.width, height / model.height)
   model.scale.set(scale)
   model.x = (width - model.width * scale) / 2

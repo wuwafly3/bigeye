@@ -3,6 +3,7 @@
  * 每个页面 JS 的入口都应先调用 initLayout()。
  */
 import { initMimir } from './mimir.js'
+export { assetUrl } from './assets.js'
 
 const NAV_ITEMS = [
   ['index.html', '首页'],

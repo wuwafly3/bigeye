@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, revealOnScroll } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl } from '../shared/layout.js'
 import enemiesData from '../data/enemies.json'
 
 initLayout()
@@ -63,7 +63,7 @@ function cardHtml(e, i) {
       data-index="${i}"
     >
       <div class="enemy-figure">
-        <img src="./${escapeHtml(e.image || '')}" alt="${escapeHtml(name)}" loading="lazy" />
+        <img src="${escapeHtml(assetUrl(e.image))}" alt="${escapeHtml(name)}" loading="lazy" />
       </div>
       <div class="enemy-info">
         <div class="enemy-name-row">
@@ -133,7 +133,7 @@ function openModal(index) {
   const desc = String(e.description || '').trim()
 
   modalFigure.innerHTML =
-    `<img src="./${escapeHtml(e.image || '')}" alt="${escapeHtml(name)}" />`
+    `<img src="${escapeHtml(assetUrl(e.image))}" alt="${escapeHtml(name)}" />`
   imageFallback(modalFigure.querySelector('img'), name.slice(0, 1))
 
   modalTitleRow.innerHTML =

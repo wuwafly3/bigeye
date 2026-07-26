@@ -20,6 +20,7 @@ import { MMDLoader } from 'three/addons/loaders/MMDLoader.js'
 import { MMDAnimationHelper } from 'three/addons/animation/MMDAnimationHelper.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { TGALoader } from 'three/addons/loaders/TGALoader.js'
+import { assetUrl } from '../shared/assets.js'
 
 export function createMMDViewer(container, opts = {}) {
   const options = {
@@ -270,7 +271,7 @@ export function createMMDViewer(container, opts = {}) {
     showProgress()
     const manager = createManager(null)
     new MMDLoader(manager).load(
-      './' + path,
+      assetUrl(path),
       loadedMesh => addModel(loadedMesh, scale),
       undefined,
       () => {
