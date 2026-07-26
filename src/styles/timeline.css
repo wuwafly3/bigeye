@@ -1,5 +1,12 @@
 /* 时间线页专属样式 */
 
+/* 本页主题色：时之薄荷青（页面差异化，覆写全局信号色） */
+:root {
+  --accent: #1fa88f;
+  --accent-soft: rgba(31, 168, 143, 0.12);
+  --signal-gradient: linear-gradient(90deg, #1fa88f, #1899d6);
+}
+
 /* ---------- 筛选条 ---------- */
 .chip-group {
   display: flex;

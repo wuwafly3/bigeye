@@ -417,6 +417,13 @@ export function createMMDViewer(container, opts = {}) {
   /* ---------- 初始加载 ---------- */
   if (options.modelPath) loadSiteModel(options.modelPath, options.modelScale)
 
+  /** 运行时切换站内模型（皮肤/换装用），path 相对 public/ */
+  function loadSite(path, scale) {
+    const p = String(path || '').trim()
+    if (!p || disposed) return
+    loadSiteModel(p, Number(scale) > 0 ? Number(scale) : 1)
+  }
+
   /* ---------- 清理 ---------- */
   function dispose() {
     if (disposed) return
@@ -433,5 +440,5 @@ export function createMMDViewer(container, opts = {}) {
     container.innerHTML = ''
   }
 
-  return { dispose }
+  return { dispose, loadSite }
 }

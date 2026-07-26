@@ -9,16 +9,37 @@
       "element": "雷",
       "weapon": "太刀",
       "faction": "真樱",
-      "voiceActor": { "cn": "虫虫", "jp": "石川由依" },
+      "voiceActor": {
+        "cn": "虫虫",
+        "jp": "石川由依"
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "真樱神系S级雷属性近战修正者，雉小队队长，公测期的首位限定角色。凭借「雷殛之印」的衍生机制打出极高的单体与群体爆发，开服时期长居强度榜首。以严苛的自我要求与极高的任务完成率著称，性格寡言冷静，作战分析简明扼要。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
-      "quotes": ["森罗万象，剑镇乾坤。"],
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
+      "quotes": [
+        "森罗万象，剑镇乾坤。"
+      ],
       "skills": [
-        { "name": "鸣雷之刃", "type": "普攻", "description": "连续挥动太刀斩击敌人，共计五式，完整命中可积攒怒气值。" },
-        { "name": "雷殛·烈光", "type": "技能", "description": "消耗20点怒气向目标方向冲刺，对沿途敌人造成雷属性伤害并施加「雷殛之印」。" },
-        { "name": "雷殛·双流", "type": "技能", "description": "消耗30点怒气发动强力斩击，与印记机制联动打出爆发伤害。" }
+        {
+          "name": "鸣雷之刃",
+          "type": "普攻",
+          "description": "连续挥动太刀斩击敌人，共计五式，完整命中可积攒怒气值。"
+        },
+        {
+          "name": "雷殛·烈光",
+          "type": "技能",
+          "description": "消耗20点怒气向目标方向冲刺，对沿途敌人造成雷属性伤害并施加「雷殛之印」。"
+        },
+        {
+          "name": "雷殛·双流",
+          "type": "技能",
+          "description": "消耗30点怒气发动强力斩击，与印记机制联动打出爆发伤害。"
+        }
       ],
       "portrait": "images/characters/tsukuyomi-zhenli/portrait.png",
       "fullArt": "images/characters/tsukuyomi-zhenli/full.png"
@@ -32,16 +53,35 @@
       "element": "冰",
       "weapon": "",
       "faction": "奥山",
-      "voiceActor": { "cn": "陶典", "jp": "佐藤利奈" },
+      "voiceActor": {
+        "cn": "陶典",
+        "jp": "佐藤利奈"
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "奥山神系初始S级冰属性远程修正者。比起正面与视骸作战，更擅长在队友身后以神力架设冰属性炮台提供支援，拥有极强的对群控场与输出能力。能量型角色，每秒自动回复能量，操作简单，是开服以来的元老级主力。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "普攻", "description": "远程发射冰属性攻击，作为能量型角色每秒自动回复3点能量。" },
-        { "name": "", "type": "技能", "description": "召唤冰属性炮台，在队友身后持续输出与支援。" },
-        { "name": "", "type": "技能", "description": "对群体敌人造成冰属性伤害并施加强力控场效果。" }
+        {
+          "name": "",
+          "type": "普攻",
+          "description": "远程发射冰属性攻击，作为能量型角色每秒自动回复3点能量。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "召唤冰属性炮台，在队友身后持续输出与支援。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "对群体敌人造成冰属性伤害并施加强力控场效果。"
+        }
       ],
       "portrait": "images/characters/poseidon-bingyuan/portrait.png",
       "fullArt": "images/characters/poseidon-bingyuan/full.png"
@@ -55,11 +95,18 @@
       "element": "火",
       "weapon": "野太刀「龙切」",
       "faction": "真樱",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "真樱神系初始S级火属性近战修正者，鸦越家亲卫队「急小队」队长。成为修正者的时间很早，因此一直保持着少年的容貌，实力却是亲卫队中毋庸置疑的第一。性格随和开朗，非工作时间有点懒散。所持野太刀「龙切」由家族科研部锻造，专门用于对付巨型视骸。",
-      "profile": { "height": "", "birthday": "", "hobby": "喝碳酸饮料、钓鱼" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": "喝碳酸饮料、钓鱼"
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/kagutsuchi-longqie/portrait.png",
@@ -74,14 +121,25 @@
       "element": "光",
       "weapon": "巨剑",
       "faction": "圣树",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "圣树神系初始S级光属性近战修正者，塔列朗家族继承人，与深空之眼合资后管理第三部门。技能倍率位居全游戏前列，但手法较为复杂，通过切换巨剑形态获取印记打出高额爆发，适合追求操作上限的玩家。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "技能", "description": "切换巨剑类型并对周围敌人造成光属性伤害，同时获得2枚印记。" }
+        {
+          "name": "",
+          "type": "技能",
+          "description": "切换巨剑类型并对周围敌人造成光属性伤害，同时获得2枚印记。"
+        }
       ],
       "portrait": "images/characters/tyr-hantian/portrait.png",
       "fullArt": "images/characters/tyr-hantian/full.png"
@@ -95,11 +153,18 @@
       "element": "",
       "weapon": "",
       "faction": "真樱",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "真樱神系初始S级修正者，以「进行自由的研究和发明」为条件加入深空之眼。定位半输出半辅助，技能可为全队回血、加攻、回怒并持续提升暴击率，是万金油式的角色，尤其擅长为震离·月读等怒气型队友供能。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/okuninushi-zaoying/portrait.png",
@@ -114,11 +179,18 @@
       "element": "",
       "weapon": "",
       "faction": "真樱",
-      "voiceActor": { "cn": "牛奶君", "jp": "" },
+      "voiceActor": {
+        "cn": "牛奶君",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "",
       "description": "真樱神系初始S级修正者，身手矫健的忍者型角色，技能可在多种属性之间切换。输出上限在常驻S级中名列前茅，但不适合交给AI操作，对玩家手法要求较高。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/kuninotokotachi-miying/portrait.png",
@@ -133,11 +205,18 @@
       "element": "火",
       "weapon": "",
       "faction": "众星",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "",
       "description": "众星神系初始S级火属性修正者，原型为印度神话中吞噬日月的阿修罗罗睺（国际服名称即为 Rahu）。开服时期众星阵营的核心输出，专属武器的获取优先级在全角色中名列前茅，长期位居培养推荐榜前列。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/asura-zhangyue/portrait.png",
@@ -152,15 +231,30 @@
       "element": "水",
       "weapon": "",
       "faction": "奥山",
-      "voiceActor": { "cn": "陶典", "jp": "" },
+      "voiceActor": {
+        "cn": "陶典",
+        "jp": ""
+      },
       "releaseVersion": "1.0",
       "releaseDate": "2022-04-22",
       "description": "奥山神系初始A级水属性远程辅助修正者，性格温柔恬静，很擅长倾听他人的烦恼。拥有可观的全队治疗量与攻击力加成，还能为队友回复能量、提升机制值获取效率，作为游戏中稀缺的治疗角色，即使是A级也被视为必练。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "技能", "description": "为全队持续回复生命，并提供攻击力加成。" },
-        { "name": "", "type": "技能", "description": "为队友回复能量并提升机制值获取效率，与冰渊·波塞冬等能量型角色高度契合。" }
+        {
+          "name": "",
+          "type": "技能",
+          "description": "为全队持续回复生命，并提供攻击力加成。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "为队友回复能量并提升机制值获取效率，与冰渊·波塞冬等能量型角色高度契合。"
+        }
       ],
       "portrait": "images/characters/poseidon-chaoyin/portrait.png",
       "fullArt": "images/characters/poseidon-chaoyin/full.png"
@@ -174,15 +268,30 @@
       "element": "风",
       "weapon": "镰刀",
       "faction": "尼罗",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "2022-05",
       "description": "尼罗神系初始S级风属性近战修正者。有着与奥西里斯完全相同的容貌，却是其体内自称「冥王」的疯狂第二人格，拥有一双象征狂暴与不祥的赤色瞳孔，不屑与其他修正者合作。挥舞镰刀作战，可短暂解开灵魂束缚进入「冥府审判」模式大幅强化自身。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "技能", "description": "召唤镰刀连续斩击目标，造成风属性伤害。" },
-        { "name": "", "type": "终结技", "description": "进入「冥府审判」模式：自身伤害提升、生命值立即回满、全程霸体，并改变多个技能的攻击模式。" }
+        {
+          "name": "",
+          "type": "技能",
+          "description": "召唤镰刀连续斩击目标，造成风属性伤害。"
+        },
+        {
+          "name": "",
+          "type": "终结技",
+          "description": "进入「冥府审判」模式：自身伤害提升、生命值立即回满、全程霸体，并改变多个技能的攻击模式。"
+        }
       ],
       "portrait": "images/characters/osiris-shenghun/portrait.png",
       "fullArt": "images/characters/osiris-shenghun/full.png"
@@ -196,11 +305,18 @@
       "element": "暗",
       "weapon": "权钥「迟钝」（可变形黑棺军火库）",
       "faction": "圣树",
-      "voiceActor": { "cn": "李蝉妃", "jp": "田村由香里" },
+      "voiceActor": {
+        "cn": "李蝉妃",
+        "jp": "田村由香里"
+      },
       "releaseVersion": "1.1",
       "releaseDate": "",
       "description": "圣树神系S级暗属性远程修正者，于1.1版本登场，游戏中首位暗属性神能类型角色。身为冥界之神，担任「送葬者」小队负责人，专门清除伪装成人类的侵蚀种视骸。有着遭受虐待的悲惨童年，觉醒修正者意识后选择冰封自我；冷漠的哥特少女与爱吐槽的可变形权钥「迟钝」（黑棺形态的军火库，能变出枪炮与浮游炮）形成强烈反差。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/hela-anxing/portrait.png",
@@ -215,15 +331,30 @@
       "element": "风",
       "weapon": "长枪",
       "faction": "尼罗",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "description": "尼罗神系初始A级风属性修正者，手持长枪的高性价比输出角色。普攻手感优秀，起手快、后摇短，通过积攒印记强化蓄力突刺，成长数值达到S级角色水准，是平民玩家的可靠主力。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "普攻", "description": "五段连续枪击，攻速快、后摇短。" },
-        { "name": "", "type": "技能", "description": "后撤蓄力后向前方突刺，根据持有印记数量提升伤害倍率。" }
+        {
+          "name": "",
+          "type": "普攻",
+          "description": "五段连续枪击，攻速快、后摇短。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "后撤蓄力后向前方突刺，根据持有印记数量提升伤害倍率。"
+        }
       ],
       "portrait": "images/characters/shu-fengqiang/portrait.png",
       "fullArt": "images/characters/shu-fengqiang/full.png"
@@ -237,11 +368,18 @@
       "element": "火",
       "weapon": "",
       "faction": "众星",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "description": "众星神系初始A级火属性近战修正者。喜欢挑战各种离奇设计的机械工程师，与深空之眼签订了长期合作协议，专门制造来自隐科组的新奇发明。技能倍率较高，但灵活性相对不足。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/nuada-yinbi/portrait.png",
@@ -256,7 +394,10 @@
       "element": "暗",
       "weapon": "",
       "faction": "尼罗",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "description": "尼罗神系暗属性修正者。装备特定武器时，其「狼魂」会自动协同攻击，有概率施放特殊攻击，造成暗属性伤害并使敌人陷入眩晕。",
@@ -274,7 +415,10 @@
       "element": "",
       "weapon": "",
       "faction": "尼罗",
-      "voiceActor": { "cn": "刘照坤", "jp": "" },
+      "voiceActor": {
+        "cn": "刘照坤",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/sobek-kuange/portrait.png",
@@ -320,7 +464,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/verthandi-jiushi/portrait.png",
-      "fullArt": "images/characters/verthandi-jiushi/full.png"
+      "fullArt": "images/characters/verthandi-jiushi/full.png",
+      "skins": [
+        {
+          "name": "日常休闲常服",
+          "fullArt": "images/characters/verthandi-jiushi/skin-casual.png"
+        }
+      ]
     },
     {
       "id": "skuld-qiwang",
@@ -331,7 +481,10 @@
       "element": "",
       "weapon": "",
       "faction": "圣树",
-      "voiceActor": { "cn": "", "jp": "大桥步夕" },
+      "voiceActor": {
+        "cn": "",
+        "jp": "大桥步夕"
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/skuld-qiwang/portrait.png",
@@ -458,7 +611,10 @@
       "element": "",
       "weapon": "",
       "faction": "圣树",
-      "voiceActor": { "cn": "谢莹", "jp": "" },
+      "voiceActor": {
+        "cn": "谢莹",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/hodur-jisheng/portrait.png",
@@ -518,14 +674,25 @@
       "element": "雷",
       "weapon": "大锤「妙尔尼尔」",
       "faction": "圣树",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "2022-12",
       "description": "圣树神系S级雷属性修正者，深空之眼「雷小队」队长，组织的头号战力之一。挥舞巨锤「妙尔尼尔」引导自身的雷之神力，通过积攒专属机制值「雷势」强化独立伤害。战斗风格豪迈奔放、正义感极强，但处事略显冲动，狂野的战斗服与红色双马尾正是这种「气势」的写照。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "技能", "description": "以巨锤「妙尔尼尔」轰击敌人，造成雷属性伤害并积攒机制值「雷势」。" }
+        {
+          "name": "",
+          "type": "技能",
+          "description": "以巨锤「妙尔尼尔」轰击敌人，造成雷属性伤害并积攒机制值「雷势」。"
+        }
       ],
       "portrait": "images/characters/thor-honglei/portrait.png",
       "fullArt": "images/characters/thor-honglei/full.png"
@@ -612,16 +779,35 @@
       "element": "冰",
       "weapon": "太刀",
       "faction": "真樱",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "2023-11",
       "description": "真樱神系S级冰属性近战修正者，使用太刀作战。围绕「冰镜」与「镜游」机制展开连段，可唤出式神「日狭女」协同攻击，其专属钥从为「式神彼岸大神实命」，以独特的技能机制和高输出能力受到玩家喜爱。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "", "type": "普攻", "description": "发动五段太刀斩击，造成冰属性伤害。" },
-        { "name": "", "type": "技能", "description": "施放普攻第三段或特定技能时，生成一面跟随自身的「冰镜」。" },
-        { "name": "", "type": "技能", "description": "持有「镜游」效果时替换为衍生技能，普攻第五段消耗「镜游」并唤出「日狭女」攻击敌人。" }
+        {
+          "name": "",
+          "type": "普攻",
+          "description": "发动五段太刀斩击，造成冰属性伤害。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "施放普攻第三段或特定技能时，生成一面跟随自身的「冰镜」。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "持有「镜游」效果时替换为衍生技能，普攻第五段消耗「镜游」并唤出「日狭女」攻击敌人。"
+        }
       ],
       "portrait": "images/characters/izanami-jinghuahuangquan/portrait.png",
       "fullArt": "images/characters/izanami-jinghuahuangquan/full.png"
@@ -1033,11 +1219,18 @@
       "element": "雷",
       "weapon": "",
       "faction": "真樱",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "",
       "releaseDate": "",
       "description": "真樱神系S级雷属性远程输出修正者，前鬼坊天狗的第三把权钥，于「偏振理论」版本实装。输出能力十分优秀，与轰雷·托尔组成的雷属性小队深度绑定，是雷队的核心主C之一。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/zenkibo-shenwei/portrait.png",
@@ -1052,7 +1245,10 @@
       "element": "",
       "weapon": "神机（God Arc）",
       "faction": "联动（噬神者）",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "4.2",
       "releaseDate": "2025-06-05",
       "description": "《深空之眼》×《噬神者》联动可玩角色，游戏内名称为「赤音·亚莉莎」，本名亚莉莎·伊莉妮提娜·阿米耶拉。第二世代新型神机使者，芬里尔极东支部第一部队成员。联动卡池与常规限定池共享保底，联动专武为限时获取。",
@@ -1070,7 +1266,10 @@
       "element": "",
       "weapon": "神机（God Arc）",
       "faction": "联动（噬神者）",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "4.2",
       "releaseDate": "2025-06-05",
       "description": "《深空之眼》×《噬神者》联动可玩角色，游戏内名称为「血弹·雪儿」，本名雪儿·阿朗松。隶属芬里尔特殊部队「BLOOD」的第三世代神机使者，可在联动主题活动中免费领取。",
@@ -1105,16 +1304,35 @@
       "element": "暗",
       "weapon": "栖幽双剑",
       "faction": "天垣",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "5.0",
       "releaseDate": "2026-04",
       "description": "天垣神系S级暗属性协律型输出修正者，于四周年5.0版本实装。以「双生共契、阴阳轮转」为核心机制：无咎与必安两名角色同步上场、共用对剑体系，通过武器交换与状态联动实现高频率、高爆发的暗属性伤害，并可触发四种独立普攻形态。",
-      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "profile": {
+        "height": "",
+        "birthday": "",
+        "hobby": ""
+      },
       "quotes": [],
       "skills": [
-        { "name": "九幽镇厄", "type": "普攻", "description": "依据当前武器配置与主副位设定，自动进入「镇厄」「渡灵」「归寂」「往生」四种普攻状态之一。" },
-        { "name": "双魂同契", "type": "技能", "description": "令无咎与必安实时交换武器，触发暗属性伤害并切换主力/协力身份。" },
-        { "name": "", "type": "技能", "description": "处于「冥衣」状态时，每次技能命中附加额外伤害并积累协律点数。" }
+        {
+          "name": "九幽镇厄",
+          "type": "普攻",
+          "description": "依据当前武器配置与主副位设定，自动进入「镇厄」「渡灵」「归寂」「往生」四种普攻状态之一。"
+        },
+        {
+          "name": "双魂同契",
+          "type": "技能",
+          "description": "令无咎与必安实时交换武器，触发暗属性伤害并切换主力/协力身份。"
+        },
+        {
+          "name": "",
+          "type": "技能",
+          "description": "处于「冥衣」状态时，每次技能命中附加额外伤害并积累协律点数。"
+        }
       ],
       "portrait": "images/characters/wuchang-shuangsi/portrait.png",
       "fullArt": "images/characters/wuchang-shuangsi/full.png"
@@ -1128,7 +1346,10 @@
       "element": "",
       "weapon": "",
       "faction": "真樱",
-      "voiceActor": { "cn": "", "jp": "" },
+      "voiceActor": {
+        "cn": "",
+        "jp": ""
+      },
       "releaseVersion": "5.2",
       "releaseDate": "2026-07-23",
       "description": "真樱神系修正者，大国主的新权钥形态。随2026年7月23日的V5.2最终版本更新实装，是《深空之眼》停止内容更新前的最后一名新增可玩修正者。",

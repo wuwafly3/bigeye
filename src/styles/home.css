@@ -191,11 +191,12 @@
   --card-accent: var(--accent);
 }
 /* 五个模块各领一色：嘉年华式点缀，仍保持小面积 */
+/* 与各模块页面的主题色一一对应：蓝/青/紫/粉/警示红 */
 .module-card:nth-child(1) { --card-accent: var(--accent); }
 .module-card:nth-child(2) { --card-accent: var(--mint); }
 .module-card:nth-child(3) { --card-accent: var(--accent-2); }
 .module-card:nth-child(4) { --card-accent: var(--pink); }
-.module-card:nth-child(5) { --card-accent: var(--sun); }
+.module-card:nth-child(5) { --card-accent: var(--danger); }
 .module-card::before { border-color: var(--card-accent); }
 .module-card:hover {
   border-color: color-mix(in srgb, var(--card-accent) 55%, transparent);
