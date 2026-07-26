@@ -1,0 +1,127 @@
+# 数据结构说明（DATA_SCHEMA）
+
+档案馆的全部内容都存放在 `src/data/*.json`，页面在构建时通过 ES import 读取。
+向档案馆补充内容 = 编辑这些 JSON 文件（+ 把图片/模型放进 `public/`）。
+
+通用约定：
+
+- 所有文本使用简体中文；未知字段填 `""` 或省略，**不要编造**。
+- `id` 使用小写拉丁字母/数字/连字符（如 `apollo`），作为文件夹名与页面锚点。
+- 图片路径相对 `public/`（如 `images/characters/apollo/portrait.png`），页面引用时写 `./images/...`。
+- 日期一律 `YYYY-MM-DD`（只知道年月时可写 `YYYY-MM`）。
+
+---
+
+## characters.json — 角色图鉴
+
+```jsonc
+{
+  "characters": [
+    {
+      "id": "apollo",                    // 必填，唯一
+      "name": "阿波罗",                   // 神名
+      "codename": "晨曦",                 // 代号（神格）
+      "fullName": "阿波罗·晨曦",          // 展示名，缺省为 name·codename
+      "rarity": "S",                     // S / A / B
+      "element": "炎",                   // 属性：炎 / 雷 / 冰 / 暗 …
+      "weapon": "",                      // 武器类型
+      "faction": "",                     // 所属阵营 / 序列
+      "voiceActor": { "cn": "", "jp": "" },
+      "releaseVersion": "",              // 实装版本号
+      "releaseDate": "",                 // 实装日期
+      "description": "",                 // 角色介绍（1-3 段）
+      "profile": { "height": "", "birthday": "", "hobby": "" },
+      "quotes": ["……"],                  // 语音 / 台词摘录
+      "skills": [
+        { "name": "", "type": "普攻|技能|终结技|连携", "description": "" }
+      ],
+      "portrait": "images/characters/apollo/portrait.png", // 头像/半身
+      "fullArt": "images/characters/apollo/full.png",      // 全身立绘
+      "model": { "path": "models/apollo/model.pmx", "scale": 1 } // 可选，MMD 模型
+    }
+  ]
+}
+```
+
+## timeline.json — 时间线
+
+```jsonc
+{
+  "events": [
+    {
+      "date": "2022-03-24",             // 必填
+      "version": "1.0",                 // 可选，版本号
+      "title": "全平台公测开启",          // 必填
+      "category": "运营",               // 版本 / 活动 / 剧情 / 运营
+      "description": "……"
+    }
+  ]
+}
+```
+
+## story.json — 剧情回顾
+
+```jsonc
+{
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "order": 1,
+      "title": "第一章 标题",
+      "subtitle": "",                   // 副标题/引言
+      "summary": "一段话概括本章剧情",
+      "sections": [                     // 详细剧情，按小节
+        { "heading": "小节标题", "content": "正文，可含 \n 分段" }
+      ],
+      "characters": ["阿波罗"]          // 主要登场角色中文名，可选
+    }
+  ]
+}
+```
+
+## gallery.json — 插画合集
+
+```jsonc
+{
+  "artworks": [
+    {
+      "id": "art-001",
+      "title": "作品标题",
+      "source": "game",                 // game=游戏内 / official=官方社媒
+      "date": "2022-03",
+      "description": "",
+      "image": "images/gallery/art-001.jpg",
+      "tags": ["主视觉"]
+    }
+  ]
+}
+```
+
+## enemies.json — 敌人图鉴
+
+```jsonc
+{
+  "enemies": [
+    {
+      "id": "enemy-001",
+      "name": "敌人名",
+      "category": "普通",               // 普通 / 精英 / 首领
+      "faction": "",                    // 势力/种类，如"视骸"
+      "description": "",
+      "appearsIn": "",                  // 出现章节/玩法
+      "image": "images/enemies/enemy-001.png"
+    }
+  ]
+}
+```
+
+---
+
+## 素材放置位置
+
+- 角色图：`public/images/characters/<id>/portrait.png`（头像）、`full.png`（立绘）
+- 插画：`public/images/gallery/<id>.<ext>`
+- 敌人图：`public/images/enemies/<id>.<ext>`
+- MMD 模型：`public/models/<id>/` 目录整体放入（.pmx + 贴图），详见 `public/models/README.md`
+
+图片缺失时页面会自动显示占位块，不会报错，可以放心先填文字数据。

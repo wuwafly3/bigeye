@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="深空之眼档案馆 — 非官方粉丝存档站：角色图鉴、时间线、剧情回顾、插画合集与敌人图鉴。" />
+  <title>深空之眼档案馆 · Aether Gazer Archive</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%2355d6ff' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%238f7bff'/></svg>" />
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/home.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <main class="container">
+    <section class="home-hero">
+      <div class="hero-kicker">UNOFFICIAL FAN ARCHIVE</div>
+      <h1 class="hero-title">深空之眼<span class="hero-title-thin">档案馆</span></h1>
+      <p class="hero-sub">
+        当服务器的灯火熄灭，记忆不必随之沉入深空。<br />
+        这里为《深空之眼》留存角色、剧情、时光与画卷 —— 献给每一位管理员。
+      </p>
+      <div class="hero-stats" id="hero-stats"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">档案模块</h2>
+      <div class="module-grid" id="module-grid"></div>
+    </section>
+
+    <section class="about-panel panel">
+      <h2>关于本站</h2>
+      <p>
+        《深空之眼》是由勇仕网络研发的 3D 动作手游，于 2022 年 3 月开启公测。
+        本站是由玩家自发建立的<strong>非官方档案馆</strong>：在游戏停止运营之前，
+        尽可能完整地收录角色设定、版本历程、主线剧情与官方美术作品，作为长期可访问的静态存档。
+      </p>
+      <p class="about-dim">
+        档案内容仍在持续补充。欢迎通过仓库提交修正与补充 —— 数据格式见
+        <code>docs/DATA_SCHEMA.md</code>。
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="./src/pages/home.js"></script>
+</body>
+</html>
