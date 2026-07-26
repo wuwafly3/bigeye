@@ -2,6 +2,7 @@
 
 | 用途 | 路径 | 建议规格 |
 | --- | --- | --- |
+| 首页主视觉背景 | `images/backdrop/home-hero.jpg` | 横版 ≥1920px 宽；放入后自动替换同目录的 SVG 占位图 |
 | 角色头像/半身 | `images/characters/<角色id>/portrait.png` | 竖版 3:4，≥480px 宽 |
 | 角色全身立绘 | `images/characters/<角色id>/full.png` | 竖版全身，透明底最佳 |
 | 插画 | `images/gallery/<作品id>.<ext>` | 原图；大图建议另存 `-thumb` 缩略图 |
