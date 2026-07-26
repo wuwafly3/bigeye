@@ -1,4 +1,4 @@
-import { initLayout } from '../shared/layout.js'
+import { initLayout, revealOnScroll } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 import timelineData from '../data/timeline.json'
 import storyData from '../data/story.json'
@@ -70,21 +70,27 @@ document.getElementById('module-grid').innerHTML = modules
     </a>`)
   .join('')
 
+revealOnScroll(document.querySelectorAll('.module-card'), { stagger: 70 })
+
 /* ---------- 星空背景 ---------- */
 const canvas = document.getElementById('starfield')
 if (canvas && !reduceMotion) {
   const ctx = canvas.getContext('2d')
   let stars = []
+  /* 嘉年华彩纸：气球色的圆点与小方片，缓慢上浮 + 左右摇曳 */
+  const PALETTE = ['#1899d6', '#8b7ce0', '#f2708f', '#f0b23a', '#2fbfa8']
   const resize = () => {
     canvas.width = innerWidth * devicePixelRatio
     canvas.height = innerHeight * devicePixelRatio
-    const n = Math.min(180, Math.floor(innerWidth * innerHeight / 9000))
+    const n = Math.min(150, Math.floor(innerWidth * innerHeight / 11000))
     stars = Array.from({ length: n }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: (Math.random() * 1.2 + 0.3) * devicePixelRatio,
-      s: Math.random() * 0.25 + 0.05,
-      p: Math.random() * Math.PI * 2
+      r: (Math.random() * 1.8 + 0.7) * devicePixelRatio,
+      s: Math.random() * 0.3 + 0.08,
+      p: Math.random() * Math.PI * 2,
+      color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
+      square: Math.random() < 0.3
     }))
   }
   resize()
@@ -93,13 +99,24 @@ if (canvas && !reduceMotion) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (const st of stars) {
       const tw = 0.55 + 0.45 * Math.sin(t / 1400 + st.p)
-      ctx.globalAlpha = tw * 0.22
-      ctx.fillStyle = st.p % 1 > 0.5 ? '#3579a6' : '#6f7fae'
-      ctx.beginPath()
-      ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2)
-      ctx.fill()
+      ctx.globalAlpha = tw * 0.4
+      ctx.fillStyle = st.color
+      if (st.square) {
+        ctx.save()
+        ctx.translate(st.x, st.y)
+        ctx.rotate(t / 3000 + st.p)
+        ctx.fillRect(-st.r, -st.r, st.r * 2, st.r * 2)
+        ctx.restore()
+      } else {
+        ctx.beginPath()
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2)
+        ctx.fill()
+      }
       st.y -= st.s
-      if (st.y < -4) st.y = canvas.height + 4
+      st.x += Math.sin(t / 1800 + st.p) * 0.18
+      if (st.y < -6) { st.y = canvas.height + 6; st.x = Math.random() * canvas.width }
+      if (st.x < -6) st.x = canvas.width + 6
+      if (st.x > canvas.width + 6) st.x = -6
     }
     requestAnimationFrame(draw)
   }

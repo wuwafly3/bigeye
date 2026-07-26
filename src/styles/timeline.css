@@ -60,9 +60,9 @@
   --cat-color: var(--accent);
 }
 .tl-item[data-cat="版本"] { --cat-color: var(--accent); }
-.tl-item[data-cat="活动"] { --cat-color: var(--gold); }
+.tl-item[data-cat="活动"] { --cat-color: var(--sun); }
 .tl-item[data-cat="剧情"] { --cat-color: var(--accent-2); }
-.tl-item[data-cat="运营"] { --cat-color: var(--ok); }
+.tl-item[data-cat="运营"] { --cat-color: var(--mint); }
 
 .tl-left { padding-right: 42px; }
 .tl-right { margin-left: 50%; padding-left: 42px; }

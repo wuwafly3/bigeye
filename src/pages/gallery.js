@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, formatDate } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, formatDate, revealOnScroll } from '../shared/layout.js'
 import galleryData from '../data/gallery.json'
 
 initLayout()
@@ -95,6 +95,7 @@ function renderCards() {
   flow.querySelectorAll('.art-figure img').forEach((img, i) => {
     imageFallback(img, fallbackLabel(artworks[i]))
   })
+  revealOnScroll(cards)
 }
 
 function applyFilter() {
