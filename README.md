@@ -18,12 +18,13 @@
 
 严格按项目 `design.md`（AetherGazer_SciFi_Tactical_UI / 近未来战术终端风）实现：银冰画布 `#DDE5EE` + 白浮层卡 `#F0F4F8`；
 深石板 `#0D1117` 仅用于指定件（顶部工具条、页脚、弹层背景等）。主行动按钮是琥珀金切角梯形 `#F59E0B`，
-激活态变为同系胶囊；电青 `#06B6D4` 用于扫描线、进度、击赞助金、页签标记点；
+激活态变为同系胶囊；石板灰/冷银（亮色 `#334155`，暗色 `#94A3B8`/`#CBD5E1`）用于技术色点缀；
 卡片带 8px 圆角 + 1px `#CBD5E1` 细边、悬停提高、按下 scale 0.97 上移动 1px——点击反馈直接可见。
 所有交互动效均按压曲线反馈（点击按简移动 + scale 压缩），并遵守 prefers-reduced-motion。
-设计令牌集中在 `src/styles/base.css`。字体为自托管的
-[MiSans](https://hyperos.mi.com/font/)（Regular/Medium/Semibold，按 unicode-range
-分片按需加载，可免费商用，许可见 `src/fonts/misans/LICENSE`）。
+设计令牌集中在 `src/styles/base.css`。字体统一方案：英文/数字使用
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/)（变量字重，`@fontsource-variable/jetbrains-mono`），
+中文使用华为 [HarmonyOS Sans](https://developer.huawei.com/consumer/cn/design/resource/) SC
+（`harmonyos-sans-sc-webfont-splitted`，按 unicode-range 分片按需加载）。
 
 ## 快速开始
 

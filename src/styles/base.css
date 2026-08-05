@@ -6,9 +6,21 @@
    动画带真实点击反馈（按压缩放 / 按下变色），偏好减动时静默。
    ========================================================================== */
 
-@import '../fonts/misans/index.css';
-/* 思源黑体（CN Fontsource 的 Source Han Sans SC VF，variable） */
-@import 'cn-fontsource-source-han-sans-sc-vf/font.css';
+/* 字体：英文/数字统一 JetBrains Mono（变量字重 100-800），中文统一 HarmonyOS Sans（华为官方，分片自托管） */
+@import '@fontsource-variable/jetbrains-mono/index.css';
+@import 'harmonyos-sans-sc-webfont-splitted';
+
+/* 字体分包 CSS 自带 :lang(zh) 强推规则，这里按同优先级后置覆盖，
+   恢复全局栈：拉丁/数字走 JetBrains Mono，中文兜底 HarmonyOS Sans SC */
+:lang(Hans),
+:lang(zh),
+:lang(CHS),
+:lang(zh-CN),
+:lang(zh-SG),
+:lang(Jpan),
+:lang(ja) {
+  font-family: var(--font-body);
+}
 
 /* ---------- 设计令牌 ---------- */
 :root {
@@ -101,10 +113,10 @@
   --container: 1180px;
   --header-h: 64px;
 
-  --font-body: "Noto Sans SC", "Source Han Sans SC VF", "Source Han Sans SC",
-    "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei",
-    "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
-  --font-num: "IBM Plex Mono", "SF Mono", ui-monospace, Consolas, monospace;
+  /* 字体：JetBrains Mono 覆盖拉丁/数字，HarmonyOS Sans SC 覆盖中文 */
+  --font-body: "JetBrains Mono Variable", "HarmonyOS Sans SC", "HarmonyOS Sans",
+    "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-num: "JetBrains Mono Variable", ui-monospace, "SF Mono", Consolas, monospace;
 
   /* 阴影：浅底上包裹式多层 */
   --shadow-card:
