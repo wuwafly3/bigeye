@@ -30,7 +30,8 @@
 .detail-panel {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
   box-shadow: var(--shadow);
   padding: 26px 28px 30px;
 }
@@ -105,6 +106,68 @@
 .skill-name { font-size: 14px; font-weight: 600; }
 .skill-desc { margin: 3px 0 0; font-size: 13px; color: var(--text-dim); }
 
+.detail-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.detail-tabs .chip { justify-content: center; width: 100%; }
+.detail-tab-panel { min-height: 150px; }
+.detail-pending { margin: 14px 0 0; color: var(--ink-faint); font-size: 12.5px; text-align: center; }
+.code-tree-placeholder {
+  position: relative;
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 14px;
+  padding: 18px 24px;
+  background: linear-gradient(rgba(6,182,212,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  border: 1px solid var(--line);
+}
+.code-tree-placeholder::before { content: ""; position: absolute; left: 50%; top: 54px; bottom: 56px; width: 1px; background: var(--cyan); }
+.code-tree-placeholder::after { content: ""; position: absolute; left: 17%; right: 17%; bottom: 64px; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+.code-node { position: relative; z-index: 1; justify-self: center; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--cyan); background: #1e2530; color: #fff; transform: rotate(45deg); font: 700 11px var(--font-num); }
+.code-node:not(.code-node-core) { margin-bottom: 6px; }
+.code-node-core { position: absolute; left: calc(50% - 27px); top: 20px; width: 54px; height: 54px; color: var(--accent); }
+.code-node { text-orientation: mixed; }
+.code-node::before { content: attr(data-label); }
+.sigil-wheel {
+  --wheel-size: min(310px, 72vw);
+  position: relative;
+  width: var(--wheel-size);
+  aspect-ratio: 1;
+  margin: 4px auto 18px;
+  display: grid;
+  place-items: center;
+}
+.sigil-ring { position: absolute; inset: 11%; background: url('/images/game-art/hud/system/ring_021.png') center / contain no-repeat; opacity: .5; }
+.sigil-slot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 70px;
+  margin: -35px 0 0 -32px;
+  transform: rotate(var(--angle)) translateY(calc(var(--wheel-size) * -.37)) rotate(var(--counter));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f8fafc;
+  background: #1e2530;
+  border: 1px solid rgba(255,255,255,.72);
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  box-shadow: 0 0 18px rgba(6,182,212,.12);
+}
+.sigil-slot b { color: var(--cyan); font: 700 17px var(--font-num); }
+.sigil-slot small { font-size: 10px; color: #94a3b8; }
+.sigil-core { width: 82px; height: 82px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(13,17,23,.92); border: 1px solid var(--cyan); border-radius: 50%; color: #fff; box-shadow: 0 0 24px rgba(6,182,212,.22); }
+.sigil-core strong { font: 700 24px var(--font-num); }
+.sigil-core small { font: 700 9px var(--font-num); letter-spacing: 2px; color: var(--cyan); }
+
 .quote {
   position: relative;
   margin: 0 0 10px;
@@ -166,7 +229,8 @@
   height: 70vh;
   min-height: 360px;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
   overflow: hidden;
   background:
     linear-gradient(rgba(6, 182, 212, 0.06) 1px, transparent 1px) 0 0 / 100% 44px,
@@ -191,10 +255,6 @@
   opacity: 0.28;
   pointer-events: none;
   mix-blend-mode: screen;
-  animation: hud-ring-spin 24s linear infinite;
-}
-@keyframes hud-ring-spin {
-  to { transform: rotate(360deg); }
 }
 .mmd-stage canvas {
   display: block;
@@ -293,19 +353,19 @@
   padding: 4px 12px;
   font-size: 12px;
   gap: 5px;
-  background: rgba(6, 182, 212, 0.06);
-  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
   color: var(--ink-text);
 }
 .mmd-controls .btn:hover {
-  border-color: rgba(148, 163, 184, 0.6);
+  border: 0;
   color: var(--ink-text);
   background: rgba(255, 255, 255, 0.12);
 }
 .mmd-controls .btn.active {
-  border-color: var(--accent);
-  color: var(--ink);
-  background: var(--accent);
+  border: 0;
+  color: #161b22;
+  background: #d8dde3;
   font-weight: 600;
 }
 

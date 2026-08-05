@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl, showHudTransition } from '../shared/layout.js'
 import charactersData from '../data/characters.json'
 
 initLayout()
@@ -42,6 +42,11 @@ function sortRarity(options) {
 }
 
 const RARITY_CLASS = { S: 'badge-s', A: 'badge-a', B: 'badge-b' }
+const GRADE_ICON = {
+  B: 'com_grade_1__70x68.png',
+  A: 'com_grade_2__70x68.png',
+  S: 'com_grade_3__70x68.png'
+}
 
 /* 神系徽章（来自 hero_godatlas 导出图） */
 const FACTION_ICON = {
@@ -83,15 +88,16 @@ function cardHtml(c) {
 
   const badges = []
   if (rarity) {
-    badges.push(
-      `<span class="badge ${RARITY_CLASS[rarity] || ''}">${escapeHtml(rarity)}</span>`
-    )
+    const gradeIcon = GRADE_ICON[rarity]
+    badges.push(gradeIcon
+      ? `<img class="grade-icon" src="${assetUrl('images/game-art/hero-grade/' + gradeIcon)}" alt="${escapeHtml(rarity)}级" draggable="false">`
+      : `<span class="badge ${RARITY_CLASS[rarity] || ''}">${escapeHtml(rarity)}</span>`)
   }
   if (element) {
     const icon = ELEMENT_ICON[element]
     if (icon) {
       badges.push(
-        `<span class="badge char-element" data-element="${escapeHtml(element)}"><img class="element-icon" src="${assetUrl('images/game-art/hero/icon_' + icon + '.png')}" alt="" onerror="this.style.display='none'" draggable="false">${escapeHtml(element)}</span>`
+        `<span class="badge char-element" data-element="${escapeHtml(element)}"><img class="element-icon" src="${assetUrl('images/game-art/hero/icon_' + icon + '__80x80.png')}" alt="" onerror="this.style.display='none'" draggable="false">${escapeHtml(element)}</span>`
       )
     } else {
       badges.push(
@@ -103,7 +109,7 @@ function cardHtml(c) {
     const icon = FACTION_ICON[faction]
     if (icon) {
       badges.push(
-        `<span class="char-faction"><img class="faction-icon" src="${assetUrl('images/game-art/hero_godatlas/' + icon + '.png')}" alt="" onerror="this.style.display='none'" draggable="false">${escapeHtml(faction)}</span>`
+        `<span class="char-faction"><span class="faction-emblem"><img class="faction-frame" src="${assetUrl('images/game-art/hud/system/bg_groupBase.png')}" alt="" draggable="false"><img class="faction-icon" src="${assetUrl('images/game-art/hero_godatlas/' + icon + '.png')}" alt="" onerror="this.style.display='none'" draggable="false"></span>${escapeHtml(faction)}</span>`
       )
     } else {
       badges.push(`<span class="char-faction">${escapeHtml(faction)}</span>`)
@@ -165,6 +171,7 @@ function buildChips(containerId, key, options) {
     wrap.querySelectorAll('.chip').forEach(ch =>
       ch.classList.toggle('active', ch === btn)
     )
+    showHudTransition()
     applyFilter()
   })
 }
@@ -181,6 +188,7 @@ if (!characters.length) {
 
   searchInput.addEventListener('input', () => {
     state.q = searchInput.value.trim().toLowerCase()
+    showHudTransition(180)
     applyFilter()
   })
 

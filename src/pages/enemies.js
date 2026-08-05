@@ -1,4 +1,4 @@
-import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl } from '../shared/layout.js'
+import { initLayout, imageFallback, escapeHtml, revealOnScroll, assetUrl, setTheme, showHudTransition } from '../shared/layout.js'
 import enemiesData from '../data/enemies.json'
 
 initLayout()
@@ -100,6 +100,10 @@ function applyFilter() {
   })
   resultCount.textContent = `共 ${n} 种敌人`
   emptyFilter.hidden = n !== 0
+  const highRisk = state.category === '首领'
+  document.body.classList.toggle('high-risk-mode', highRisk)
+  if (highRisk) setTheme('dark', { persist: false })
+  else setTheme(localStorage.getItem('bigeye-theme') || 'light', { persist: false })
 }
 
 /* ---------- 类别筛选 ---------- */
@@ -121,6 +125,7 @@ function buildChips() {
     chipsWrap.querySelectorAll('.chip').forEach(ch =>
       ch.classList.toggle('active', ch === btn)
     )
+    showHudTransition()
     applyFilter()
   })
 }
@@ -208,6 +213,7 @@ if (!enemies.length) {
   buildChips()
   searchInput.addEventListener('input', () => {
     state.q = searchInput.value.trim().toLowerCase()
+    showHudTransition(180)
     applyFilter()
   })
   renderCards()

@@ -11,6 +11,11 @@ const roster = (charactersData && charactersData.characters) || []
 const root = document.getElementById('char-page')
 
 const RARITY_CLASS = { S: 'badge-s', A: 'badge-a', B: 'badge-b' }
+const GRADE_ICON = {
+  B: 'com_grade_1__70x68.png',
+  A: 'com_grade_2__70x68.png',
+  S: 'com_grade_3__70x68.png'
+}
 
 const trimmed = value => String(value == null ? '' : value).trim()
 
@@ -89,7 +94,12 @@ function renderCharacter(c, i) {
   const rarity = trimmed(c.rarity)
   const element = trimmed(c.element)
   const badges = []
-  if (rarity) badges.push(`<span class="badge ${RARITY_CLASS[rarity] || ''}">${escapeHtml(rarity)}</span>`)
+  if (rarity) {
+    const gradeIcon = GRADE_ICON[rarity]
+    badges.push(gradeIcon
+      ? `<img class="grade-icon grade-icon-detail" src="${assetUrl('images/game-art/hero-grade/' + gradeIcon)}" alt="${escapeHtml(rarity)}级" draggable="false">`
+      : `<span class="badge ${RARITY_CLASS[rarity] || ''}">${escapeHtml(rarity)}</span>`)
+  }
   if (element) badges.push(`<span class="badge" data-element="${escapeHtml(element)}">${escapeHtml(element)}</span>`)
   if (escIf(c.weapon)) badges.push(`<span class="badge">${escIf(c.weapon)}</span>`)
   if (escIf(c.faction)) badges.push(`<span class="badge">${escIf(c.faction)}</span>`)
@@ -195,6 +205,33 @@ function renderCharacter(c, i) {
     ? `${artTabsHtml}<div class="full-art" id="full-art-box"></div>`
     : ''
 
+  const inspectorHtml = `
+    <div class="detail-tabs" role="tablist" aria-label="角色战术档案">
+      <button type="button" class="chip active" role="tab" aria-selected="true" data-detail-tab="skills">技能</button>
+      <button type="button" class="chip" role="tab" aria-selected="false" data-detail-tab="codes">神格</button>
+      <button type="button" class="chip" role="tab" aria-selected="false" data-detail-tab="sigils">刻印</button>
+    </div>
+    <div class="detail-tab-panels">
+      <section class="detail-tab-panel active" data-detail-panel="skills">
+        ${skillsHtml ? `<ul class="skill-list">${skillsHtml}</ul>` : '<p class="detail-pending">技能档案待补充。</p>'}
+      </section>
+      <section class="detail-tab-panel" data-detail-panel="codes" hidden>
+        <div class="code-tree-placeholder">
+          <span class="code-node code-node-core">CORE</span>
+          <span class="code-node">Ⅰ</span><span class="code-node">Ⅱ</span><span class="code-node">Ⅲ</span>
+        </div>
+        <p class="detail-pending">神格节点资料待补充，当前仅展示三分支档案结构。</p>
+      </section>
+      <section class="detail-tab-panel" data-detail-panel="sigils" hidden>
+        <div class="sigil-wheel" aria-label="六槽刻印轮盘">
+          <span class="sigil-ring" aria-hidden="true"></span>
+          ${Array.from({ length: 6 }, (_, index) => `<span class="sigil-slot" style="--angle:${index * 60 - 90}deg;--counter:${90 - index * 60}deg"><b>${index + 1}</b><small>待配置</small></span>`).join('')}
+          <span class="sigil-core"><strong>6</strong><small>SLOTS</small></span>
+        </div>
+        <p class="detail-pending">推荐刻印数据待补充，轮盘不预设未经数据验证的配装。</p>
+      </section>
+    </div>`
+
   /* 上一位 / 下一位（按 roster 顺序循环） */
   let pagerHtml = ''
   if (roster.length > 1) {
@@ -226,7 +263,7 @@ function renderCharacter(c, i) {
         ${block('档案信息', infoRows ? `<dl class="kv-table">${infoRows}</dl>` : '')}
         ${block('角色介绍', descHtml ? `<div class="detail-desc">${descHtml}</div>` : '')}
         ${block('角色资料', profileRows ? `<dl class="kv-table">${profileRows}</dl>` : '')}
-        ${block('技能', skillsHtml ? `<ul class="skill-list">${skillsHtml}</ul>` : '')}
+        ${block('战术档案', inspectorHtml)}
         ${block('语音摘录', quotesHtml)}
         ${block('档案', archivesHtml)}
         ${block('誓约心链', heartlinksHtml)}
@@ -253,6 +290,25 @@ function renderCharacter(c, i) {
       if (!btn) return
       artTabs.querySelectorAll('.chip').forEach(b => b.classList.toggle('active', b === btn))
       showArt(+btn.dataset.index)
+    })
+  }
+
+  const detailTabs = root.querySelector('.detail-tabs')
+  if (detailTabs) {
+    detailTabs.addEventListener('click', event => {
+      const button = event.target.closest('[data-detail-tab]')
+      if (!button) return
+      const key = button.dataset.detailTab
+      detailTabs.querySelectorAll('[data-detail-tab]').forEach(tab => {
+        const active = tab === button
+        tab.classList.toggle('active', active)
+        tab.setAttribute('aria-selected', String(active))
+      })
+      root.querySelectorAll('[data-detail-panel]').forEach(panel => {
+        const active = panel.dataset.detailPanel === key
+        panel.hidden = !active
+        panel.classList.toggle('active', active)
+      })
     })
   }
 

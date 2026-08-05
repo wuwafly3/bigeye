@@ -5,7 +5,7 @@
  * 修改 src/data/*.json 落档。档案数据因此保持纯静态。
  *
  * 路由：
- * - POST /api/submit  投稿接口（移植自 api/submit.js，Vercel Serverless）
+ * - POST /api/submit  投稿接口
  * - 其余路径         由 Workers Static Assets 直接服务 dist/ 构建产物
  *
  * 需要的环境变量（wrangler.jsonc / 控制台配置）：

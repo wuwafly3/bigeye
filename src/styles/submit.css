@@ -98,13 +98,13 @@ select.form-input option { background: var(--panel-solid); color: var(--text); }
 
 /* 表单面板内嵌的按钮：与深底页内语言对齐 */
 .submit-form .btn {
-  border-color: var(--line-strong);
+  border: 0;
   color: var(--text);
 }
 .submit-form .btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-soft);
+  border: 0;
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.08);
 }
 
 /* ---------- 侧栏 ---------- */

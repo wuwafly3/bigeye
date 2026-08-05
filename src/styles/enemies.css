@@ -19,6 +19,15 @@
   );
   opacity: 0.85;
 }
+.high-risk-mode .page-hero,
+.high-risk-mode .enemy-card,
+.high-risk-mode .enemy-figure {
+  border-color: rgba(239, 68, 68, 0.48);
+}
+.high-risk-mode .page-hero::before { background: linear-gradient(180deg, var(--danger), #ff8b8b); }
+.high-risk-mode .page-hero::after { background: repeating-linear-gradient(-45deg, var(--danger) 0 8px, transparent 8px 16px); }
+.high-risk-mode .enemy-card:hover { border-color: var(--danger); box-shadow: 0 0 0 1px rgba(239,68,68,.3), 0 16px 32px rgba(0,0,0,.34); }
+.high-risk-mode .enemy-faction--danger { text-shadow: 0 0 10px rgba(239,68,68,.4); }
 
 /* ---------- 工具条 ---------- */
 #enemy-toolbar[hidden] { display: none; }
@@ -165,8 +174,8 @@ body.modal-lock { overflow: hidden; }
   z-index: 2;
   width: 34px;
   height: 34px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  border: 0;
   background: var(--panel-solid);
   color: var(--text);
   font-size: 18px;
@@ -175,7 +184,8 @@ body.modal-lock { overflow: hidden; }
   transition: color 0.18s ease, border-color 0.18s ease;
 }
 .modal-close:hover {
-  border-color: var(--danger);
+  border: 0;
+  background: rgba(239, 68, 68, 0.1);
   color: var(--danger);
 }
 

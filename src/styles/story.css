@@ -176,7 +176,7 @@
 .reader-body .empty-state { margin-top: 34px; }
 /* 档案面板内嵌套的空状态：收紧为淡底 */
 .reader-body .empty-state {
-  border-color: var(--line-strong);
+  border: 0;
   background: var(--panel-2);
   color: var(--text-faint);
 }
@@ -194,7 +194,7 @@
   border-color: var(--line-strong);
   color: var(--text);
 }
-.reader-nav .btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.reader-nav .btn:hover { border: 0; color: var(--text); background: rgba(15, 23, 42, 0.08); }
 .reader-nav-btn {
   max-width: 48%;
   font-size: 13.5px;

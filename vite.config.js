@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         index: resolve(root, 'index.html'),
         characters: resolve(root, 'characters.html'),
+        functors: resolve(root, 'functors.html'),
         character: resolve(root, 'character.html'),
         timeline: resolve(root, 'timeline.html'),
         story: resolve(root, 'story.html'),

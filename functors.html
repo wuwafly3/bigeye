@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="弥弥尔资料站钥从图鉴，收录《深空之眼》S级与A级钥从。" />
+  <title>钥从图鉴 · 弥弥尔资料站</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%23e8e5de' stroke-width='7'/><circle cx='50' cy='50' r='16' fill='%2318181b'/></svg>" />
+  <script>try{const t=localStorage.getItem('bigeye-theme');const dark=t==='dark';document.documentElement.dataset.theme=dark?'dark':'light';document.documentElement.style.colorScheme=dark?'dark':'light'}catch{document.documentElement.dataset.theme='light'}</script>
+  <style>html,body{background:#dde5ee}html[data-theme="dark"],html[data-theme="dark"] body{background:#0d1117}</style>
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/functors.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="page-hero">
+      <div class="page-kicker">FUNCTORS</div>
+      <h1>钥从图鉴</h1>
+      <p class="page-desc">收录钥从档案与官方图标。图鉴仅按 S、A 等级整理，不附加属性或阵营分类。</p>
+    </section>
+
+    <section class="toolbar functor-toolbar" id="functor-toolbar" aria-label="钥从筛选">
+      <input class="search-input" id="functor-search" type="search" placeholder="搜索钥从名称" aria-label="按名称搜索钥从" />
+      <span class="result-count" id="functor-count"></span>
+      <div class="functor-filter-row">
+        <span class="filter-label">等级</span>
+        <div class="filter-chips" id="functor-rarity" role="group" aria-label="按等级筛选钥从"></div>
+      </div>
+    </section>
+
+    <section aria-label="钥从列表">
+      <div class="functor-grid" id="functor-grid"></div>
+      <div class="empty-state" id="functor-empty" hidden>
+        <p>没有符合条件的钥从。</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/pages/functors.js"></script>
+</body>
+</html>

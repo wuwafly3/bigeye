@@ -4,6 +4,7 @@ import timelineData from '../data/timeline.json'
 import storyData from '../data/story.json'
 import galleryData from '../data/gallery.json'
 import enemiesData from '../data/enemies.json'
+import functorsData from '../data/functors.json'
 
 initLayout()
 
@@ -17,6 +18,7 @@ if (backdropImg) {
 /* ---------- 数据统计 ---------- */
 const counts = {
   characters: charactersData.characters.length,
+  functors: functorsData.functors.length,
   timeline: timelineData.events.length,
   story: storyData.chapters.length,
   gallery: galleryData.artworks.length,
@@ -25,6 +27,7 @@ const counts = {
 
 const stats = [
   [counts.characters, '位修正者'],
+  [counts.functors, '件钥从'],
   [counts.timeline, '条时间线记录'],
   [counts.story, '章剧情'],
   [counts.gallery, '张插画'],
@@ -57,16 +60,18 @@ document.querySelectorAll('.stat-num').forEach(el => {
 
 /* ---------- 模块入口 ---------- */
 const modules = [
-  ['characters.html', '01', 'Characters', '角色图鉴', '全部修正者的档案：属性、技能、语音与 3D 模型展示。', `${counts.characters} 条记录`],
-  ['timeline.html', '02', 'Timeline', '时间线', '从公测到落幕，每个版本与重要节点的编年史。', `${counts.timeline} 条记录`],
-  ['story.html', '03', 'Story', '剧情回顾', '主线章节的剧情梗概与回顾，重温泽塔阿尔法的故事。', `${counts.story} 章`],
-  ['gallery.html', '04', 'Gallery', '插画合集', '游戏内 CG 与官方社媒发布的美术作品收藏。', `${counts.gallery} 张`],
-  ['enemies.html', '05', 'Enemies', '敌人图鉴', '视骸与诸多敌人的资料档案。', `${counts.enemies} 条记录`]
+  ['characters.html', '01', 'Characters', '角色图鉴', '全部修正者的档案：属性、技能、语音与 3D 模型展示。', `${counts.characters} 条记录`, 'images/game-art/main/main_icon_system_01__88x88.png'],
+  ['functors.html', '02', 'Functors', '钥从图鉴', '收录 S、A 级钥从的名称与官方图标。', `${counts.functors} 条记录`, 'images/game-art/main/icon_weaponservant_new__102x110.png'],
+  ['timeline.html', '03', 'Timeline', '时间线', '从公测到落幕，每个版本与重要节点的编年史。', `${counts.timeline} 条记录`],
+  ['story.html', '04', 'Story', '剧情回顾', '主线章节的剧情梗概与回顾，重温泽塔阿尔法的故事。', `${counts.story} 章`],
+  ['gallery.html', '05', 'Gallery', '插画合集', '游戏内 CG 与官方社媒发布的美术作品收藏。', `${counts.gallery} 张`],
+  ['enemies.html', '06', 'Enemies', '敌人图鉴', '视骸与诸多敌人的资料档案。', `${counts.enemies} 条记录`]
 ]
 
 document.getElementById('module-grid').innerHTML = modules
-  .map(([href, index, en, title, desc, count]) => `
+  .map(([href, index, en, title, desc, count, icon]) => `
     <a class="card module-card" href="${href}">
+      ${icon ? `<span class="module-art" aria-hidden="true"><img src="${assetUrl(icon)}" alt="" draggable="false"></span>` : ''}
       <div class="module-head">
         <span class="module-index">${index} /</span>
         <span class="module-en">${en}</span>

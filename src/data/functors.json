@@ -1,0 +1,658 @@
+{
+  "functors": [
+    {
+      "id": "2510000",
+      "name": "星使·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510000__188x188.png"
+    },
+    {
+      "id": "2510001",
+      "name": "星使·美提斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510001__188x188.png"
+    },
+    {
+      "id": "2510002",
+      "name": "星使·笛奈",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510002__188x188.png"
+    },
+    {
+      "id": "2510003",
+      "name": "星使·托勒弥",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510003__188x188.png"
+    },
+    {
+      "id": "2510004",
+      "name": "星使·珀尔修丝",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510004__188x188.png"
+    },
+    {
+      "id": "2510005",
+      "name": "星使·刻耳柏洛斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510005__188x188.png"
+    },
+    {
+      "id": "2510006",
+      "name": "星使·摩洛克洛斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510006__188x188.png"
+    },
+    {
+      "id": "2510007",
+      "name": "星使·克律索马罗斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510007__188x188.png"
+    },
+    {
+      "id": "2510008",
+      "name": "星使·佩加索斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510008__188x188.png"
+    },
+    {
+      "id": "2510009",
+      "name": "星使·米里亚姆",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510009__188x188.png"
+    },
+    {
+      "id": "2510010",
+      "name": "星使·安菲特里忒",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510010__188x188.png"
+    },
+    {
+      "id": "2510012",
+      "name": "星使·阿里翁",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510012__188x188.png"
+    },
+    {
+      "id": "2510013",
+      "name": "星使·恩狄明",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510013__215x215.png"
+    },
+    {
+      "id": "2510014",
+      "name": "星使·凯莉丝特",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510014__188x188.png"
+    },
+    {
+      "id": "2510999",
+      "name": "星使·许德拉",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2510999__188x188.png"
+    },
+    {
+      "id": "2520000",
+      "name": "列王·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520000__188x188.png"
+    },
+    {
+      "id": "2520001",
+      "name": "列王·胡夫",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520001__188x188.png"
+    },
+    {
+      "id": "2520002",
+      "name": "列王·巴卡",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520002__188x188.png"
+    },
+    {
+      "id": "2520003",
+      "name": "列王·赫肯涅迈",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520003__188x188.png"
+    },
+    {
+      "id": "2520004",
+      "name": "列王·萨胡拉",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520004__188x188.png"
+    },
+    {
+      "id": "2520005",
+      "name": "列王·奈杰里赫特",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520005__188x188.png"
+    },
+    {
+      "id": "2520006",
+      "name": "列王·门卡拉",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520006__188x188.png"
+    },
+    {
+      "id": "2520007",
+      "name": "列王·伊比",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520007__188x188.png"
+    },
+    {
+      "id": "2520008",
+      "name": "列王·瑟莫赫特",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520008__188x188.png"
+    },
+    {
+      "id": "2520009",
+      "name": "列王·内弗尔卡塔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520009__188x188.png"
+    },
+    {
+      "id": "2520010",
+      "name": "列王·洁特",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520010__215x215.png"
+    },
+    {
+      "id": "2520011",
+      "name": "列王·美尼斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520011__188x188.png"
+    },
+    {
+      "id": "2520012",
+      "name": "列王·乌纳斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520012__188x188.png"
+    },
+    {
+      "id": "2520013",
+      "name": "列王·荷尔阿哈",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520013__188x188.png"
+    },
+    {
+      "id": "2520999",
+      "name": "列王·乌瑟卡夫",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2520999__188x188.png"
+    },
+    {
+      "id": "2530000",
+      "name": "式神·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530000__188x188.png"
+    },
+    {
+      "id": "2530001",
+      "name": "式神·朝凪以津真天",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530001__188x188.png"
+    },
+    {
+      "id": "2530002",
+      "name": "式神·若夏黑童子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530002__188x188.png"
+    },
+    {
+      "id": "2530003",
+      "name": "式神·弥生缘结",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530003__188x188.png"
+    },
+    {
+      "id": "2530004",
+      "name": "式神·白夜玉藻前",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530004__188x188.png"
+    },
+    {
+      "id": "2530005",
+      "name": "式神·雪见白童子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530005__188x188.png"
+    },
+    {
+      "id": "2530006",
+      "name": "式神·雁渡红叶狩",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530006__188x188.png"
+    },
+    {
+      "id": "2530007",
+      "name": "式神·旱星狂骨",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530007__188x188.png"
+    },
+    {
+      "id": "2530008",
+      "name": "式神·炎天丛原火",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530008__188x188.png"
+    },
+    {
+      "id": "2530009",
+      "name": "式神·夜引天邪",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530009__188x188.png"
+    },
+    {
+      "id": "2530010",
+      "name": "式神·阳炎不知火",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530010__188x188.png"
+    },
+    {
+      "id": "2530011",
+      "name": "式神·彼岸大神实命",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530011__188x188.png"
+    },
+    {
+      "id": "2530012",
+      "name": "式神·青岚姑获鸟",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530012__188x188.png"
+    },
+    {
+      "id": "2530013",
+      "name": "式神·春雷猫又",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530013__188x188.png"
+    },
+    {
+      "id": "2530014",
+      "name": "式神·霜夜天探女",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530014__215x215.png"
+    },
+    {
+      "id": "2530999",
+      "name": "式神·萤狩青鹭火",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2530999__188x188.png"
+    },
+    {
+      "id": "2540000",
+      "name": "妖精·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540000__188x188.png"
+    },
+    {
+      "id": "2540001",
+      "name": "妖精·蒂姆希拉克",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540001__188x188.png"
+    },
+    {
+      "id": "2540002",
+      "name": "妖精·碧洛迪丝",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540002__188x188.png"
+    },
+    {
+      "id": "2540003",
+      "name": "妖精·穆丽儿",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540003__188x188.png"
+    },
+    {
+      "id": "2540004",
+      "name": "妖精·爱尔文",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540004__188x188.png"
+    },
+    {
+      "id": "2540005",
+      "name": "妖精·艾丝特尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540005__188x188.png"
+    },
+    {
+      "id": "2540006",
+      "name": "妖精·凯莱布丽安",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540006__188x188.png"
+    },
+    {
+      "id": "2540008",
+      "name": "妖精·艾尔威",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540008__188x188.png"
+    },
+    {
+      "id": "2540009",
+      "name": "妖精·埃雅温",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540009__188x188.png"
+    },
+    {
+      "id": "2540010",
+      "name": "妖精·格蕾",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540010__188x188.png"
+    },
+    {
+      "id": "2540011",
+      "name": "妖精·亚伦格林",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540011__188x188.png"
+    },
+    {
+      "id": "2540012",
+      "name": "妖精·洁萝露尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540012__188x188.png"
+    },
+    {
+      "id": "2540013",
+      "name": "妖精·奥尔露恩",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540013__188x192.png"
+    },
+    {
+      "id": "2540014",
+      "name": "妖精·瑞吉蕾芙",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540014__188x188.png"
+    },
+    {
+      "id": "2540015",
+      "name": "妖精·密丝特",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540015__188x188.png"
+    },
+    {
+      "id": "2540016",
+      "name": "妖精·格恩达尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540016__188x188.png"
+    },
+    {
+      "id": "2540999",
+      "name": "妖精·盖拉德丽尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2540999__188x188.png"
+    },
+    {
+      "id": "2550000",
+      "name": "命者·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550000__188x188.png"
+    },
+    {
+      "id": "2550001",
+      "name": "命者·贝鲁塞巴布",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550001__188x188.png"
+    },
+    {
+      "id": "2550002",
+      "name": "命者·娑加罗",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550002__188x188.png"
+    },
+    {
+      "id": "2550004",
+      "name": "命者·奎矢崎",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550004__188x188.png"
+    },
+    {
+      "id": "2550005",
+      "name": "命者·德叉伽",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550005__188x188.png"
+    },
+    {
+      "id": "2550006",
+      "name": "命者·木施胡舒",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550006__188x188.png"
+    },
+    {
+      "id": "2550007",
+      "name": "命者·库萨里库",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550007__188x188.png"
+    },
+    {
+      "id": "2550008",
+      "name": "命者·赛珮",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550008__188x188.png"
+    },
+    {
+      "id": "2550009",
+      "name": "命者·乌修穆伽尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550009__188x188.png"
+    },
+    {
+      "id": "2550010",
+      "name": "命者·修吉",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550010__188x188.png"
+    },
+    {
+      "id": "2550011",
+      "name": "命者·摩那斯",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550011__188x188.png"
+    },
+    {
+      "id": "2550012",
+      "name": "命者·阿那婆达多",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550012__188x188.png"
+    },
+    {
+      "id": "2550013",
+      "name": "命者·卡泽耐尔",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550013__188x188.png"
+    },
+    {
+      "id": "2550014",
+      "name": "命者·纳姆塔拉",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550014__215x215.png"
+    },
+    {
+      "id": "2550996",
+      "name": "命者·法兰",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550996__188x188.png"
+    },
+    {
+      "id": "2550997",
+      "name": "命者·竹田云雀",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550997__188x188.png"
+    },
+    {
+      "id": "2550998",
+      "name": "命者·雅",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550998__188x188.png"
+    },
+    {
+      "id": "2550999",
+      "name": "命者·苏枳",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2550999__188x188.png"
+    },
+    {
+      "id": "2590000",
+      "name": "方异·沉睡之子",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590000__188x188.png"
+    },
+    {
+      "id": "2590001",
+      "name": "方异·毕方",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590001__188x188.png"
+    },
+    {
+      "id": "2590003",
+      "name": "方异·凰",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590003__188x188.png"
+    },
+    {
+      "id": "2590004",
+      "name": "方异·夔龙",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590004__188x188.png"
+    },
+    {
+      "id": "2590005",
+      "name": "方异·虎蛟",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590005__188x188.png"
+    },
+    {
+      "id": "2590006",
+      "name": "方异·神鲤",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590006__188x188.png"
+    },
+    {
+      "id": "2590007",
+      "name": "方异·鸾鸟",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590007__188x188.png"
+    },
+    {
+      "id": "2590008",
+      "name": "方异·土蝼",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590008__188x188.png"
+    },
+    {
+      "id": "2590009",
+      "name": "方异·玄龟",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590009__188x188.png"
+    },
+    {
+      "id": "2590010",
+      "name": "方异·敏牛",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590010__188x188.png"
+    },
+    {
+      "id": "2590011",
+      "name": "方异·夫诸",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590011__188x188.png"
+    },
+    {
+      "id": "2590012",
+      "name": "方异·三骓",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590012__188x188.png"
+    },
+    {
+      "id": "2590013",
+      "name": "方异·兆吉毕方",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590013__215x215.png"
+    },
+    {
+      "id": "2590014",
+      "name": "方异·蛮蛮",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590014__215x215.png"
+    },
+    {
+      "id": "2590015",
+      "name": "方异·孟极",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590015__215x215.png"
+    },
+    {
+      "id": "2590999",
+      "name": "方异·狰",
+      "rarity": "S",
+      "icon": "images/game-art/functors/2590999__188x188.png"
+    },
+    {
+      "id": "2410001",
+      "name": "星使·莱拉普斯",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2410001__188x188.png"
+    },
+    {
+      "id": "2410002",
+      "name": "星使·墨兰普斯",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2410002__188x188.png"
+    },
+    {
+      "id": "2420001",
+      "name": "列王·图特摩斯",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2420001__188x188.png"
+    },
+    {
+      "id": "2420002",
+      "name": "列王·伊涅特夫一世",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2420002__188x188.png"
+    },
+    {
+      "id": "2430001",
+      "name": "式神·稻妻雷兽",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2430001__188x188.png"
+    },
+    {
+      "id": "2430002",
+      "name": "式神·夕立幽谷响",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2430002__188x188.png"
+    },
+    {
+      "id": "2440001",
+      "name": "妖精·玫菲尔",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2440001__188x188.png"
+    },
+    {
+      "id": "2440002",
+      "name": "妖精·蒂雅姆",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2440002__188x188.png"
+    },
+    {
+      "id": "2450001",
+      "name": "命者·只遮尼俱",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2450001__188x188.png"
+    },
+    {
+      "id": "2450002",
+      "name": "命者·伽阇那俱",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2450002__188x188.png"
+    },
+    {
+      "id": "2490001",
+      "name": "方异·鹿蜀",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2490001__188x188.png"
+    },
+    {
+      "id": "2490002",
+      "name": "方异·孰湖",
+      "rarity": "A",
+      "icon": "images/game-art/functors/2490002__188x188.png"
+    }
+  ]
+}

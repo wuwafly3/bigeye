@@ -118,8 +118,8 @@
   z-index: 2;
   width: 22px;
   height: 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border: 0;
+  border-radius: 0;
   background: var(--slate-2);
   color: var(--ink-faint);
   font-size: 13px;
@@ -130,7 +130,7 @@
 }
 .mimir-widget:hover .mimir-close,
 .mimir-close:focus-visible { opacity: 1; }
-.mimir-close:hover { color: var(--danger); border-color: var(--danger); }
+.mimir-close:hover { color: #fff; background: var(--danger); }
 
 .mimir-restore {
   position: fixed;
@@ -140,7 +140,7 @@
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--ink);
   color: var(--ink-text);
   font-size: 15px;
