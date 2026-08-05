@@ -1,12 +1,6 @@
 /* 首页专属样式 —— Cyber-Tactical Tactical OS（严格按 design.md）
    银冰画布 + 白浮层 + 琥珀金 CTA + 石板灰装饰元素 + 红点提醒 */
 
-/* 首页强调色：石板灰 #334155（替代全局电青，仅作用于首页，不影响其他页面） */
-:root {
-  --home-accent: #334155;
-  --home-accent-soft: rgba(51, 65, 85, 0.12);
-}
-
 /* 全局星野 canvas（在浅底上仅保留极少星点作扫锚回传） */
 #starfield {
   position: fixed;
@@ -74,8 +68,8 @@
       var(--bg) 97%);
 }
 :root[data-theme="dark"] .hero-backdrop::before {
-  border-color: rgba(51, 65, 85, .36);
-  box-shadow: 0 0 0 26px rgba(51,65,85,.04), inset 0 0 60px rgba(51,65,85,.08);
+  border-color: var(--cyan-line);
+  box-shadow: 0 0 0 26px var(--cyan-aurora), inset 0 0 60px var(--cyan-hover-bg);
 }
 :root[data-theme="dark"] .hero-system-ring::before { border-color: rgba(248,250,252,.2); }
 :root[data-theme="dark"] .hero-system-mark { opacity: .58; }
@@ -88,11 +82,11 @@
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  border: 1px solid rgba(51, 65, 85, 0.3);
+  border: 1px solid var(--cyan-line);
   box-shadow:
-    0 0 0 26px rgba(51, 65, 85, 0.055),
-    0 0 0 26px rgba(51, 65, 85, 0.055),
-    inset 0 0 60px rgba(51, 65, 85, 0.06);
+    0 0 0 26px var(--cyan-aurora),
+    0 0 0 26px var(--cyan-aurora),
+    inset 0 0 60px var(--cyan-hover-bg);
   pointer-events: none;
 }
 
@@ -117,14 +111,14 @@
   width: 92px;
   height: 92px;
   object-fit: contain;
-  filter: drop-shadow(0 0 14px rgba(51, 65, 85, 0.32));
+  filter: drop-shadow(0 0 14px var(--cyan-line));
 }
 .hero-system-ring {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(51, 65, 85, 0.32);
+  border: 1px solid var(--cyan-line);
   border-radius: 50%;
-  box-shadow: 0 0 0 18px rgba(51, 65, 85, 0.04), inset 0 0 30px rgba(51, 65, 85, 0.06);
+  box-shadow: 0 0 0 18px var(--cyan-aurora), inset 0 0 30px var(--cyan-hover-bg);
   animation: ag-spin 22s linear infinite;
 }
 .hero-system-ring::before,
@@ -175,7 +169,7 @@
   letter-spacing: 9px;
   line-height: 1.2;
   text-transform: uppercase;
-  color: var(--home-accent);
+  color: var(--cyan);
   user-select: none;
   margin-bottom: 26px;
   animation: rise-in 0.55s ease 0.12s both;
@@ -391,12 +385,12 @@
 .about-panel p { color: var(--ink-dim); max-width: 780px; }
 .about-panel .about-dim { color: var(--ink-faint); font-size: 13px; }
 .about-panel code {
-  background: var(--home-accent-soft);
+  background: var(--cyan-soft);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   padding: 1px 7px;
   font-size: 12px;
-  color: var(--home-accent);
+  color: var(--cyan);
   font-family: var(--font-num);
 }
 

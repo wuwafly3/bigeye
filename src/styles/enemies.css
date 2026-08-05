@@ -95,7 +95,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--cyan);
-  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.22);
+  box-shadow: 0 0 0 2px var(--cyan-halo);
 }
 .enemy-desc {
   margin: 0;

@@ -2,7 +2,7 @@
    深空之眼档案馆 · 设计系统 (base.css) — Cyber-Tactical Tactical OS v3
    严格遵循 design.md (AetherGazer_SciFi_Tactical_UI)：
    银冰浅画布 + 白浮层卡 + 深石板仅用于指定导航/底部铆钉/深色覆盖；
-   琥珀金主行动 + 电青能源色 + 红点小提醒 + 切角梯形几何。
+   琥珀金主行动 + 石板灰/冷银技术色 + 红点小提醒 + 切角梯形几何。
    动画带真实点击反馈（按压缩放 / 按下变色），偏好减动时静默。
    ========================================================================== */
 
@@ -51,10 +51,31 @@
   --rarity-a: #8b5cf6;   /* A 级 紫罗兰 */
   --rarity-b: #3b82f6;   /* B 级 蓝色 */
 
-  /* 电青：技术能却、进度条、扫锚线 */
-  --cyan: #06b6d4;
-  --cyan-2: #38bdf8;
-  --cyan-soft: rgba(6, 182, 212, 0.12);
+  /* 工业钛灰/冷银：技术色（原电青；亮色=打印档案钛灰，暗色=冷银金属） */
+  --cyan: #334155;
+  --cyan-2: #94a3b8;
+  --cyan-soft: rgba(51, 65, 85, 0.12);
+  --cyan-line: rgba(51, 65, 85, 0.3);      /* 页面表面：边框/辉光 */
+  --cyan-halo: rgba(51, 65, 85, 0.22);     /* 页面表面：细光环 */
+  --cyan-focus: rgba(51, 65, 85, 0.14);    /* 页面表面：聚焦环 */
+  --cyan-hover-bg: rgba(51, 65, 85, 0.08);
+  --cyan-hover-line: rgba(51, 65, 85, 0.72);
+  --cyan-aurora: rgba(51, 65, 85, 0.055);  /* body 顶部微光 */
+
+  /* 深石板组件上的冷银（两主题一致：命令面板 / HUD / 激活导航 / 徽记） */
+  --slate-accent: #94a3b8;
+  --slate-accent-soft: rgba(148, 163, 184, 0.12);
+  --slate-accent-grid: rgba(148, 163, 184, 0.06);
+  --slate-accent-ring: rgba(148, 163, 184, 0.28);
+  --slate-accent-glow: rgba(148, 163, 184, 0.5);
+  --slate-accent-panel: rgba(148, 163, 184, 0.56);
+  --slate-accent-line: rgba(148, 163, 184, 0.44);
+  --slate-accent-focus: rgba(148, 163, 184, 0.16);
+  --slate-accent-hover: rgba(148, 163, 184, 0.1);
+  --slate-accent-shadow: rgba(148, 163, 184, 0.22);
+  --slate-accent-aurora: rgba(148, 163, 184, 0.12);
+  --slate-accent-aurora-faint: rgba(148, 163, 184, 0.04);
+  --slate-accent-tint: rgba(148, 163, 184, 0.16);
 
   /* 功能态 */
   --danger: #ef4444;   /* 红点小提醒、限时紅条 */
@@ -105,7 +126,6 @@
   --shadow: var(--shadow-panel);
   --shadow-raise: 0 18px 48px rgba(13, 17, 23, 0.28);
   --signal-gradient: linear-gradient(90deg, var(--accent), rgba(245, 158, 11, 0.14));
-  --cyan-gradient: linear-gradient(90deg, var(--cyan), rgba(6, 182, 212, 0.12));
 }
 
 /* ---------- 重置 ---------- */
@@ -118,7 +138,7 @@ body {
   /* 浅银冰画布 + 极淡准线网格（按 design.md “Subtle radar rings, fine line reticles”） */
   background-color: var(--bg);
   background-image:
-    radial-gradient(1200px 500px at 78% -180px, rgba(6, 182, 212, 0.055), transparent 62%),
+    radial-gradient(1200px 500px at 78% -180px, var(--cyan-aurora), transparent 62%),
     radial-gradient(900px 420px at -6% 32%, rgba(245, 158, 11, 0.04), transparent 60%),
     linear-gradient(rgba(100, 116, 139, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(100, 116, 139, 0.05) 1px, transparent 1px),
@@ -772,23 +792,34 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   --line-strong: #64748b;
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 22px rgba(0, 0, 0, 0.24);
   --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.05), 0 14px 34px rgba(0, 0, 0, 0.28);
-  --shadow-hover: 0 0 0 1px rgba(6, 182, 212, 0.22), 0 14px 32px rgba(0, 0, 0, 0.38);
+  --shadow-hover: 0 0 0 1px var(--cyan-halo), 0 14px 32px rgba(0, 0, 0, 0.38);
   --shadow: var(--shadow-panel);
   --shadow-raise: 0 22px 58px rgba(0, 0, 0, 0.5);
+
+  /* 工业钛灰 → 冷银（暗色：高对比冷金属面板） */
+  --cyan: #94a3b8;
+  --cyan-2: #cbd5e1;
+  --cyan-soft: rgba(148, 163, 184, 0.14);
+  --cyan-line: rgba(148, 163, 184, 0.32);
+  --cyan-halo: rgba(148, 163, 184, 0.24);
+  --cyan-focus: rgba(148, 163, 184, 0.16);
+  --cyan-hover-bg: rgba(148, 163, 184, 0.1);
+  --cyan-hover-line: rgba(148, 163, 184, 0.7);
+  --cyan-aurora: rgba(148, 163, 184, 0.08);
 }
 
 :root[data-theme="dark"] body {
   background-image:
-    radial-gradient(900px 440px at 82% -160px, rgba(6, 182, 212, 0.12), transparent 64%),
-    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    radial-gradient(900px 440px at 82% -160px, var(--slate-accent-aurora), transparent 64%),
+    linear-gradient(var(--slate-accent-aurora-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--slate-accent-aurora-faint) 1px, transparent 1px),
     linear-gradient(180deg, var(--bg-soft), var(--bg) 280px);
   background-size: auto, 56px 56px, 56px 56px, auto;
 }
 
 :root[data-theme="dark"] .site-header {
   background: rgba(13, 17, 23, 0.88);
-  border-color: rgba(56, 189, 248, 0.16);
+  border-color: var(--slate-accent-tint);
 }
 :root[data-theme="dark"] .site-logo .logo-cn,
 :root[data-theme="dark"] .nav-links a { color: #e2e8f0; }
@@ -815,8 +846,8 @@ button.chip,
 .nav-links a:hover,
 button.chip:hover,
 .btn:hover {
-  border-color: rgba(6, 182, 212, 0.72);
-  background: rgba(6, 182, 212, 0.08);
+  border-color: var(--cyan-hover-line);
+  background: var(--cyan-hover-bg);
   color: var(--ink-text);
   box-shadow: inset 0 -2px 0 var(--cyan);
 }
@@ -829,7 +860,7 @@ button.chip[aria-selected="true"],
   background: #1e2530;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 3px 12px rgba(13, 17, 23, 0.3), inset 0 -2px 0 var(--cyan);
+  box-shadow: 0 3px 12px rgba(13, 17, 23, 0.3), inset 0 -2px 0 var(--slate-accent);
 }
 .nav-links a.active::before,
 button.chip.active::before,
@@ -838,11 +869,11 @@ button.chip[aria-selected="true"]::before,
 .btn-primary::before {
   content: "◆";
   margin-right: 7px;
-  color: var(--cyan);
+  color: var(--slate-accent);
   font-size: 9px;
 }
 .btn-primary { padding: 8px 18px; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
-.btn-primary::after { background: linear-gradient(90deg, var(--cyan), transparent); }
+.btn-primary::after { background: linear-gradient(90deg, var(--slate-accent), transparent); }
 .btn-primary:hover { background: #252d3b; color: #fff; }
 button.chip { padding: 7px 15px; }
 
@@ -875,7 +906,7 @@ button.chip { padding: 7px 15px; }
   clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
 }
 .icon-btn:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-soft); }
-.theme-toggle[aria-pressed="true"] { background: #1e2530; color: #fff; border-color: var(--cyan); }
+.theme-toggle[aria-pressed="true"] { background: #1e2530; color: #fff; border-color: var(--slate-accent); }
 
 /* Full-page tactical loading and short data transitions. */
 .hud-loading-overlay {
@@ -906,11 +937,11 @@ button.chip { padding: 7px 15px; }
 .hud-loading-ring {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(56, 189, 248, 0.28);
+  border: 1px solid var(--cyan-line);
   border-top-color: var(--cyan);
   border-bottom-color: rgba(245, 158, 11, 0.72);
   border-radius: 50%;
-  box-shadow: inset 0 0 24px rgba(6, 182, 212, 0.08), 0 0 24px rgba(6, 182, 212, 0.08);
+  box-shadow: inset 0 0 24px var(--cyan-hover-bg), 0 0 24px var(--cyan-hover-bg);
   animation: ag-spin 1.5s linear infinite;
 }
 .hud-loading-ring::after { content: ""; position: absolute; inset: 13px; border: 1px dashed rgba(15,23,42,.18); border-radius: 50%; }
@@ -919,7 +950,7 @@ button.chip { padding: 7px 15px; }
 .hud-loading-track span { display: block; width: 42%; height: 100%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); animation: hud-progress 1.15s ease-in-out infinite; }
 :root[data-theme="dark"] .hud-loading-overlay { background: rgba(13, 17, 23, 0.96); color: #f8fafc; }
 :root[data-theme="dark"] .hud-loading-overlay::after { mix-blend-mode: screen; opacity: .09; }
-:root[data-theme="dark"] .hud-loading-core img { filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.55)); opacity: 1; }
+:root[data-theme="dark"] .hud-loading-core img { filter: drop-shadow(0 0 14px var(--slate-accent-glow)); opacity: 1; }
 :root[data-theme="dark"] .hud-loading-ring::after { border-color: rgba(255,255,255,.2); }
 :root[data-theme="dark"] .hud-loading-label { color: #cbd5e1; }
 :root[data-theme="dark"] .hud-loading-track { background: rgba(255,255,255,.12); }
@@ -934,21 +965,21 @@ button.chip { padding: 7px 15px; }
 body.command-lock { overflow: hidden; }
 .command-palette { position: fixed; inset: 0; z-index: 400; display: grid; place-items: start center; padding: max(88px, 10vh) 18px 20px; }
 .command-mask { position: absolute; inset: 0; background: rgba(13, 17, 23, 0.74); backdrop-filter: blur(10px); }
-.command-panel { position: relative; width: min(640px, 100%); padding: 16px; background: #161b22; border: 1px solid rgba(56,189,248,.56); color: #f8fafc; box-shadow: 0 24px 70px rgba(0,0,0,.48); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); }
+.command-panel { position: relative; width: min(640px, 100%); padding: 16px; background: #161b22; border: 1px solid var(--slate-accent-panel); color: #f8fafc; box-shadow: 0 24px 70px rgba(0,0,0,.48); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); }
 .command-head { display: flex; align-items: center; gap: 10px; min-height: 40px; font-weight: 700; letter-spacing: 2px; }
-.command-mark { color: var(--cyan); font-size: 10px; }
+.command-mark { color: var(--slate-accent); font-size: 10px; }
 .command-close { margin-left: auto; color: #f8fafc; border-color: #475569; }
 .command-input { width: 100%; min-height: 48px; margin: 8px 0 12px; padding: 0 15px; border: 1px solid #475569; border-radius: 0; color: #f8fafc; font: inherit; outline: none; clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%); }
-.command-input:focus { border-color: var(--cyan); box-shadow: 0 0 0 2px rgba(6,182,212,.14); }
+.command-input:focus { border-color: var(--slate-accent); box-shadow: 0 0 0 2px var(--slate-accent-focus); }
 .command-results { display: grid; gap: 4px; max-height: min(55vh, 460px); overflow-y: auto; }
 .command-result { min-height: 58px; display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 12px; padding: 7px 11px; color: #e2e8f0; border: 1px solid transparent; }
-.command-result:hover, .command-result.is-active { color: #fff; border-color: rgba(6,182,212,.44); background: rgba(6,182,212,.08); }
-.command-thumb { width: 40px; height: 40px; display: grid; place-items: center; overflow: hidden; color: var(--cyan); background: #0d1117; border: 1px solid #334155; }
+.command-result:hover, .command-result.is-active { color: #fff; border-color: var(--slate-accent-line); background: var(--slate-accent-hover); }
+.command-thumb { width: 40px; height: 40px; display: grid; place-items: center; overflow: hidden; color: var(--slate-accent); background: #0d1117; border: 1px solid #334155; }
 .command-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .command-copy { min-width: 0; display: flex; flex-direction: column; }
 .command-copy strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .command-copy small { color: #94a3b8; }
-.command-arrow { color: var(--cyan); }
+.command-arrow { color: var(--slate-accent); }
 .command-empty { padding: 24px; text-align: center; color: #94a3b8; }
 
 @media (max-width: 860px) {
@@ -972,10 +1003,10 @@ body.command-lock { overflow: hidden; }
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     transform: none;
-    border-top: 1px solid rgba(56,189,248,.28);
+    border-top: 1px solid var(--slate-accent-ring);
   }
   .nav-links a { justify-content: center; min-width: 0; padding: 8px 2px; font-size: 10.5px; clip-path: none; border: 0; }
-  .nav-links a.active { border-top: 2px solid var(--cyan); box-shadow: none; }
+  .nav-links a.active { border-top: 2px solid var(--slate-accent); box-shadow: none; }
   .nav-links a.active::before { display: none; }
   .site-footer { margin-bottom: 0; }
   .header-tools .icon-btn { width: 38px; height: 38px; }
