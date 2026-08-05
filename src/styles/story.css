@@ -1,17 +1,11 @@
-/* 剧情回顾页专属样式 */
-
-/* 本页主题色：叙事星域紫（页面差异化，覆写全局信号色） */
-:root {
-  --accent: #7a68d8;
-  --accent-soft: rgba(122, 104, 216, 0.12);
-  --signal-gradient: linear-gradient(90deg, #7a68d8, #f2708f);
-}
+/* 剧情回顾页专属样式 —— 深空档案读取 */
 
 /* ---------- 剧透提示 ---------- */
 .story-notice {
   margin-bottom: 30px;
-  border-left-color: var(--gold);
-  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+.story-notice::before {
+  background: linear-gradient(90deg, var(--rank-s) 0 20%, rgba(245, 158, 11, 0.32) 20% 30%, transparent 30%);
 }
 
 /* ---------- 目录视图：章节卡列表 ---------- */
@@ -25,6 +19,8 @@
   display: flex;
   gap: 26px;
   padding: 26px 30px 24px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 /* 大号装饰序号 */
@@ -73,12 +69,21 @@
   gap: 8px;
   margin-bottom: 16px;
 }
-/* 纯展示 chip：不可点 */
+/* 纯白展示 chip：不可点，不使用工具条深色 chip 语言 */
 .chip-static {
   cursor: default;
   pointer-events: none;
   padding: 3px 12px;
   font-size: 12px;
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text-dim);
+}
+.chip-static:hover {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text-dim);
+  transform: none;
 }
 
 .chapter-read { font-size: 13.5px; }
@@ -94,14 +99,21 @@
 .chapter-card-empty .chapter-summary { color: var(--text-faint); }
 .chapter-card-empty:hover {
   transform: none;
-  box-shadow: none;
+  box-shadow: var(--shadow);
   border-color: var(--line);
 }
+.chapter-card-empty.card:hover::before,
+.chapter-card-empty.card:hover::after { opacity: 0; }
 
-/* ---------- 阅读视图 ---------- */
+/* ---------- 阅读视图：整段放入一篇档案面板 ---------- */
 #reader-view {
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: 38px 46px 46px;
 }
 
 .back-link {
@@ -111,7 +123,7 @@
   margin-bottom: 30px;
   font-size: 14px;
   color: var(--text-dim);
-  transition: color 0.15s;
+  transition: color 0.18s ease;
 }
 .back-link:hover { color: var(--accent); }
 
@@ -139,9 +151,9 @@
 .reader-summary {
   margin: 0 0 14px;
   padding: 16px 20px;
-  border-left: 3px solid var(--accent-2);
+  border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--accent-2) 7%, transparent);
+  background: var(--accent-soft);
   color: var(--text-dim);
   font-size: 14px;
   line-height: 2;
@@ -152,12 +164,22 @@
   font-size: 16px;
   line-height: 2.05;
 }
-.reader-body .section-title { font-size: 18px; }
+.reader-body .section-title {
+  color: var(--text);
+  font-size: 18px;
+}
+.reader-body .section-title::after { background: var(--line); }
 .reader-body p {
   margin-bottom: 1.15em;
   text-align: justify;
 }
 .reader-body .empty-state { margin-top: 34px; }
+/* 档案面板内嵌套的空状态：收紧为淡底 */
+.reader-body .empty-state {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+  color: var(--text-faint);
+}
 
 /* 上一章 / 下一章 */
 .reader-nav {
@@ -168,6 +190,11 @@
   padding-top: 26px;
   border-top: 1px solid var(--line);
 }
+.reader-nav .btn {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+.reader-nav .btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .reader-nav-btn {
   max-width: 48%;
   font-size: 13.5px;
@@ -181,6 +208,7 @@
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 720px) {
+  #reader-view { padding: 24px 20px 28px; }
   .chapter-card {
     flex-direction: column;
     gap: 8px;

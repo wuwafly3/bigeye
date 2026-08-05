@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aether-gazer-archive",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "none"
+  },
+  "vars": {
+    "GITHUB_REPO": "wuwafly3/bigeye"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

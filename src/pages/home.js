@@ -31,13 +31,14 @@ const stats = [
   [counts.enemies, '种敌人']
 ]
 
-document.getElementById('hero-stats').innerHTML = stats
-  .map(([num, label]) => `
-    <div class="stat-pill">
-      <span class="stat-num" data-target="${num}">0</span>
-      <span class="stat-label">${label}</span>
-    </div>`)
-  .join('')
+document.getElementById('hero-stats').innerHTML =
+  '<div class="stats-lead">ARCHIVE INDEX</div>' + stats
+    .map(([num, label]) => `
+      <div class="stat-pill">
+        <span class="stat-num" data-target="${num}">0</span>
+        <span class="stat-label">${label}</span>
+      </div>`)
+    .join('')
 
 /* 数字滚动动画 */
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -70,6 +71,7 @@ document.getElementById('module-grid').innerHTML = modules
         <span class="module-index">${index} /</span>
         <span class="module-en">${en}</span>
       </div>
+      <span class="module-entry" aria-hidden="true"></span>
       <h3>${title}</h3>
       <p class="module-desc">${desc}</p>
       <span class="module-count">${count}</span>
@@ -84,20 +86,20 @@ const canvas = document.getElementById('starfield')
 if (canvas && !reduceMotion) {
   const ctx = canvas.getContext('2d')
   let stars = []
-  /* 嘉年华彩纸：气球色的圆点与小方片，缓慢上浮 + 左右摇曳 */
-  const PALETTE = ['#1899d6', '#8b7ce0', '#f2708f', '#f0b23a', '#2fbfa8']
+  /* 深空星野：冷色系圆点星 + 少量十字微闪烁星，缓慢抬升 + 轻微漂移 */
+  const PALETTE = ['#cbd5e1', '#94a3b8', '#64748b', '#cbd5e1']
   const resize = () => {
     canvas.width = innerWidth * devicePixelRatio
     canvas.height = innerHeight * devicePixelRatio
-    const n = Math.min(150, Math.floor(innerWidth * innerHeight / 11000))
+    const n = Math.min(120, Math.floor(innerWidth * innerHeight / 13000))
     stars = Array.from({ length: n }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: (Math.random() * 1.8 + 0.7) * devicePixelRatio,
-      s: Math.random() * 0.3 + 0.08,
+      r: (Math.random() * 1.6 + 0.6) * devicePixelRatio,
+      s: Math.random() * 0.26 + 0.07,
       p: Math.random() * Math.PI * 2,
       color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
-      square: Math.random() < 0.3
+      cross: Math.random() < 0.16
     }))
   }
   resize()
@@ -105,22 +107,24 @@ if (canvas && !reduceMotion) {
   const draw = t => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (const st of stars) {
-      const tw = 0.55 + 0.45 * Math.sin(t / 1400 + st.p)
-      ctx.globalAlpha = tw * 0.4
+      const tw = 0.55 + 0.45 * Math.sin(t / 1600 + st.p)
+      ctx.globalAlpha = tw * 0.42
       ctx.fillStyle = st.color
-      if (st.square) {
-        ctx.save()
-        ctx.translate(st.x, st.y)
-        ctx.rotate(t / 3000 + st.p)
-        ctx.fillRect(-st.r, -st.r, st.r * 2, st.r * 2)
-        ctx.restore()
+      if (st.cross) {
+        /* 十字微闪烁星：微亮星用两种重叠短线呈现闪烁 */
+        const len = st.r * 3.2
+        ctx.fillRect(st.x - len / 2, st.y - 0.5, len, 1)
+        ctx.fillRect(st.x - 0.5, st.y - len / 2, 1, len)
+        ctx.beginPath()
+        ctx.arc(st.x, st.y, st.r * 0.6, 0, Math.PI * 2)
+        ctx.fill()
       } else {
         ctx.beginPath()
         ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2)
         ctx.fill()
       }
       st.y -= st.s
-      st.x += Math.sin(t / 1800 + st.p) * 0.18
+      st.x += Math.sin(t / 2200 + st.p) * 0.12
       if (st.y < -6) { st.y = canvas.height + 6; st.x = Math.random() * canvas.width }
       if (st.x < -6) st.x = canvas.width + 6
       if (st.x > canvas.width + 6) st.x = -6

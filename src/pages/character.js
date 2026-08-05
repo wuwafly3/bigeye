@@ -220,6 +220,7 @@ function renderCharacter(c, i) {
       </div>
       <div class="char-info-col">
         <a class="back-link" href="characters.html">← 返回角色图鉴</a>
+        <div class="detail-panel">
         <h1 class="detail-name">${escapeHtml(name)}</h1>
         ${badges.length ? `<div class="detail-badges">${badges.join('')}</div>` : ''}
         ${block('档案信息', infoRows ? `<dl class="kv-table">${infoRows}</dl>` : '')}
@@ -230,6 +231,7 @@ function renderCharacter(c, i) {
         ${block('档案', archivesHtml)}
         ${block('誓约心链', heartlinksHtml)}
         ${block('立绘', artHtml)}
+        </div>
       </div>
     </div>
     ${pagerHtml}

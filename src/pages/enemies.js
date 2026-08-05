@@ -70,10 +70,16 @@ function cardHtml(e, i) {
           <span class="enemy-name" title="${escapeHtml(name)}">${escapeHtml(name)}</span>
           ${categoryBadge(category)}
         </div>
-        ${faction ? `<div class="enemy-faction">${escapeHtml(faction)}</div>` : ''}
+        ${faction ? `<div class="${factionTagClass(faction)}">${escapeHtml(faction)}</div>` : ''}
         ${desc ? `<p class="enemy-desc">${escapeHtml(desc)}</p>` : ''}
       </div>
     </article>`
+}
+
+function factionTagClass(faction) {
+  if (faction.startsWith('视骸')) return 'enemy-faction enemy-faction--danger'
+  if (faction === '修正者') return 'enemy-faction enemy-faction--friend'
+  return 'enemy-faction'
 }
 
 function renderCards() {

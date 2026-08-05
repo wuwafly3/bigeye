@@ -43,6 +43,17 @@ function sortRarity(options) {
 
 const RARITY_CLASS = { S: 'badge-s', A: 'badge-a', B: 'badge-b' }
 
+/* 神系徽章（来自 hero_godatlas 导出图） */
+const FACTION_ICON = {
+  '真樱': 'zhenying', '奥山': 'aoshan', '圣树': 'shengshu',
+  '众星': 'zhonxin', '尼罗': 'niluo', '天垣': 'tianyuan'
+}
+/* 元素图标（来自 atlas/hero 精灵图） */
+const ELEMENT_ICON = {
+  '火': 'fire', '雷': 'ray', '冰': 'ice', '水': 'water',
+  '风': 'wind', '暗': 'dark', '光': 'light', '物理': 'physical'
+}
+
 /* ---------- 筛选状态 ---------- */
 
 const state = { q: '', element: '', rarity: '', faction: '' }
@@ -77,16 +88,32 @@ function cardHtml(c) {
     )
   }
   if (element) {
-    badges.push(
-      `<span class="badge" data-element="${escapeHtml(element)}">${escapeHtml(element)}</span>`
-    )
+    const icon = ELEMENT_ICON[element]
+    if (icon) {
+      badges.push(
+        `<span class="badge char-element" data-element="${escapeHtml(element)}"><img class="element-icon" src="${assetUrl('images/game-art/hero/icon_' + icon + '.png')}" alt="" onerror="this.style.display='none'" draggable="false">${escapeHtml(element)}</span>`
+      )
+    } else {
+      badges.push(
+        `<span class="badge" data-element="${escapeHtml(element)}">${escapeHtml(element)}</span>`
+      )
+    }
   }
   if (faction) {
-    badges.push(`<span class="char-faction">${escapeHtml(faction)}</span>`)
+    const icon = FACTION_ICON[faction]
+    if (icon) {
+      badges.push(
+        `<span class="char-faction"><img class="faction-icon" src="${assetUrl('images/game-art/hero_godatlas/' + icon + '.png')}" alt="" onerror="this.style.display='none'" draggable="false">${escapeHtml(faction)}</span>`
+      )
+    } else {
+      badges.push(`<span class="char-faction">${escapeHtml(faction)}</span>`)
+    }
   }
 
+  const attr = rarity ? ` data-rarity="${escapeHtml(rarity)}"` : ''
+
   return `
-    <a class="card char-card" href="character.html?id=${encodeURIComponent(c.id || '')}">
+    <a class="card char-card"${attr} href="character.html?id=${encodeURIComponent(c.id || '')}">
       <div class="char-portrait">
         <img src="${escapeHtml(assetUrl(c.portrait))}" alt="${escapeHtml(name)}" loading="lazy" />
       </div>

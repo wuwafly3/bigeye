@@ -32,8 +32,11 @@ export function initLayout() {
   header.innerHTML = `
     <div class="header-inner">
       <a class="site-logo" href="index.html" aria-label="返回首页">
-        <span class="logo-cn">深空之眼档案馆</span>
-        <span class="logo-en">Aether Gazer Archive</span>
+        <img class="logo-img" src="${new URL('../icon/logo.jpg', import.meta.url).href}" alt="深空之眼档案馆" />
+        <span class="logo-stack">
+          <span class="logo-cn">深空之眼档案馆</span>
+          <span class="logo-en">Aether Gazer Archive</span>
+        </span>
       </a>
       <button class="nav-toggle" aria-label="打开菜单">☰</button>
       <nav class="nav-links">

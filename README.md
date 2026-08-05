@@ -16,8 +16,11 @@
 
 ## 设计
 
-工业科技风设计语言（参考明日方舟系 UI 的公开设计语法）：浅灰纸面 + 近黑墨色 +
-单一低饱和淡蓝信号色；直角、1px 细线、切角与括号角标；大标题紧排、微标签疏排。
+严格按项目 `design.md`（AetherGazer_SciFi_Tactical_UI / 近未来战术终端风）实现：银冰画布 `#DDE5EE` + 白浮层卡 `#F0F4F8`；
+深石板 `#0D1117` 仅用于指定件（顶部工具条、页脚、弹层背景等）。主行动按钮是琥珀金切角梯形 `#F59E0B`，
+激活态变为同系胶囊；电青 `#06B6D4` 用于扫描线、进度、击赞助金、页签标记点；
+卡片带 8px 圆角 + 1px `#CBD5E1` 细边、悬停提高、按下 scale 0.97 上移动 1px——点击反馈直接可见。
+所有交互动效均按压曲线反馈（点击按简移动 + scale 压缩），并遵守 prefers-reduced-motion。
 设计令牌集中在 `src/styles/base.css`。字体为自托管的
 [MiSans](https://hyperos.mi.com/font/)（Regular/Medium/Semibold，按 unicode-range
 分片按需加载，可免费商用，许可见 `src/fonts/misans/LICENSE`）。
@@ -67,6 +70,32 @@ npm run preview  # 预览构建产物
 
 > 提示：`*.vercel.app` 域名在中国大陆访问可能不稳定，建议绑定自有域名。
 > 两种部署可以并存：GitHub Pages 提供纯静态镜像，Vercel 提供带投稿接口的主站。
+
+### Cloudflare Workers（静态 + 投稿接口）
+
+仓库已内置 Workers 配置（`wrangler.jsonc` + `worker/index.js`）：静态资源由
+Workers Static Assets 直接服务 `dist/`，`POST /api/submit` 投稿接口由 Worker 处理。
+前置：安装 [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)（已在 devDependencies 中）。
+
+```bash
+npx wrangler login          # 浏览器登录 Cloudflare 账号（CI 用 CLOUDFLARE_API_TOKEN）
+npx wrangler secret put GITHUB_TOKEN   # 必填。细粒度 PAT，只需目标仓库的 Issues: Read and write 权限
+npm run cf:deploy           # = npm run build && wrangler deploy
+```
+
+本地联调：
+
+```bash
+npm run cf:dev              # 构建后在本机 8787 端口跑完整 Worker + 静态站点
+```
+
+- `GITHUB_REPO` 可选（默认 `wuwafly3/bigeye`），改 `wrangler.jsonc` 的 `vars` 即可。
+- 本地开发时把 `GITHUB_TOKEN` 写入 `.dev.vars`（已 gitignore），不要提交。
+- 推送 `main` 分支后由 `.github/workflows/deploy-cf.yml` 自动部署，需先在仓库
+  **Settings → Secrets and variables → Actions** 添加 `CLOUDFLARE_API_TOKEN`。
+
+> 提示：`*.workers.dev` 域名在中国大陆访问可能不稳定，建议绑定自有域名。
+> 三种部署可以并存：GitHub Pages 提供纯静态镜像，Vercel 与 Cloudflare Workers 各提供一个带投稿接口的主站。
 
 ## 免责声明
 

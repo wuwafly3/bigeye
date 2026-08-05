@@ -1,4 +1,4 @@
-/* 角色详情页 + 3D MMD 查看器 专属样式 */
+/* 角色详情页 + 3D MMD 查看器 专属样式 —— 档案页 + 深空观测舞台 */
 
 /* 确保 hidden 属性对带布局类的元素也生效 */
 [hidden] { display: none !important; }
@@ -21,11 +21,19 @@
 .back-link {
   display: inline-block;
   font-size: 13px;
-  color: var(--text-dim);
+  color: var(--ink-faint);
   margin-bottom: 14px;
-  transition: color 0.15s;
+  transition: color 0.18s ease;
 }
 .back-link:hover { color: var(--accent); }
+
+.detail-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: 26px 28px 30px;
+}
 
 .detail-name {
   font-size: 30px;
@@ -88,7 +96,7 @@
   align-items: flex-start;
   gap: 10px;
   padding: 12px 14px;
-  background: var(--panel);
+  background: var(--panel-2);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
@@ -98,13 +106,21 @@
 .skill-desc { margin: 3px 0 0; font-size: 13px; color: var(--text-dim); }
 
 .quote {
+  position: relative;
   margin: 0 0 10px;
-  padding: 7px 14px;
-  border-left: 3px solid var(--accent-2);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  background: color-mix(in srgb, var(--accent-2) 7%, transparent);
+  padding: 9px 14px 7px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
   color: var(--text-dim);
   font-size: 13.5px;
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 62%; top: 0;
+  height: 2px;
+  background: var(--accent);
 }
 .quote:last-child { margin-bottom: 0; }
 
@@ -112,7 +128,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--bg-soft);
+  background: var(--panel-2);
 }
 .full-art img { width: 100%; }
 .full-art .img-placeholder { min-height: 260px; }
@@ -138,13 +154,13 @@
   margin: 30px 0 0;
   text-align: center;
   font-size: 12.5px;
-  color: var(--text-faint);
+  color: var(--ink-faint);
   letter-spacing: 1px;
 }
 
 .char-empty .empty-actions { margin-top: 20px; }
 
-/* ---------- MMD 查看器：墨色舞台（模型展示区刻意保持深色） ---------- */
+/* ---------- MMD 查看器：深空观测舞台（模型展示区保持夜空底） ---------- */
 .mmd-viewer {
   position: relative;
   height: 70vh;
@@ -153,11 +169,33 @@
   border-radius: var(--radius-sm);
   overflow: hidden;
   background:
-    linear-gradient(rgba(233, 237, 242, 0.045) 1px, transparent 1px) 0 0 / 100% 44px,
-    linear-gradient(90deg, rgba(233, 237, 242, 0.045) 1px, transparent 1px) 0 0 / 44px 100%,
-    linear-gradient(180deg, var(--ink-2), var(--ink));
+    linear-gradient(rgba(6, 182, 212, 0.06) 1px, transparent 1px) 0 0 / 100% 44px,
+    linear-gradient(90deg, rgba(6, 182, 212, 0.06) 1px, transparent 1px) 0 0 / 44px 100%,
+    linear-gradient(180deg, var(--slate), var(--ink));
+  box-shadow: var(--shadow);
 }
 .mmd-stage { position: absolute; inset: 0; }
+
+/* 地面旋转环（复用游戏 uiresources ring 纹理），用 CSS 25s 慢旋 */
+.mmd-stage::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72vmin;
+  height: 72vmin;
+  margin: -36vmin 0 0 -36vmin;
+  background-image: url('/images/game-art/hud/ring/ring_024.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: hud-ring-spin 24s linear infinite;
+}
+@keyframes hud-ring-spin {
+  to { transform: rotate(360deg); }
+}
 .mmd-stage canvas {
   display: block;
   width: 100%;
@@ -172,13 +210,13 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: rgba(233, 237, 242, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   z-index: 4;
 }
 .mmd-progress-fill {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: var(--signal-gradient);
   transition: width 0.2s ease;
 }
 
@@ -189,8 +227,15 @@
   left: 12px;
   right: 12px;
   z-index: 5;
-  border-left-color: var(--danger);
   background: var(--panel-solid);
+  color: var(--text-dim);
+}
+.mmd-error::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--danger) 0 30%, rgba(239, 68, 68, 0.32) 30% 40%, transparent 40%);
 }
 
 /* 未加载模型时的占位面板 */
@@ -225,11 +270,6 @@
   line-height: 1.9;
   color: var(--ink-dim);
 }
-.mmd-placeholder .btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-.mmd-placeholder .btn-primary::before { background: #fff; }
 .mmd-ph-text code {
   color: var(--accent);
   font-family: var(--font-num);
@@ -247,30 +287,32 @@
   flex-wrap: wrap;
   gap: 6px;
   padding: 10px 12px;
-  background: linear-gradient(180deg, transparent, rgba(18, 23, 30, 0.88) 55%);
+  background: linear-gradient(180deg, transparent, rgba(13, 17, 23, 0.92) 55%);
 }
 .mmd-controls .btn {
   padding: 4px 12px;
   font-size: 12px;
   gap: 5px;
-  background: rgba(233, 237, 242, 0.08);
-  border-color: rgba(233, 237, 242, 0.28);
+  background: rgba(6, 182, 212, 0.06);
+  border-color: rgba(6, 182, 212, 0.3);
   color: var(--ink-text);
-  /* 深色舞台上的暗边压层 */
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
 }
-.mmd-controls .btn:active { box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45); }
-.mmd-controls .btn:hover { border-color: rgba(233, 237, 242, 0.6); }
+.mmd-controls .btn:hover {
+  border-color: rgba(148, 163, 184, 0.6);
+  color: var(--ink-text);
+  background: rgba(255, 255, 255, 0.12);
+}
 .mmd-controls .btn.active {
   border-color: var(--accent);
-  color: #fff;
+  color: var(--ink);
   background: var(--accent);
+  font-weight: 600;
 }
 
 .viewer-note {
   margin: 10px 2px 0;
   font-size: 12px;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 /* ---------- 响应式：窄屏上下堆叠 ---------- */
@@ -286,7 +328,7 @@
 
 /* JS 渲染前的静态加载占位 */
 .char-loading {
-  color: var(--text-faint);
+  color: var(--ink-faint);
   font-size: 14px;
   margin: 8px 0;
 }
@@ -307,7 +349,6 @@
   border-radius: var(--radius-sm);
   background: var(--panel-solid);
   margin-bottom: 10px;
-  box-shadow: 0 2px 0 rgba(24, 60, 90, 0.07);
   overflow: hidden;
 }
 .fold-item summary {
@@ -320,7 +361,7 @@
   align-items: center;
   gap: 9px;
   user-select: none;
-  transition: background 0.15s;
+  transition: background 0.18s ease;
 }
 .fold-item summary::-webkit-details-marker { display: none; }
 .fold-item summary::before {
@@ -332,7 +373,7 @@
   transition: transform 0.2s;
 }
 .fold-item[open] summary::before { transform: rotate(45deg); }
-.fold-item summary:hover { background: var(--bg-soft); }
+.fold-item summary:hover { background: var(--panel-2); }
 .fold-body {
   padding: 4px 16px 12px;
   border-top: 1px solid var(--line);
@@ -343,8 +384,9 @@
 .fold-body p { margin: 10px 0 0; }
 .fold-body .fold-summary {
   color: var(--text-faint);
-  border-left: 3px solid var(--line-strong);
-  padding-left: 12px;
+  border-top: 2px solid var(--line-strong);
+  padding-top: 8px;
+  padding-left: 0;
   font-size: 13px;
 }
 /* 心链条目：个人剧情，阅读排版稍舒展 */

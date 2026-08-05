@@ -1,11 +1,4 @@
-/* 时间线页专属样式 */
-
-/* 本页主题色：时之薄荷青（页面差异化，覆写全局信号色） */
-:root {
-  --accent: #1fa88f;
-  --accent-soft: rgba(31, 168, 143, 0.12);
-  --signal-gradient: linear-gradient(90deg, #1fa88f, #1899d6);
-}
+/* 时间线页专属样式 —— 深空编年档案 */
 
 /* ---------- 筛选条 ---------- */
 .chip-group {
@@ -14,7 +7,7 @@
   gap: 10px;
 }
 
-/* ---------- 主体与发光轴线 ---------- */
+/* ---------- 主体与信号轴线：一道收集灯的细光条 ---------- */
 .timeline {
   position: relative;
   padding: 6px 0 36px;
@@ -30,15 +23,14 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    var(--accent) 7%,
-    var(--accent-2) 55%,
-    var(--accent) 92%,
+    rgba(255, 255, 255, 0.7) 7%,
+    rgba(255, 255, 255, 0.85) 48%,
+    rgba(255, 255, 255, 0.7) 92%,
     transparent 100%
   );
-  opacity: 0.85;
 }
 
-/* ---------- 年份标记：横跨轴线 ---------- */
+/* ---------- 年份标记：横跨轴线的面板刻度 ---------- */
 .tl-year {
   position: relative;
   z-index: 1;
@@ -57,6 +49,7 @@
   background: var(--panel-solid);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
 }
 
 /* ---------- 事件条目：桌面端左右交替 ---------- */
@@ -67,14 +60,14 @@
   --cat-color: var(--accent);
 }
 .tl-item[data-cat="版本"] { --cat-color: var(--accent); }
-.tl-item[data-cat="活动"] { --cat-color: var(--sun); }
-.tl-item[data-cat="剧情"] { --cat-color: var(--accent-2); }
-.tl-item[data-cat="运营"] { --cat-color: var(--mint); }
+.tl-item[data-cat="活动"] { --cat-color: #9a8a58; }
+.tl-item[data-cat="剧情"] { --cat-color: #8a6fc0; }
+.tl-item[data-cat="运营"] { --cat-color: #3f8a6d; }
 
 .tl-left { padding-right: 42px; }
 .tl-right { margin-left: 50%; padding-left: 42px; }
 
-/* 圆点：接在轴线上 */
+/* 节点：接在轴线上的信号时标 */
 .tl-dot {
   position: absolute;
   top: 24px;
@@ -84,11 +77,12 @@
   background: var(--cat-color);
   outline: 3px solid var(--bg);
   z-index: 2;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cat-color) 45%, transparent);
 }
 .tl-left .tl-dot { right: -6px; }
 .tl-right .tl-dot { left: -6px; }
 
-/* 圆点到卡片的细连接线 */
+/* 节点到卡片的细连接线 */
 .tl-item::before {
   content: "";
   position: absolute;
@@ -106,10 +100,10 @@
   background: linear-gradient(90deg, var(--cat-color), transparent);
 }
 
-/* ---------- 事件卡片 ---------- */
+/* ---------- 事件卡片（浅面板在深空背景上纵向分明） ---------- */
 .tl-card { padding: 16px 18px 14px; }
 .tl-card:hover {
-  border-color: color-mix(in srgb, var(--cat-color) 45%, transparent);
+  border-color: var(--cat-color);
 }
 .tl-meta {
   display: flex;
@@ -127,18 +121,18 @@
 .tl-version {
   font-family: var(--font-num);
   color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-  background: color-mix(in srgb, var(--accent) 8%, #fff);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: transparent;
 }
 .tl-cat {
   display: inline-block;
   padding: 1px 9px;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   font-size: 11px;
   letter-spacing: 1px;
   color: var(--cat-color);
   border: 1px solid color-mix(in srgb, var(--cat-color) 55%, transparent);
-  background: color-mix(in srgb, var(--cat-color) 10%, transparent);
+  background: transparent;
 }
 .tl-title { font-size: 15.5px; margin: 0 0 6px; }
 .tl-desc {
@@ -148,22 +142,25 @@
   line-height: 1.8;
 }
 
-/* ---------- 结语卡 ---------- */
+/* ---------- 结语卡：观测终端刻目 ---------- */
 .tl-ending {
   max-width: 560px;
   margin: 10px auto 0;
   padding: 30px 26px 24px;
   text-align: center;
+  background: var(--panel-glass);
+  border-color: var(--line-strong);
 }
 .tl-ending-dot {
   width: 9px;
   height: 9px;
   margin: 0 auto 16px;
-  background: var(--lime);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.14);
 }
 .tl-ending-text {
   margin: 0 0 8px;
-  color: var(--text-dim);
+  color: var(--line-strong);
   font-size: 14.5px;
   letter-spacing: 2px;
 }
@@ -171,7 +168,7 @@
   font-size: 10px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 /* ---------- 入场动画 ---------- */
