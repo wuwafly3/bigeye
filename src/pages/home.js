@@ -76,7 +76,6 @@ document.getElementById('module-grid').innerHTML = modules
         <span class="module-index">${index} /</span>
         <span class="module-en">${en}</span>
       </div>
-      <span class="module-entry" aria-hidden="true"></span>
       <h3>${title}</h3>
       <p class="module-desc">${desc}</p>
       <span class="module-count">${count}</span>

@@ -1,11 +1,10 @@
 /* 首页专属样式 —— Cyber-Tactical Tactical OS（严格按 design.md）
-   银冰画布 + 白浮层 + 琥珀金 CTA + 石板灰扫描元素 + 红点提醒 */
+   银冰画布 + 白浮层 + 琥珀金 CTA + 石板灰装饰元素 + 红点提醒 */
 
 /* 首页强调色：石板灰 #334155（替代全局电青，仅作用于首页，不影响其他页面） */
 :root {
   --home-accent: #334155;
   --home-accent-soft: rgba(51, 65, 85, 0.12);
-  --home-accent-gradient: linear-gradient(90deg, #334155, rgba(51, 65, 85, 0.12));
 }
 
 /* 全局星野 canvas（在浅底上仅保留极少星点作扫锚回传） */
@@ -18,7 +17,7 @@
 /* 保证画布在内容下方 */
 .home-hero, .module-grid, .about-panel { position: relative; z-index: 1; }
 
-/* ---------- 主视觉背景：白透玻璃 + 顶琥珀刻度 + 侧青色扫描线 ---------- */
+/* ---------- 主视觉背景：白透玻璃 + 顶琥珀刻度 + 侧雷达环 ---------- */
 .hero-backdrop {
   position: absolute;
   top: 0;
@@ -238,7 +237,6 @@
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
 }
-/* 石板灰终端扫描线 */
 .stat-pill .stat-label {
   font-size: 11px;
   color: var(--ink-dim);
@@ -291,19 +289,6 @@
   position: relative;
   z-index: 1;
 }
-/* 石板灰扫描扫入 */
-.module-card .module-entry {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--home-accent-gradient);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.module-card:hover .module-entry { transform: scaleX(1); }
 .module-head {
   display: flex;
   align-items: baseline;

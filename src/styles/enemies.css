@@ -1,31 +1,11 @@
 /* 敌人图鉴专属样式 —— 威胁等级扫描档案 */
 
-/* 页面标题下的威胁评级斜线 */
-.page-hero {
-  position: relative;
-  padding-bottom: 40px;
-}
-.page-hero::after {
-  content: "";
-  position: absolute;
-  left: 34px;
-  bottom: 12px;
-  width: 190px;
-  height: 6px;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--danger) 0 8px,
-    transparent 8px 16px
-  );
-  opacity: 0.85;
-}
 .high-risk-mode .page-hero,
 .high-risk-mode .enemy-card,
 .high-risk-mode .enemy-figure {
   border-color: rgba(239, 68, 68, 0.48);
 }
 .high-risk-mode .page-hero::before { background: linear-gradient(180deg, var(--danger), #ff8b8b); }
-.high-risk-mode .page-hero::after { background: repeating-linear-gradient(-45deg, var(--danger) 0 8px, transparent 8px 16px); }
 .high-risk-mode .enemy-card:hover { border-color: var(--danger); box-shadow: 0 0 0 1px rgba(239,68,68,.3), 0 16px 32px rgba(0,0,0,.34); }
 .high-risk-mode .enemy-faction--danger { text-shadow: 0 0 10px rgba(239,68,68,.4); }
 
@@ -240,7 +220,6 @@ body.modal-lock { overflow: hidden; }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 720px) {
-  .page-hero::after { left: 20px; }
   #enemy-toolbar .search-input { width: 100%; min-width: 0; }
   .enemy-modal { padding: 14px; }
   .modal-body { padding: 16px 18px 20px; }

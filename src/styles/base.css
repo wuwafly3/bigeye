@@ -322,22 +322,13 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   overflow: hidden;
   animation: rise-in 0.5s ease both;
 }
-/* 顶部金色激活点刻度 + 右侧电青扫描线 */
+/* 顶部金色激活点刻度 */
 .page-hero::before {
   content: "";
   position: absolute;
   left: 0; top: 0;
   width: 6px; height: 38%;
   background: linear-gradient(180deg, var(--accent), var(--accent-strong));
-}
-.page-hero::after {
-  content: "";
-  position: absolute;
-  right: -26px; top: 0;
-  width: 36%; height: 2px;
-  transform: rotate(-14deg);
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  opacity: 0.5;
 }
 .page-hero .page-kicker {
   display: flex;
