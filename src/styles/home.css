@@ -11,6 +11,100 @@
 /* 保证画布在内容下方 */
 .home-hero, .module-grid, .about-panel { position: relative; z-index: 1; }
 
+/* ---------- 背景战术细节：四角角标 / 十字定位 / 系统编号（低密度纯装饰） ---------- */
+.home-deco {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.deco-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.65;
+}
+.deco-corner::before,
+.deco-corner::after {
+  content: "";
+  position: absolute;
+  background: var(--cyan-line);
+}
+.deco-corner::before { width: 100%; height: 2px; }
+.deco-corner::after  { width: 2px; height: 100%; }
+.deco-corner--tl { left: 16px; top: 84px; }
+.deco-corner--tl::before { top: 0; left: 0; }
+.deco-corner--tl::after  { top: 0; left: 0; }
+.deco-corner--tr { right: 16px; top: 84px; }
+.deco-corner--tr::before { top: 0; right: 0; }
+.deco-corner--tr::after  { top: 0; right: 0; }
+.deco-corner--bl { left: 16px; bottom: 18px; }
+.deco-corner--bl::before { bottom: 0; left: 0; }
+.deco-corner--bl::after  { bottom: 0; left: 0; }
+.deco-corner--br { right: 16px; bottom: 18px; }
+.deco-corner--br::before { bottom: 0; right: 0; }
+.deco-corner--br::after  { bottom: 0; right: 0; }
+
+.deco-cross {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  opacity: 0.55;
+}
+.deco-cross::before,
+.deco-cross::after {
+  content: "";
+  position: absolute;
+  background: var(--cyan-line);
+}
+.deco-cross::before { left: 0; right: 0; top: 50%; height: 1px; }
+.deco-cross::after  { top: 0; bottom: 0; left: 50%; width: 1px; }
+.deco-cross--1 { right: 6vw; top: 34vh; }
+.deco-cross--2 { left: 4vw; bottom: 26vh; }
+
+.deco-tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 500 9px/1 var(--font-num);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  opacity: 0.72;
+  white-space: nowrap;
+}
+/* 迷你条码：粗细不一的竖条（currentColor 随主题） */
+.deco-tag::before {
+  content: "";
+  width: 52px;
+  height: 10px;
+  flex: none;
+  opacity: 0.85;
+  background: linear-gradient(90deg,
+    currentColor 0 2px, transparent 2px 5px,
+    currentColor 5px 7px, transparent 7px 10px,
+    currentColor 10px 13px, transparent 13px 16px,
+    currentColor 16px 17px, transparent 17px 21px,
+    currentColor 21px 24px, transparent 24px 27px,
+    currentColor 27px 28px, transparent 28px 32px,
+    currentColor 32px 33px, transparent 33px 36px,
+    currentColor 36px 39px, transparent 39px 43px,
+    currentColor 43px 44px, transparent 44px 48px,
+    currentColor 48px 51px, transparent 51px 52px);
+}
+.deco-tag--1 { left: 4vw; bottom: 16vh; }
+.deco-tag--2 { right: 3.5vw; top: 58vh; }
+
+@media (max-width: 1024px) {
+  .deco-cross, .deco-tag { display: none; }
+}
+@media (max-width: 720px) {
+  .deco-corner { width: 14px; height: 14px; opacity: 0.5; }
+  .deco-corner--tl, .deco-corner--tr { top: 70px; }
+  .deco-corner--bl, .deco-corner--br { bottom: 12px; }
+}
+
 /* ---------- 主视觉背景：白透玻璃 + 顶琥珀刻度 + 侧雷达环 ---------- */
 .hero-backdrop {
   position: absolute;
