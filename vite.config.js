@@ -1,11 +1,14 @@
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
 const root = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   base: './',
+  plugins: [tailwindcss()],
+  esbuild: { jsx: 'automatic' },
   build: {
     chunkSizeWarningLimit: 1600,
     rollupOptions: {

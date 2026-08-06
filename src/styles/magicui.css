@@ -1,0 +1,39 @@
+/* Magic UI 组件运行时样式
+   Tailwind v4 仅引入 theme + utilities（跳过 preflight，避免重置本站手写样式）
+   动画变量与 keyframes 取自 magicui 官方 globals.css（MIT） */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
+}
+
+/* --speed 由组件内联提供；此处兜底避免 :root 变量 guaranteed-invalid 无法继承 */
+:root {
+  --speed: 3s;
+}
+
+@keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+  }
+  15%,
+  35% {
+    transform: translateZ(0) rotate(90deg);
+  }
+  65%,
+  85% {
+    transform: translateZ(0) rotate(270deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+@keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+  }
+}

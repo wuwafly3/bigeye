@@ -137,3 +137,11 @@ if (canvas && !reduceMotion) {
   }
   requestAnimationFrame(draw)
 }
+
+/* ---------- Magic UI 实验区：动态加载 React 入口，失败静默不影响页面 ---------- */
+const magicStage = document.getElementById('magic-stage')
+if (magicStage) {
+  import('../magicui/entry.jsx')
+    .then((m) => m.mount(magicStage))
+    .catch(() => {})
+}
