@@ -30,8 +30,8 @@
 .detail-panel {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 0;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  border-radius: var(--radius-card, 6px);
+  clip-path: none;
   box-shadow: var(--shadow);
   padding: 26px 28px 30px;
 }
@@ -159,7 +159,8 @@
   color: #f8fafc;
   background: #1e2530;
   border: 1px solid rgba(255,255,255,.72);
-  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  border-radius: var(--radius-card, 4px);
+  clip-path: none;
   box-shadow: 0 0 18px var(--slate-accent-soft);
 }
 .sigil-slot b { color: var(--slate-accent); font: 700 17px var(--font-num); }
@@ -229,8 +230,8 @@
   height: 70vh;
   min-height: 360px;
   border: 1px solid var(--line-strong);
-  border-radius: 0;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  border-radius: var(--radius-card, 6px);
+  clip-path: none;
   overflow: hidden;
   background:
     linear-gradient(var(--slate-accent-grid) 1px, transparent 1px) 0 0 / 100% 44px,

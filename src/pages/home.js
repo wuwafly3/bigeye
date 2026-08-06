@@ -85,63 +85,10 @@ document.getElementById('module-grid').innerHTML = modules
 
 revealOnScroll(document.querySelectorAll('.module-card'), { stagger: 70 })
 
-/* ---------- 星空背景 ---------- */
-const canvas = document.getElementById('starfield')
-if (canvas && !reduceMotion) {
-  const ctx = canvas.getContext('2d')
-  let stars = []
-  /* 深空星野：冷色系圆点星 + 少量十字微闪烁星，缓慢抬升 + 轻微漂移 */
-  const PALETTE = ['#cbd5e1', '#94a3b8', '#64748b', '#cbd5e1']
-  const resize = () => {
-    canvas.width = innerWidth * devicePixelRatio
-    canvas.height = innerHeight * devicePixelRatio
-    const n = Math.min(120, Math.floor(innerWidth * innerHeight / 13000))
-    stars = Array.from({ length: n }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: (Math.random() * 1.6 + 0.6) * devicePixelRatio,
-      s: Math.random() * 0.26 + 0.07,
-      p: Math.random() * Math.PI * 2,
-      color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
-      cross: Math.random() < 0.16
-    }))
-  }
-  resize()
-  addEventListener('resize', resize)
-  const draw = t => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    for (const st of stars) {
-      const tw = 0.55 + 0.45 * Math.sin(t / 1600 + st.p)
-      ctx.globalAlpha = tw * 0.42
-      ctx.fillStyle = st.color
-      if (st.cross) {
-        /* 十字微闪烁星：微亮星用两种重叠短线呈现闪烁 */
-        const len = st.r * 3.2
-        ctx.fillRect(st.x - len / 2, st.y - 0.5, len, 1)
-        ctx.fillRect(st.x - 0.5, st.y - len / 2, 1, len)
-        ctx.beginPath()
-        ctx.arc(st.x, st.y, st.r * 0.6, 0, Math.PI * 2)
-        ctx.fill()
-      } else {
-        ctx.beginPath()
-        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2)
-        ctx.fill()
-      }
-      st.y -= st.s
-      st.x += Math.sin(t / 2200 + st.p) * 0.12
-      if (st.y < -6) { st.y = canvas.height + 6; st.x = Math.random() * canvas.width }
-      if (st.x < -6) st.x = canvas.width + 6
-      if (st.x > canvas.width + 6) st.x = -6
-    }
-    requestAnimationFrame(draw)
-  }
-  requestAnimationFrame(draw)
-}
-
-/* ---------- Magic UI 实验区：动态加载 React 入口，失败静默不影响页面 ---------- */
-const magicStage = document.getElementById('magic-stage')
-if (magicStage) {
-  import('../magicui/entry.jsx')
-    .then((m) => m.mount(magicStage))
+/* ---------- 交互网格背景（magicui）：仅精细指针设备挂载；失败静默回退 body 准线网格 ---------- */
+const gridBg = document.getElementById('grid-bg')
+if (gridBg && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  import('../magicui/bg-entry.jsx')
+    .then((m) => m.mountBackground(gridBg))
     .catch(() => {})
 }

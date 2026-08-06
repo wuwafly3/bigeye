@@ -4,6 +4,25 @@ Command failures and integration errors.
 
 ---
 
+## [ERR-20260806-001] apply_patch encoded comment context
+
+**Logged**: 2026-08-06T00:00:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+Large CSS patches failed because surrounding legacy comments were decoded differently by the shell output and patch matcher.
+
+### Resolution
+Applied the changes through small selector-only patches without matching the encoded comments.
+
+### Metadata
+- Reproducible: yes
+- Related Files: src/styles/home.css, src/styles/characters.css
+
+---
+
 ## [ERR-20260804-001] playwright-core cached browser mismatch
 
 **Logged**: 2026-08-04T00:00:00+08:00

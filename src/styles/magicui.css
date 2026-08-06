@@ -4,36 +4,56 @@
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/utilities" layer(utilities);
 
-@theme {
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
-    alternate;
+/* Interactive Grid Pattern：外观全走 CSS 变量（--grid-line / --grid-fill，明暗随 data-theme 即时翻转） */
+.interactive-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.interactive-grid rect {
+  fill: transparent;
+  stroke: var(--grid-line);
+  stroke-width: 1;
+  transition: fill 1s ease-in-out; /* 熄灭余韵 */
+}
+.interactive-grid rect.is-lit {
+  fill: var(--grid-fill);
+  transition-duration: 0.12s; /* 亮起 */
+}
+@media (prefers-reduced-motion: reduce) {
+  .interactive-grid rect {
+    transition: none;
+  }
+  .interactive-grid rect.is-lit {
+    fill: transparent;
+  }
 }
 
-/* --speed 由组件内联提供；此处兜底避免 :root 变量 guaranteed-invalid 无法继承 */
-:root {
-  --speed: 3s;
+/* MagicCard 动态跟光面板（原生 CSS / vanilla JS 也能无缝施加） */
+.magic-card-vanilla {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card, 4px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.magic-card-vanilla::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    220px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--cyan-soft, rgba(148, 163, 184, 0.15)),
+    transparent 80%
+  );
+  z-index: 1;
+}
+.magic-card-vanilla:hover::before {
+  opacity: 1;
 }
 
-@keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);
-  }
-  15%,
-  35% {
-    transform: translateZ(0) rotate(90deg);
-  }
-  65%,
-  85% {
-    transform: translateZ(0) rotate(270deg);
-  }
-  100% {
-    transform: translateZ(0) rotate(360deg);
-  }
-}
-
-@keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);
-  }
-}

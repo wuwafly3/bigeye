@@ -130,6 +130,24 @@ export function initLayout() {
 
   initClickEffect()
   initMimir()
+  initMagicCardGlow()
+}
+
+/** 全局卡片 MagicCard 光斑跟随：为全站 .card 元素在鼠标经过时提供柔和跟光体验 */
+export function initMagicCardGlow() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  document.addEventListener('pointermove', e => {
+    const card = e.target.closest('.card, .magic-card-vanilla')
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    card.style.setProperty('--mouse-x', `${x}px`)
+    card.style.setProperty('--mouse-y', `${y}px`)
+    if (!card.classList.contains('magic-card-vanilla')) {
+      card.classList.add('magic-card-vanilla')
+    }
+  }, { passive: true })
 }
 
 export function showHudTransition(duration = 260) {

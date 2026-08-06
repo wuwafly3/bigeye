@@ -89,7 +89,8 @@
   min-height: 124px;
   color: var(--text);
   border-color: var(--line);
-  border-radius: 0;
+  border-radius: var(--radius-card, 4px);
+  overflow: hidden;
   clip-path: none;
 }
 .char-card.hide { display: none; }

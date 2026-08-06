@@ -74,6 +74,10 @@
   --cyan-hover-line: rgba(51, 65, 85, 0.72);
   --cyan-aurora: rgba(51, 65, 85, 0.055);  /* body 顶部微光 */
 
+  /* 交互网格背景（magicui InteractiveGridPattern） */
+  --grid-line: rgba(51, 65, 85, 0.05);
+  --grid-fill: rgba(51, 65, 85, 0.1);
+
   /* 深石板组件上的冷银（两主题一致：命令面板 / HUD / 激活导航 / 徽记） */
   --slate-accent: #94a3b8;
   --slate-accent-soft: rgba(148, 163, 184, 0.12);
@@ -152,11 +156,8 @@ body {
   background-image:
     radial-gradient(1200px 500px at 78% -180px, var(--cyan-aurora), transparent 62%),
     radial-gradient(900px 420px at -6% 32%, rgba(245, 158, 11, 0.04), transparent 60%),
-    linear-gradient(rgba(100, 116, 139, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100, 116, 139, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, var(--bg-soft), var(--bg) 240px, var(--bg));
-  background-size: auto, auto, 56px 56px, 56px 56px, auto;
-  background-attachment: fixed;
+  background-size: auto, auto, auto;
   color: var(--ink-text);
   font-family: var(--font-body);
   font-size: 15px;
@@ -636,7 +637,7 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   transform: translateY(1px);                   /* 点击压下 */
   background: #f4e7ce;
 }
-/* 主行动按钮（design.md Primary CTA：切角梯形 + 琥珀金 + 墨文加粗）*/
+/* 主行动按钮（矩形 + 琥珀金 + 墨文加粗）*/
 .btn-primary {
   position: relative;
   background: linear-gradient(180deg, var(--accent-strong), var(--accent));
@@ -645,15 +646,17 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   font-weight: 700;
   letter-spacing: 1px;
   padding: 10px 24px;
-  clip-path: polygon(var(--notch-sm) 0, 100% 0, calc(100% - var(--notch-sm)) 100%, 0 100%);
-  border-radius: 0;
-  transition: transform 0.16s ease, filter 0.16s ease;
+  border-radius: var(--radius-card, 4px);
+  clip-path: none;
+  transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
 }
 .btn-primary::after {
   content: "";
   position: absolute;
-  left: 0; right: var(--notch-sm); top: 0;
+  left: 0; right: 0; top: 0;
   height: 2px;
+  border-top-left-radius: var(--radius-card, 4px);
+  border-top-right-radius: var(--radius-card, 4px);
   background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.2));
 }
 .btn-primary:hover {
@@ -818,15 +821,17 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
   --cyan-hover-bg: rgba(148, 163, 184, 0.1);
   --cyan-hover-line: rgba(148, 163, 184, 0.7);
   --cyan-aurora: rgba(148, 163, 184, 0.08);
+
+  /* 交互网格背景（暗色：冷银） */
+  --grid-line: rgba(148, 163, 184, 0.06);
+  --grid-fill: rgba(148, 163, 184, 0.1);
 }
 
 :root[data-theme="dark"] body {
   background-image:
     radial-gradient(900px 440px at 82% -160px, var(--slate-accent-aurora), transparent 64%),
-    linear-gradient(var(--slate-accent-aurora-faint) 1px, transparent 1px),
-    linear-gradient(90deg, var(--slate-accent-aurora-faint) 1px, transparent 1px),
     linear-gradient(180deg, var(--bg-soft), var(--bg) 280px);
-  background-size: auto, 56px 56px, 56px 56px, auto;
+  background-size: auto, auto;
 }
 
 :root[data-theme="dark"] .site-header {
@@ -843,16 +848,17 @@ main.container { padding-top: 36px; padding-bottom: 80px; min-height: 70vh; }
 :root[data-theme="dark"] .search-input,
 :root[data-theme="dark"] .command-input { background: rgba(13, 17, 23, 0.76); }
 
-/* Bottom-bar inspired tactical controls. */
+/* 战术控制控件与长方形按钮 */
 .nav-links a,
 button.chip,
 .btn {
   min-height: 40px;
-  border-radius: 0;
-  clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+  border-radius: var(--radius-card, 4px);
+  clip-path: none;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.18);
   box-shadow: none;
+  transition: all 0.2s ease;
 }
 .nav-links a { display: inline-flex; align-items: center; padding: 8px 14px; }
 .nav-links a:hover,
@@ -884,7 +890,7 @@ button.chip[aria-selected="true"]::before,
   color: var(--slate-accent);
   font-size: 9px;
 }
-.btn-primary { padding: 8px 18px; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
+.btn-primary { padding: 8px 18px; clip-path: none; border-radius: var(--radius-card, 4px); }
 .btn-primary::after { background: linear-gradient(90deg, var(--slate-accent), transparent); }
 .btn-primary:hover { background: #252d3b; color: #fff; }
 button.chip { padding: 7px 15px; }
@@ -892,16 +898,16 @@ button.chip { padding: 7px 15px; }
 .search-input {
   min-height: 42px;
   padding: 0 14px;
-  border: 0;
-  border-bottom: 1px solid var(--line-strong);
-  border-radius: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card, 4px);
   clip-path: none;
   background: var(--panel);
   box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .search-input:focus {
-  border-bottom-color: var(--ink-text);
-  box-shadow: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan-focus);
 }
 
 .header-tools { display: flex; align-items: center; gap: 6px; }
@@ -915,7 +921,9 @@ button.chip { padding: 7px 15px; }
   color: var(--ink-text);
   font-size: 20px;
   cursor: pointer;
-  clip-path: polygon(7px 0, 100% 0, calc(100% - 7px) 100%, 0 100%);
+  border-radius: var(--radius-card, 4px);
+  clip-path: none;
+  transition: all 0.2s ease;
 }
 .icon-btn:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-soft); }
 .theme-toggle[aria-pressed="true"] { background: #1e2530; color: #fff; border-color: var(--slate-accent); }
@@ -977,11 +985,11 @@ button.chip { padding: 7px 15px; }
 body.command-lock { overflow: hidden; }
 .command-palette { position: fixed; inset: 0; z-index: 400; display: grid; place-items: start center; padding: max(88px, 10vh) 18px 20px; }
 .command-mask { position: absolute; inset: 0; background: rgba(13, 17, 23, 0.74); backdrop-filter: blur(10px); }
-.command-panel { position: relative; width: min(640px, 100%); padding: 16px; background: #161b22; border: 1px solid var(--slate-accent-panel); color: #f8fafc; box-shadow: 0 24px 70px rgba(0,0,0,.48); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); }
+.command-panel { position: relative; width: min(640px, 100%); padding: 16px; background: #161b22; border: 1px solid var(--slate-accent-panel); color: #f8fafc; box-shadow: 0 24px 70px rgba(0,0,0,.48); border-radius: 6px; clip-path: none; }
 .command-head { display: flex; align-items: center; gap: 10px; min-height: 40px; font-weight: 700; letter-spacing: 2px; }
 .command-mark { color: var(--slate-accent); font-size: 10px; }
 .command-close { margin-left: auto; color: #f8fafc; border-color: #475569; }
-.command-input { width: 100%; min-height: 48px; margin: 8px 0 12px; padding: 0 15px; border: 1px solid #475569; border-radius: 0; color: #f8fafc; font: inherit; outline: none; clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%); }
+.command-input { width: 100%; min-height: 48px; margin: 8px 0 12px; padding: 0 15px; border: 1px solid #475569; border-radius: 4px; color: #f8fafc; font: inherit; outline: none; clip-path: none; }
 .command-input:focus { border-color: var(--slate-accent); box-shadow: 0 0 0 2px var(--slate-accent-focus); }
 .command-results { display: grid; gap: 4px; max-height: min(55vh, 460px); overflow-y: auto; }
 .command-result { min-height: 58px; display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 12px; padding: 7px 11px; color: #e2e8f0; border: 1px solid transparent; }

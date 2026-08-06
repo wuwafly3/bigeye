@@ -1,0 +1,10 @@
+instructions: |
+  审查 Magic UI 组件替换实验。重点：方案 1（ShimmerButton 替换首页 CTA）的
+  视觉一致性、React 挂载架构、性能取舍、无障碍与 reduced-motion。
+
+advisors:
+  - name: Advisor
+    tools: [read, grep, glob]
+    instructions: |
+      你是 UI 架构顾问。评估方案 1 后给出明确结论：值得做 / 需要调整 / 反对。
+      用中文回复，结论先行，每条建议给出理由。

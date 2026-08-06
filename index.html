@@ -13,12 +13,14 @@
   <link rel="stylesheet" href="./src/styles/home.css" />
 </head>
 <body>
+  <!-- 交互网格背景（React 挂载点；触屏/减动时留空，回退 body 准线网格）。
+       DOM 置于 hero-backdrop 之前：同 z-0 下后者覆盖前者，hero 区网格被主视觉自然遮挡 -->
+  <div class="grid-bg" id="grid-bg" aria-hidden="true"></div>
   <!-- 主视觉背景：优先加载 home-hero.jpg（官方图，缺省时用同风格深空 SVG 占位） -->
   <div class="hero-backdrop" aria-hidden="true">
     <div class="hero-backdrop-img"
          style="background-image: url('./images/backdrop/home-hero.jpg'), url('./images/backdrop/home-hero.svg')"></div>
   </div>
-  <canvas id="starfield" aria-hidden="true"></canvas>
 
   <main class="container">
     <section class="home-hero">
@@ -54,8 +56,6 @@
         的格式发起变更。
       </p>
     </section>
-
-    <section class="magic-stage" id="magic-stage" aria-label="Magic UI 组件实验区"></section>
   </main>
 
   <!-- 背景战术细节（低密度纯装饰）：四角角标 / 十字定位符 / 系统编号 -->

@@ -1,21 +1,37 @@
 /* 首页专属样式 —— Cyber-Tactical Tactical OS（严格按 design.md）
    银冰画布 + 白浮层 + 琥珀金 CTA + 石板灰装饰元素 + 红点提醒 */
 
-/* 全局星野 canvas（在浅底上仅保留极少星点作扫锚回传） */
-#starfield {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+/* 交互网格背景容器（magicui 组件挂载点；fixed 层，正文 z-1 之下） */
+.grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(720px, 92svh);
+  min-height: 560px;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.72;
   pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 60% 68% at 54% 36%, #000 0%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0.12) 76%, transparent 92%);
+  mask-image: radial-gradient(ellipse 60% 68% at 54% 36%, #000 0%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0.12) 76%, transparent 92%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 /* 保证画布在内容下方 */
-.home-hero, .module-grid, .about-panel { position: relative; z-index: 1; }
+main.container { position: relative; z-index: 2; }
+.home-hero, .module-grid, .about-panel { position: relative; z-index: 2; }
 
 /* ---------- 背景战术细节：四角角标 / 十字定位 / 系统编号（低密度纯装饰） ---------- */
 .home-deco {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(720px, 92svh);
+  min-height: 560px;
+  z-index: 1;
+  overflow: hidden;
   pointer-events: none;
 }
 .deco-corner {
@@ -343,8 +359,8 @@
   display: block;
   padding: 18px 20px 16px;
   color: var(--ink-text);
-  border-radius: 0;
-  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  border-radius: var(--radius-card, 6px);
+  clip-path: none;
 }
 .module-card::before {
   content: none;
@@ -418,7 +434,7 @@
 }
 .module-card:hover .module-arrow { transform: translateX(4px); color: var(--accent); }
 
-/* CTA：主按钮（design.md Primary CTA —— 琥珀金切角平行四边形）*/
+/* CTA：主按钮（琥珀金长方形）*/
 .module-card .module-cta {
   display: inline-flex;
   align-items: center;
@@ -430,7 +446,8 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
-  clip-path: polygon(var(--notch-sm) 0, 100% 0, calc(100% - var(--notch-sm)) 100%, 0 100%);
+  border-radius: var(--radius-card, 4px);
+  clip-path: none;
   box-shadow:
     0 2px 0 #d97706,
     0 4px 14px rgba(245, 158, 11, 0.3);
@@ -456,46 +473,6 @@
   box-shadow:
     0 1px 0 #d97706,
     0 3px 10px rgba(245, 158, 11, 0.3);
-}
-
-/* ---------- Magic UI 实验区（React 挂载；组件替换实验用，随时可删） ---------- */
-.magic-stage {
-  position: relative;
-  z-index: 1;
-  margin-top: 46px;
-  padding: 22px 26px;
-  border: 1px dashed var(--line-strong);
-  background: var(--panel);
-  box-shadow: var(--shadow-panel);
-  min-height: 96px;
-}
-.magic-stage__inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.magic-stage__card {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 190px;
-  height: 64px;
-  border: 1px solid var(--line-strong);
-  background: var(--panel-solid);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.magic-stage__label {
-  color: var(--ink-dim);
-  font: 600 10px/1 var(--font-num);
-  letter-spacing: 2.5px;
-  user-select: none;
-}
-
-@media (max-width: 720px) {
-  .magic-stage__inner { gap: 12px; }
-  .magic-stage__card { width: 100%; }
 }
 
 /* ---------- 关于本站：浅底白卡 + 琥珀刻度（不再黑底） ---------- */
