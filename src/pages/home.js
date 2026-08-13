@@ -85,10 +85,24 @@ document.getElementById('module-grid').innerHTML = modules
 
 revealOnScroll(document.querySelectorAll('.module-card'), { stagger: 70 })
 
-/* ---------- 交互网格背景（magicui）：仅精细指针设备挂载；失败静默回退 body 准线网格 ---------- */
+/* ---------- 交互网格背景(magicui):仅精细指针设备挂载;失败静默回退 body 准线网格 ---------- */
 const gridBg = document.getElementById('grid-bg')
 if (gridBg && matchMedia('(hover: hover) and (pointer: fine)').matches) {
   import('../magicui/bg-entry.jsx')
     .then((m) => m.mountBackground(gridBg))
+    .catch(() => {})
+}
+
+/* ---------- 阵营轨道图标(magicui OrbitingCircles):绕 hero 系统环公转 ---------- */
+const heroMark = document.querySelector('.hero-system-mark')
+if (heroMark && matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion) {
+  import('../magicui/orbit-entry.jsx')
+    .then((m) => {
+      const mount = document.createElement('div')
+      mount.className = 'hero-faction-orbit'
+      mount.setAttribute('aria-hidden', 'false')
+      heroMark.appendChild(mount)
+      m.mountOrbit(mount)
+    })
     .catch(() => {})
 }

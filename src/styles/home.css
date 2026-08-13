@@ -240,7 +240,16 @@ main.container { position: relative; z-index: 2; }
   border-radius: 50%;
 }
 .hero-system-ring::after { inset: 42px; border-style: solid; border-color: rgba(245, 158, 11, 0.24); }
-/* 琥珀金顶部刻度条（design.md active stage marker） */
+/* 阵营轨道图标挂载点(OrbitingCircles):与系统环同中心,轨道溢出徽标框不被裁切 */
+.hero-faction-orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 3;              /* 高于系统环与中心 logo,保持可点击 */
+  pointer-events: none;    /* 容器不拦截,图标本体恢复点击 */
+}
+.hero-faction-orbit .ag-orbit-icon { pointer-events: auto; }
+
+/* 琥珀金顶部刻度条(design.md active stage marker) */
 .hero-kicker {
   display: flex;
   align-items: center;

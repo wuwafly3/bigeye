@@ -186,6 +186,18 @@ if (!characters.length) {
   buildChips('chips-rarity', 'rarity', sortRarity(collectOptions('rarity')))
   buildChips('chips-faction', 'faction', collectOptions('faction'))
 
+  /* 支持 URL 深链:characters.html?faction=众星 (首页阵营轨道图标) */
+  const params = new URLSearchParams(location.search)
+  for (const key of ['element', 'rarity', 'faction']) {
+    const v = params.get(key)
+    if (!v) continue
+    state[key] = v
+    const wrap = document.getElementById(`chips-${key}`)
+    wrap?.querySelectorAll('.chip').forEach(ch =>
+      ch.classList.toggle('active', ch.dataset.value === v)
+    )
+  }
+
   searchInput.addEventListener('input', () => {
     state.q = searchInput.value.trim().toLowerCase()
     showHudTransition(180)

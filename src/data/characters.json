@@ -42,7 +42,17 @@
         }
       ],
       "portrait": "images/characters/tsukuyomi-zhenli/portrait.png",
-      "fullArt": "images/characters/tsukuyomi-zhenli/full.png"
+      "fullArt": "images/characters/tsukuyomi-zhenli/full.webp",
+      "skins": [
+        {
+          "name": "星月萤",
+          "fullArt": "images/characters/tsukuyomi-zhenli/skin-01.webp"
+        },
+        {
+          "name": "课后补习",
+          "fullArt": "images/characters/tsukuyomi-zhenli/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "poseidon-bingyuan",
@@ -84,7 +94,17 @@
         }
       ],
       "portrait": "images/characters/poseidon-bingyuan/portrait.png",
-      "fullArt": "images/characters/poseidon-bingyuan/full.png"
+      "fullArt": "images/characters/poseidon-bingyuan/full.webp",
+      "skins": [
+        {
+          "name": "澄灵海色",
+          "fullArt": "images/characters/poseidon-bingyuan/skin-01.webp"
+        },
+        {
+          "name": "白夜奇谭",
+          "fullArt": "images/characters/poseidon-bingyuan/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "kagutsuchi-longqie",
@@ -110,7 +130,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/kagutsuchi-longqie/portrait.png",
-      "fullArt": "images/characters/kagutsuchi-longqie/full.png"
+      "fullArt": "images/characters/kagutsuchi-longqie/full.webp",
+      "skins": [
+        {
+          "name": "闲雅午憩",
+          "fullArt": "images/characters/kagutsuchi-longqie/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "tyr-hantian",
@@ -142,7 +168,13 @@
         }
       ],
       "portrait": "images/characters/tyr-hantian/portrait.png",
-      "fullArt": "images/characters/tyr-hantian/full.png"
+      "fullArt": "images/characters/tyr-hantian/full.webp",
+      "skins": [
+        {
+          "name": "盛音礼赞",
+          "fullArt": "images/characters/tyr-hantian/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "okuninushi-zaoying",
@@ -168,7 +200,17 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/okuninushi-zaoying/portrait.png",
-      "fullArt": "images/characters/okuninushi-zaoying/full.png"
+      "fullArt": "images/characters/okuninushi-zaoying/full.webp",
+      "skins": [
+        {
+          "name": "兔迎初岁",
+          "fullArt": "images/characters/okuninushi-zaoying/skin-01.webp"
+        },
+        {
+          "name": "长日绯樱",
+          "fullArt": "images/characters/okuninushi-zaoying/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "kuninotokotachi-miying",
@@ -194,7 +236,17 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/kuninotokotachi-miying/portrait.png",
-      "fullArt": "images/characters/kuninotokotachi-miying/full.png"
+      "fullArt": "images/characters/kuninotokotachi-miying/full.webp",
+      "skins": [
+        {
+          "name": "护理时间",
+          "fullArt": "images/characters/kuninotokotachi-miying/skin-01.webp"
+        },
+        {
+          "name": "谧夏绮影",
+          "fullArt": "images/characters/kuninotokotachi-miying/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "asura-zhangyue",
@@ -220,7 +272,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/asura-zhangyue/portrait.png",
-      "fullArt": "images/characters/asura-zhangyue/full.png"
+      "fullArt": "images/characters/asura-zhangyue/full.webp",
+      "skins": [
+        {
+          "name": "余烬",
+          "fullArt": "images/characters/asura-zhangyue/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "poseidon-chaoyin",
@@ -257,7 +315,17 @@
         }
       ],
       "portrait": "images/characters/poseidon-chaoyin/portrait.png",
-      "fullArt": "images/characters/poseidon-chaoyin/full.png"
+      "fullArt": "images/characters/poseidon-chaoyin/full.webp",
+      "skins": [
+        {
+          "name": "恋海",
+          "fullArt": "images/characters/poseidon-chaoyin/skin-01.webp"
+        },
+        {
+          "name": "浥轻尘",
+          "fullArt": "images/characters/poseidon-chaoyin/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "osiris-shenghun",
@@ -294,7 +362,17 @@
         }
       ],
       "portrait": "images/characters/osiris-shenghun/portrait.png",
-      "fullArt": "images/characters/osiris-shenghun/full.png"
+      "fullArt": "images/characters/osiris-shenghun/full.webp",
+      "skins": [
+        {
+          "name": "瑞龙吟",
+          "fullArt": "images/characters/osiris-shenghun/skin-01.webp"
+        },
+        {
+          "name": "鸦羽幽梦",
+          "fullArt": "images/characters/osiris-shenghun/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "hela-anxing",
@@ -320,7 +398,17 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/hela-anxing/portrait.png",
-      "fullArt": "images/characters/hela-anxing/full.png"
+      "fullArt": "images/characters/hela-anxing/full.webp",
+      "skins": [
+        {
+          "name": "幻萤蝶梦",
+          "fullArt": "images/characters/hela-anxing/skin-01.webp"
+        },
+        {
+          "name": "镇魂乐章",
+          "fullArt": "images/characters/hela-anxing/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "shu-fengqiang",
@@ -357,7 +445,7 @@
         }
       ],
       "portrait": "images/characters/shu-fengqiang/portrait.png",
-      "fullArt": "images/characters/shu-fengqiang/full.png"
+      "fullArt": "images/characters/shu-fengqiang/full.webp"
     },
     {
       "id": "nuada-yinbi",
@@ -383,7 +471,7 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/nuada-yinbi/portrait.png",
-      "fullArt": "images/characters/nuada-yinbi/full.png"
+      "fullArt": "images/characters/nuada-yinbi/full.webp"
     },
     {
       "id": "anubis-hulang",
@@ -404,7 +492,7 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/anubis-hulang/portrait.png",
-      "fullArt": "images/characters/anubis-hulang/full.png"
+      "fullArt": "images/characters/anubis-hulang/full.webp"
     },
     {
       "id": "sobek-kuange",
@@ -422,7 +510,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/sobek-kuange/portrait.png",
-      "fullArt": "images/characters/sobek-kuange/full.png"
+      "fullArt": "images/characters/sobek-kuange/full.webp"
     },
     {
       "id": "bastet-lingmao",
@@ -436,7 +524,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/bastet-lingmao/portrait.png",
-      "fullArt": "images/characters/bastet-lingmao/full.png"
+      "fullArt": "images/characters/bastet-lingmao/full.webp",
+      "skins": [
+        {
+          "name": "伪装",
+          "fullArt": "images/characters/bastet-lingmao/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "hera-lihuan",
@@ -450,7 +544,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/hera-lihuan/portrait.png",
-      "fullArt": "images/characters/hera-lihuan/full.png"
+      "fullArt": "images/characters/hera-lihuan/full.webp",
+      "skins": [
+        {
+          "name": "荆棘花之梦",
+          "fullArt": "images/characters/hera-lihuan/skin-01.webp"
+        },
+        {
+          "name": "青空之境",
+          "fullArt": "images/characters/hera-lihuan/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "verthandi-jiushi",
@@ -464,7 +568,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/verthandi-jiushi/portrait.png",
-      "fullArt": "images/characters/verthandi-jiushi/full.png",
+      "fullArt": "images/characters/verthandi-jiushi/full.webp",
       "skins": [
         {
           "name": "日常休闲常服",
@@ -488,7 +592,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/skuld-qiwang/portrait.png",
-      "fullArt": "images/characters/skuld-qiwang/full.png"
+      "fullArt": "images/characters/skuld-qiwang/full.webp",
+      "skins": [
+        {
+          "name": "梦的伊始",
+          "fullArt": "images/characters/skuld-qiwang/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "skadi-zhanlang",
@@ -502,7 +612,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/skadi-zhanlang/portrait.png",
-      "fullArt": "images/characters/skadi-zhanlang/full.png"
+      "fullArt": "images/characters/skadi-zhanlang/full.webp"
     },
     {
       "id": "kuramitsuha-shuangying",
@@ -516,7 +626,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/kuramitsuha-shuangying/portrait.png",
-      "fullArt": "images/characters/kuramitsuha-shuangying/full.png"
+      "fullArt": "images/characters/kuramitsuha-shuangying/full.webp",
+      "skins": [
+        {
+          "name": "庆典遐思",
+          "fullArt": "images/characters/kuramitsuha-shuangying/skin-01.webp"
+        },
+        {
+          "name": "绚烂律动",
+          "fullArt": "images/characters/kuramitsuha-shuangying/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "buzenbo-feiran",
@@ -530,7 +650,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/buzenbo-feiran/portrait.png",
-      "fullArt": "images/characters/buzenbo-feiran/full.png"
+      "fullArt": "images/characters/buzenbo-feiran/full.webp",
+      "skins": [
+        {
+          "name": "专属女仆",
+          "fullArt": "images/characters/buzenbo-feiran/skin-01.webp"
+        },
+        {
+          "name": "警备少女",
+          "fullArt": "images/characters/buzenbo-feiran/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "oneiroi-xiaokun",
@@ -544,7 +674,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/oneiroi-xiaokun/portrait.png",
-      "fullArt": "images/characters/oneiroi-xiaokun/full.png"
+      "fullArt": "images/characters/oneiroi-xiaokun/full.webp",
+      "skins": [
+        {
+          "name": "南柯惊梦",
+          "fullArt": "images/characters/oneiroi-xiaokun/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "kali-leiliao",
@@ -558,7 +694,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/kali-leiliao/portrait.png",
-      "fullArt": "images/characters/kali-leiliao/full.png"
+      "fullArt": "images/characters/kali-leiliao/full.webp"
     },
     {
       "id": "parvati-fenlun",
@@ -572,7 +708,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/parvati-fenlun/portrait.png",
-      "fullArt": "images/characters/parvati-fenlun/full.png"
+      "fullArt": "images/characters/parvati-fenlun/full.webp",
+      "skins": [
+        {
+          "name": "奢宴流风",
+          "fullArt": "images/characters/parvati-fenlun/skin-01.webp"
+        },
+        {
+          "name": "沉默信仰",
+          "fullArt": "images/characters/parvati-fenlun/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "marduk-nushe",
@@ -586,7 +732,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/marduk-nushe/portrait.png",
-      "fullArt": "images/characters/marduk-nushe/full.png"
+      "fullArt": "images/characters/marduk-nushe/full.webp",
+      "skins": [
+        {
+          "name": "先行者",
+          "fullArt": "images/characters/marduk-nushe/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "leviathan-dichuixue",
@@ -600,7 +752,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/leviathan-dichuixue/portrait.png",
-      "fullArt": "images/characters/leviathan-dichuixue/full.png"
+      "fullArt": "images/characters/leviathan-dichuixue/full.webp",
+      "skins": [
+        {
+          "name": "返校日",
+          "fullArt": "images/characters/leviathan-dichuixue/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "hodur-jisheng",
@@ -618,7 +776,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/hodur-jisheng/portrait.png",
-      "fullArt": "images/characters/hodur-jisheng/full.png"
+      "fullArt": "images/characters/hodur-jisheng/full.webp",
+      "skins": [
+        {
+          "name": "冒牌女仆",
+          "fullArt": "images/characters/hodur-jisheng/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "heimdall-qiming",
@@ -632,7 +796,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/heimdall-qiming/portrait.png",
-      "fullArt": "images/characters/heimdall-qiming/full.png"
+      "fullArt": "images/characters/heimdall-qiming/full.webp"
     },
     {
       "id": "kagutsuchi-huohuozhuoxin",
@@ -649,7 +813,7 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/kagutsuchi-huohuozhuoxin/portrait.png",
-      "fullArt": "images/characters/kagutsuchi-huohuozhuoxin/full.png"
+      "fullArt": "images/characters/kagutsuchi-huohuozhuoxin/full.webp"
     },
     {
       "id": "mushussu-mingzhe",
@@ -695,7 +859,13 @@
         }
       ],
       "portrait": "images/characters/thor-honglei/portrait.png",
-      "fullArt": "images/characters/thor-honglei/full.png"
+      "fullArt": "images/characters/thor-honglei/full.webp",
+      "skins": [
+        {
+          "name": "喧哗颂歌",
+          "fullArt": "images/characters/thor-honglei/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "zenkibo-huiguang",
@@ -712,7 +882,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/zenkibo-huiguang/portrait.png",
-      "fullArt": "images/characters/zenkibo-huiguang/full.png"
+      "fullArt": "images/characters/zenkibo-huiguang/full.webp",
+      "skins": [
+        {
+          "name": "晖耀",
+          "fullArt": "images/characters/zenkibo-huiguang/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "thoth-canglu",
@@ -726,7 +902,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/thoth-canglu/portrait.png",
-      "fullArt": "images/characters/thoth-canglu/full.png"
+      "fullArt": "images/characters/thoth-canglu/full.webp",
+      "skins": [
+        {
+          "name": "入暮之诗",
+          "fullArt": "images/characters/thoth-canglu/skin-01.webp"
+        },
+        {
+          "name": "绘夜之诗",
+          "fullArt": "images/characters/thoth-canglu/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "tyr-laoyan",
@@ -740,7 +926,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/tyr-laoyan/portrait.png",
-      "fullArt": "images/characters/tyr-laoyan/full.png"
+      "fullArt": "images/characters/tyr-laoyan/full.webp"
     },
     {
       "id": "osiris-hunyu",
@@ -754,7 +940,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/osiris-hunyu/portrait.png",
-      "fullArt": "images/characters/osiris-hunyu/full.png"
+      "fullArt": "images/characters/osiris-hunyu/full.webp",
+      "skins": [
+        {
+          "name": "绛羽拾花",
+          "fullArt": "images/characters/osiris-hunyu/skin-01.webp"
+        },
+        {
+          "name": "邻座细语",
+          "fullArt": "images/characters/osiris-hunyu/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "tsukuyomi-shuowang",
@@ -768,7 +964,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/tsukuyomi-shuowang/portrait.png",
-      "fullArt": "images/characters/tsukuyomi-shuowang/full.png"
+      "fullArt": "images/characters/tsukuyomi-shuowang/full.webp"
     },
     {
       "id": "izanami-jinghuahuangquan",
@@ -810,7 +1006,21 @@
         }
       ],
       "portrait": "images/characters/izanami-jinghuahuangquan/portrait.png",
-      "fullArt": "images/characters/izanami-jinghuahuangquan/full.png"
+      "fullArt": "images/characters/izanami-jinghuahuangquan/full.webp",
+      "skins": [
+        {
+          "name": "初雪千华",
+          "fullArt": "images/characters/izanami-jinghuahuangquan/skin-01.webp"
+        },
+        {
+          "name": "彼岸浮生",
+          "fullArt": "images/characters/izanami-jinghuahuangquan/skin-02.webp"
+        },
+        {
+          "name": "海之恋歌",
+          "fullArt": "images/characters/izanami-jinghuahuangquan/skin-03.webp"
+        }
+      ]
     },
     {
       "id": "osiris-chuxin",
@@ -827,7 +1037,7 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/osiris-chuxin/portrait.png",
-      "fullArt": "images/characters/osiris-chuxin/full.png"
+      "fullArt": "images/characters/osiris-chuxin/full.webp"
     },
     {
       "id": "buzenbo-zhenhong",
@@ -841,7 +1051,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/buzenbo-zhenhong/portrait.png",
-      "fullArt": "images/characters/buzenbo-zhenhong/full.png"
+      "fullArt": "images/characters/buzenbo-zhenhong/full.webp"
     },
     {
       "id": "zenkibo-zhuiyan",
@@ -855,7 +1065,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/zenkibo-zhuiyan/portrait.png",
-      "fullArt": "images/characters/zenkibo-zhuiyan/full.png"
+      "fullArt": "images/characters/zenkibo-zhuiyan/full.webp",
+      "skins": [
+        {
+          "name": "校园时光",
+          "fullArt": "images/characters/zenkibo-zhuiyan/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "verthandi-zhaoyue",
@@ -869,7 +1085,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/verthandi-zhaoyue/portrait.png",
-      "fullArt": "images/characters/verthandi-zhaoyue/full.png"
+      "fullArt": "images/characters/verthandi-zhaoyue/full.webp",
+      "skins": [
+        {
+          "name": "甜心厨娘",
+          "fullArt": "images/characters/verthandi-zhaoyue/skin-01.webp"
+        },
+        {
+          "name": "踏雪寻梅",
+          "fullArt": "images/characters/verthandi-zhaoyue/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "verthandi-anyao",
@@ -883,7 +1109,21 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/verthandi-anyao/portrait.png",
-      "fullArt": "images/characters/verthandi-anyao/full.png"
+      "fullArt": "images/characters/verthandi-anyao/full.webp",
+      "skins": [
+        {
+          "name": "圣歌精灵",
+          "fullArt": "images/characters/verthandi-anyao/skin-01.webp"
+        },
+        {
+          "name": "粉珊瑚狂热",
+          "fullArt": "images/characters/verthandi-anyao/skin-02.webp"
+        },
+        {
+          "name": "致未来的我们",
+          "fullArt": "images/characters/verthandi-anyao/skin-03.webp"
+        }
+      ]
     },
     {
       "id": "vidar-hanshuang",
@@ -897,7 +1137,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/vidar-hanshuang/portrait.png",
-      "fullArt": "images/characters/vidar-hanshuang/full.png"
+      "fullArt": "images/characters/vidar-hanshuang/full.webp"
     },
     {
       "id": "heimdall-tianwei",
@@ -911,7 +1151,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/heimdall-tianwei/portrait.png",
-      "fullArt": "images/characters/heimdall-tianwei/full.png"
+      "fullArt": "images/characters/heimdall-tianwei/full.webp",
+      "skins": [
+        {
+          "name": "凝落初雪",
+          "fullArt": "images/characters/heimdall-tianwei/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "oneiroi-mengying",
@@ -925,7 +1171,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/oneiroi-mengying/portrait.png",
-      "fullArt": "images/characters/oneiroi-mengying/full.png"
+      "fullArt": "images/characters/oneiroi-mengying/full.webp",
+      "skins": [
+        {
+          "name": "星之砂",
+          "fullArt": "images/characters/oneiroi-mengying/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "kali-famie",
@@ -939,7 +1191,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/kali-famie/portrait.png",
-      "fullArt": "images/characters/kali-famie/full.png"
+      "fullArt": "images/characters/kali-famie/full.webp",
+      "skins": [
+        {
+          "name": "静谧时光",
+          "fullArt": "images/characters/kali-famie/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "brahma-sanxiang",
@@ -953,7 +1211,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/brahma-sanxiang/portrait.png",
-      "fullArt": "images/characters/brahma-sanxiang/full.png"
+      "fullArt": "images/characters/brahma-sanxiang/full.webp",
+      "skins": [
+        {
+          "name": "无间玩伴",
+          "fullArt": "images/characters/brahma-sanxiang/skin-01.webp"
+        },
+        {
+          "name": "轻纱梦华",
+          "fullArt": "images/characters/brahma-sanxiang/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "hera-yuzhuo",
@@ -967,7 +1235,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/hera-yuzhuo/portrait.png",
-      "fullArt": "images/characters/hera-yuzhuo/full.png"
+      "fullArt": "images/characters/hera-yuzhuo/full.webp"
     },
     {
       "id": "apollo-guanghuang",
@@ -981,7 +1249,7 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/apollo-guanghuang/portrait.png",
-      "fullArt": "images/characters/apollo-guanghuang/full.png"
+      "fullArt": "images/characters/apollo-guanghuang/full.webp"
     },
     {
       "id": "athena-linglan",
@@ -995,7 +1263,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/athena-linglan/portrait.png",
-      "fullArt": "images/characters/athena-linglan/full.png"
+      "fullArt": "images/characters/athena-linglan/full.webp",
+      "skins": [
+        {
+          "name": "荣勋",
+          "fullArt": "images/characters/athena-linglan/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "selene-youyue",
@@ -1009,7 +1283,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/selene-youyue/portrait.png",
-      "fullArt": "images/characters/selene-youyue/full.png"
+      "fullArt": "images/characters/selene-youyue/full.webp",
+      "skins": [
+        {
+          "name": "沉醉旖旎",
+          "fullArt": "images/characters/selene-youyue/skin-01.webp"
+        },
+        {
+          "name": "海滩漫步",
+          "fullArt": "images/characters/selene-youyue/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "artemis-xiguang",
@@ -1023,7 +1307,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/artemis-xiguang/portrait.png",
-      "fullArt": "images/characters/artemis-xiguang/full.png"
+      "fullArt": "images/characters/artemis-xiguang/full.webp",
+      "skins": [
+        {
+          "name": "炫色夏虹",
+          "fullArt": "images/characters/artemis-xiguang/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "hades-caooushi",
@@ -1037,7 +1327,21 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/hades-caooushi/portrait.png",
-      "fullArt": "images/characters/hades-caooushi/full.png"
+      "fullArt": "images/characters/hades-caooushi/full.webp",
+      "skins": [
+        {
+          "name": "冥夜鸢尾",
+          "fullArt": "images/characters/hades-caooushi/skin-01.webp"
+        },
+        {
+          "name": "忘川灯影",
+          "fullArt": "images/characters/hades-caooushi/skin-02.webp"
+        },
+        {
+          "name": "慵懒假日",
+          "fullArt": "images/characters/hades-caooushi/skin-03.webp"
+        }
+      ]
     },
     {
       "id": "horus-wangquan",
@@ -1051,7 +1355,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/horus-wangquan/portrait.png",
-      "fullArt": "images/characters/horus-wangquan/full.png"
+      "fullArt": "images/characters/horus-wangquan/full.webp",
+      "skins": [
+        {
+          "name": "完美合奏",
+          "fullArt": "images/characters/horus-wangquan/skin-01.webp"
+        },
+        {
+          "name": "炸毛警报",
+          "fullArt": "images/characters/horus-wangquan/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "serqet-caian",
@@ -1065,7 +1379,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/serqet-caian/portrait.png",
-      "fullArt": "images/characters/serqet-caian/full.png"
+      "fullArt": "images/characters/serqet-caian/full.webp",
+      "skins": [
+        {
+          "name": "午夜沉沦",
+          "fullArt": "images/characters/serqet-caian/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "zhiming-xuanji",
@@ -1082,7 +1402,21 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/zhiming-xuanji/portrait.png",
-      "fullArt": "images/characters/zhiming-xuanji/full.png"
+      "fullArt": "images/characters/zhiming-xuanji/full.webp",
+      "skins": [
+        {
+          "name": "云雾敛",
+          "fullArt": "images/characters/zhiming-xuanji/skin-01.webp"
+        },
+        {
+          "name": "沉溺于夏日",
+          "fullArt": "images/characters/zhiming-xuanji/skin-02.webp"
+        },
+        {
+          "name": "绵暖冬意",
+          "fullArt": "images/characters/zhiming-xuanji/skin-03.webp"
+        }
+      ]
     },
     {
       "id": "lingguang-chengxin",
@@ -1096,7 +1430,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/lingguang-chengxin/portrait.png",
-      "fullArt": "images/characters/lingguang-chengxin/full.png"
+      "fullArt": "images/characters/lingguang-chengxin/full.webp",
+      "skins": [
+        {
+          "name": "古墓来客",
+          "fullArt": "images/characters/lingguang-chengxin/skin-01.webp"
+        },
+        {
+          "name": "霞语相思",
+          "fullArt": "images/characters/lingguang-chengxin/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "mengzhang-qingjun",
@@ -1110,7 +1454,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/mengzhang-qingjun/portrait.png",
-      "fullArt": "images/characters/mengzhang-qingjun/full.png"
+      "fullArt": "images/characters/mengzhang-qingjun/full.webp",
+      "skins": [
+        {
+          "name": "太平令",
+          "fullArt": "images/characters/mengzhang-qingjun/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "baize-tianjie",
@@ -1124,7 +1474,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/baize-tianjie/portrait.png",
-      "fullArt": "images/characters/baize-tianjie/full.png"
+      "fullArt": "images/characters/baize-tianjie/full.webp",
+      "skins": [
+        {
+          "name": "倚新妆",
+          "fullArt": "images/characters/baize-tianjie/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "luwu-jiusi",
@@ -1138,7 +1494,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/luwu-jiusi/portrait.png",
-      "fullArt": "images/characters/luwu-jiusi/full.png"
+      "fullArt": "images/characters/luwu-jiusi/full.webp",
+      "skins": [
+        {
+          "name": "金错刀",
+          "fullArt": "images/characters/luwu-jiusi/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "gengchen-taiyi",
@@ -1152,7 +1514,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/gengchen-taiyi/portrait.png",
-      "fullArt": "images/characters/gengchen-taiyi/full.png"
+      "fullArt": "images/characters/gengchen-taiyi/full.webp",
+      "skins": [
+        {
+          "name": "代班董事",
+          "fullArt": "images/characters/gengchen-taiyi/skin-01.webp"
+        },
+        {
+          "name": "海上的私语",
+          "fullArt": "images/characters/gengchen-taiyi/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "yingzhao-xuntian",
@@ -1166,7 +1538,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/yingzhao-xuntian/portrait.png",
-      "fullArt": "images/characters/yingzhao-xuntian/full.png"
+      "fullArt": "images/characters/yingzhao-xuntian/full.webp",
+      "skins": [
+        {
+          "name": "听风消夏",
+          "fullArt": "images/characters/yingzhao-xuntian/skin-01.webp"
+        },
+        {
+          "name": "效率至上",
+          "fullArt": "images/characters/yingzhao-xuntian/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "linyu-qiaogou",
@@ -1180,7 +1562,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/linyu-qiaogou/portrait.png",
-      "fullArt": "images/characters/linyu-qiaogou/full.png"
+      "fullArt": "images/characters/linyu-qiaogou/full.webp",
+      "skins": [
+        {
+          "name": "岁华似锦",
+          "fullArt": "images/characters/linyu-qiaogou/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "jinwu-shiyao",
@@ -1194,7 +1582,17 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/jinwu-shiyao/portrait.png",
-      "fullArt": "images/characters/jinwu-shiyao/full.png"
+      "fullArt": "images/characters/jinwu-shiyao/full.webp",
+      "skins": [
+        {
+          "name": "水色晴空",
+          "fullArt": "images/characters/jinwu-shiyao/skin-01.webp"
+        },
+        {
+          "name": "金雀钗",
+          "fullArt": "images/characters/jinwu-shiyao/skin-02.webp"
+        }
+      ]
     },
     {
       "id": "luliang-baijie",
@@ -1208,7 +1606,13 @@
       "releaseVersion": "",
       "releaseDate": "",
       "portrait": "images/characters/luliang-baijie/portrait.png",
-      "fullArt": "images/characters/luliang-baijie/full.png"
+      "fullArt": "images/characters/luliang-baijie/full.webp",
+      "skins": [
+        {
+          "name": "粽香滚滚",
+          "fullArt": "images/characters/luliang-baijie/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "zenkibo-shenwei",
@@ -1234,7 +1638,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/zenkibo-shenwei/portrait.png",
-      "fullArt": "images/characters/zenkibo-shenwei/full.png"
+      "fullArt": "images/characters/zenkibo-shenwei/full.webp",
+      "skins": [
+        {
+          "name": "南瓜小鬼头",
+          "fullArt": "images/characters/zenkibo-shenwei/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "alisa",
@@ -1255,7 +1665,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/alisa/portrait.png",
-      "fullArt": "images/characters/alisa/full.png"
+      "fullArt": "images/characters/alisa/full.webp",
+      "skins": [
+        {
+          "name": "瑰色倾情",
+          "fullArt": "images/characters/alisa/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "ciel",
@@ -1276,7 +1692,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/ciel/portrait.png",
-      "fullArt": "images/characters/ciel/full.png"
+      "fullArt": "images/characters/ciel/full.webp",
+      "skins": [
+        {
+          "name": "浮光织雪",
+          "fullArt": "images/characters/ciel/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "hodur-miguang",
@@ -1293,7 +1715,13 @@
       "quotes": [],
       "skills": [],
       "portrait": "images/characters/hodur-miguang/portrait.png",
-      "fullArt": "images/characters/hodur-miguang/full.png"
+      "fullArt": "images/characters/hodur-miguang/full.webp",
+      "skins": [
+        {
+          "name": "幽情祷告",
+          "fullArt": "images/characters/hodur-miguang/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "wuchang-shuangsi",
@@ -1335,7 +1763,13 @@
         }
       ],
       "portrait": "images/characters/wuchang-shuangsi/portrait.png",
-      "fullArt": "images/characters/wuchang-shuangsi/full.png"
+      "fullArt": "images/characters/wuchang-shuangsi/full.webp",
+      "skins": [
+        {
+          "name": "慵懒靠近你",
+          "fullArt": "images/characters/wuchang-shuangsi/skin-01.webp"
+        }
+      ]
     },
     {
       "id": "okuninushi-xingyi",
@@ -1357,6 +1791,258 @@
       "skills": [],
       "portrait": "images/characters/okuninushi-xingyi/portrait.png",
       "fullArt": "images/characters/okuninushi-xingyi/full.png"
+    },
+    {
+      "id": "hermes-fengxing",
+      "name": "赫尔墨斯",
+      "codename": "风行",
+      "fullName": "风行·赫尔墨斯",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/hermes-fengxing/portrait.png",
+      "fullArt": "images/characters/hermes-fengxing/full.webp"
+    },
+    {
+      "id": "ereshkigal-yinye",
+      "name": "伊里伽尔",
+      "codename": "隐夜",
+      "fullName": "隐夜·伊里伽尔",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/ereshkigal-yinye/portrait.png",
+      "fullArt": "images/characters/ereshkigal-yinye/full.webp",
+      "skins": [
+        {
+          "name": "童话式复古",
+          "fullArt": "images/characters/ereshkigal-yinye/skin-01.webp"
+        }
+      ]
+    },
+    {
+      "id": "wuluo-duanyu",
+      "name": "武罗",
+      "codename": "锻玉",
+      "fullName": "锻玉·武罗",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/wuluo-duanyu/portrait.png",
+      "fullArt": "images/characters/wuluo-duanyu/full.webp",
+      "skins": [
+        {
+          "name": "沐兰泽",
+          "fullArt": "images/characters/wuluo-duanyu/skin-01.webp"
+        }
+      ]
+    },
+    {
+      "id": "leviathan-nichao",
+      "name": "利维坦",
+      "codename": "逆潮",
+      "fullName": "逆潮·利维坦",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/leviathan-nichao/portrait.png",
+      "fullArt": "images/characters/leviathan-nichao/full.webp"
+    },
+    {
+      "id": "kingu-huangliao",
+      "name": "金固",
+      "codename": "荒獠",
+      "fullName": "荒獠·金固",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/kingu-huangliao/portrait.png",
+      "fullArt": "images/characters/kingu-huangliao/full.webp"
+    },
+    {
+      "id": "aikeshiwa-xiaomang",
+      "name": "埃克什瓦",
+      "codename": "硝芒",
+      "fullName": "硝芒·埃克什瓦",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/aikeshiwa-xiaomang/portrait.png",
+      "fullArt": "images/characters/aikeshiwa-xiaomang/full.webp",
+      "skins": [
+        {
+          "name": "热带蓝调",
+          "fullArt": "images/characters/aikeshiwa-xiaomang/skin-01.webp"
+        }
+      ]
+    },
+    {
+      "id": "sekhmet-kuangshi",
+      "name": "塞赫麦特",
+      "codename": "狂狮",
+      "fullName": "狂狮·塞赫麦特",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/sekhmet-kuangshi/portrait.png",
+      "fullArt": "images/characters/sekhmet-kuangshi/full.webp",
+      "skins": [
+        {
+          "name": "不予投诉",
+          "fullArt": "images/characters/sekhmet-kuangshi/skin-01.webp"
+        },
+        {
+          "name": "危险教官",
+          "fullArt": "images/characters/sekhmet-kuangshi/skin-02.webp"
+        }
+      ]
+    },
+    {
+      "id": "wadjet-qianshe",
+      "name": "瓦吉特",
+      "codename": "潜蛇",
+      "fullName": "潜蛇·瓦吉特",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/wadjet-qianshe/portrait.png",
+      "fullArt": "images/characters/wadjet-qianshe/full.webp",
+      "skins": [
+        {
+          "name": "家政小帮手",
+          "fullArt": "images/characters/wadjet-qianshe/skin-01.webp"
+        },
+        {
+          "name": "恋恋春光",
+          "fullArt": "images/characters/wadjet-qianshe/skin-02.webp"
+        }
+      ]
+    },
+    {
+      "id": "oceanus-liuzhuanzhiyang",
+      "name": "欧申纳斯",
+      "codename": "流转之洋",
+      "fullName": "流转之洋·欧申纳斯",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/oceanus-liuzhuanzhiyang/portrait.png",
+      "fullArt": "images/characters/oceanus-liuzhuanzhiyang/full.webp"
+    },
+    {
+      "id": "shu-liuyinglanwu",
+      "name": "休",
+      "codename": "流萤岚雾",
+      "fullName": "流萤岚雾·休",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/shu-liuyinglanwu/portrait.png",
+      "fullArt": "images/characters/shu-liuyinglanwu/full.webp"
+    },
+    {
+      "id": "enlil-mufeng",
+      "name": "恩利尔",
+      "codename": "沐风",
+      "fullName": "沐风·恩利尔",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/enlil-mufeng/portrait.png",
+      "fullArt": "images/characters/enlil-mufeng/full.webp"
+    },
+    {
+      "id": "jinwu-zhaoyang",
+      "name": "金乌",
+      "codename": "昭阳",
+      "fullName": "昭阳·金乌",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/jinwu-zhaoyang/portrait.png",
+      "fullArt": "images/characters/jinwu-zhaoyang/full.webp",
+      "skins": [
+        {
+          "name": "毛绒派对",
+          "fullArt": "images/characters/jinwu-zhaoyang/skin-01.webp"
+        }
+      ]
+    },
+    {
+      "id": "hela-daowangzhidie",
+      "name": "海拉",
+      "codename": "悼亡之蝶",
+      "fullName": "悼亡之蝶·海拉",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/hela-daowangzhidie/portrait.png",
+      "fullArt": "images/characters/hela-daowangzhidie/full.webp",
+      "skins": [
+        {
+          "name": "魔女见习夜",
+          "fullArt": "images/characters/hela-daowangzhidie/skin-01.webp"
+        }
+      ]
+    },
+    {
+      "id": "xihe-huaiyang",
+      "name": "羲和",
+      "codename": "怀阳",
+      "fullName": "怀阳·羲和",
+      "rarity": "",
+      "element": "",
+      "weapon": "",
+      "faction": "",
+      "releaseVersion": "",
+      "releaseDate": "",
+      "portrait": "images/characters/xihe-huaiyang/portrait.png",
+      "fullArt": "images/characters/xihe-huaiyang/full.webp",
+      "skins": [
+        {
+          "name": "暮色华尔兹",
+          "fullArt": "images/characters/xihe-huaiyang/skin-01.webp"
+        }
+      ]
     }
   ]
 }
